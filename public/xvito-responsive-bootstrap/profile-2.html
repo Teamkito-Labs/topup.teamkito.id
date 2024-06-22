@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+
+    <title>Xvito - Responsive Bootstrap Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.png">
+
+    <!-- Master Stylesheet CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader-area">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preloader -->
+
+    <!-- ======================================
+    ******* Main Page Wrapper **********
+    ======================================= -->
+    <div class="main-container-wrapper">
+        <div class="horizontal-menu">
+            <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+                <div class="container">
+                    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                        <a class="navbar-brand brand-logo" href="index.html"><img src="img/core-img/logo.png" alt="logo" /></a>
+                        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="img/core-img/small-logo.png" alt="logo" /></a>
+                    </div>
+                    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item app-search d-none d-md-block">
+                                <form role="search" class=""><input type="text" placeholder="Search..." class="form-control">
+                                    <button type="submit" class="search-btn mr-0"><i class="fa fa-search"></i></button></form>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item dropdown dropdown-animate">
+                                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                                    <img class="mr-2 flex-30-img" src="img/shop-img/l5.png" alt="">English<i class="arrow_carrot-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                                    <p class="mb-0 font-weight-normal float-left dropdown-header">Language</p>
+
+                                    <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l2.jpg" alt=""> LOP</a>
+                                    <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l3.jpg" alt=""> KYI</a>
+                                    <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l4.jpg" alt=""> RTY</a>
+                                    <a href="#" class="dropdown-item preview-item d-flex align-items-center"><img class="language-thumb" src="img/shop-img/l1.jpg" alt=""> IND</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown dropdown-animate">
+                                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="count"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                                    <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                                    <a class="dropdown-item preview-item d-flex align-items-center">
+                                        <div class="notification-thumbnail">
+                                            <div class="preview-icon bg-primary">
+                                                <i class="ti-info-alt mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="notification-item-content">
+                                            <h6>Code problem solved.</h6>
+                                            <p class="mb-0">
+                                                Just now
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a class="dropdown-item preview-item d-flex align-items-center">
+                                        <div class="notification-thumbnail">
+                                            <div class="preview-icon bg-success">
+                                                <i class="ti-info-alt mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="notification-item-content">
+                                            <h6>New theme update.</h6>
+                                            <p class="mb-0">
+                                                02 days ago
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a class="dropdown-item preview-item d-flex align-items-center">
+                                        <div class="notification-thumbnail">
+                                            <div class="preview-icon bg-warning">
+                                                <i class="ti-info-alt mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="notification-item-content">
+                                            <h6>Awsome support.</h6>
+                                            <p class="mb-0">
+                                                02 days ago
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item preview-item d-flex align-items-center">
+                                        <div class="notification-thumbnail">
+                                            <div class="preview-icon bg-danger">
+                                                <i class="ti-info-alt mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="notification-item-content">
+                                            <h6>Text to build on the card title.</h6>
+                                            <p class="mb-0">
+                                                03 days ago
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li class="nav-item nav-profile dropdown dropdown-animate">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                                    <img src="img/member-img/contact-2.jpg" alt="profile" />
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top" aria-labelledby="profileDropdown">
+                                    <a href="#" class="dropdown-item"><i class="zmdi zmdi-account profile-icon mr-2" aria-hidden="true"></i> My profile</a>
+                                    <a href="#" class="dropdown-item"><i class="zmdi zmdi-email-open profile-icon mr-2" aria-hidden="true"></i> Messages</a>
+                                    <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon mr-2" aria-hidden="true"></i> Settings</a>
+                                    <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon mr-2" aria-hidden="true"></i> Sign-out</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+                            <span class="ti-menu"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar">
+                <div class="container">
+                    <ul class="nav page-navigation">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="ti-home menu-icon"></i>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ti-package menu-icon"></i>
+                                <span class="menu-title">Apps</span>
+                                <i class="menu-arrow"></i></a>
+                            <div class="submenu">
+                                <ul class="submenu-item">
+                                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="widgets.html">Widget</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="chat-box.html">Chat Box</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mega-menu">
+                            <a href="#" class="nav-link">
+                                <i class="ti-bar-chart-alt menu-icon"></i>
+                                <span class="menu-title">Data</span>
+                                <i class="menu-arrow"></i></a>
+                            <div class="submenu">
+                                <div class="col-group-wrapper row">
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Charts</p>
+                                        <ul>
+                                            <li class="nav-item"><a class="nav-link" href="apex-chart.html">Apex Chart</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="chartist.html">Chartist Chart</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="chart-js.html">Chart Js</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="morris-chart.html">Morris Chart</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="c3-charts.html">C3 Chart</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Icons</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="elegant-icons.html">Elegant</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="et-line-icons.html">Et-line</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="font-awesome.html">Font-awsome</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="matarial-icons.html">Materialize</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="pe-7-stroke.html">Pe-7 Stroke</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="themify-icons.html">Themify</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Hot Pages</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="job.html">Job News</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="job-description.html">Job Description</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="task.html">Task</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="team.html">Team Member</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="vector-map.html">Vector map</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="google-map.html">Google Map</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-group col-md-3">
+                                        <p class="category-heading">Ecommerce</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="product-details.html">Single Product</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="order.html">Orders</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="invoice.html">Invoice</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mega-menu">
+                            <a href="#" class="nav-link">
+                                <i class="ti-palette menu-icon"></i>
+                                <span class="menu-title">UI Elements</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="submenu">
+                                <div class="col-group-wrapper row">
+                                    <div class="col-group col-md-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="category-heading">Basic Elements</p>
+                                                <div class="submenu-item">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li class="nav-item"><a class="nav-link" href="alert.html">Alert</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="avatar.html">Avatar</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="buttons.html">Button</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="card.html">Card</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="tab.html">Tab</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="general.html">General</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li class="nav-item"><a class="nav-link" href="progressbar.html">Progress bar</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="dropdown.html">Dropdown</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="typography.html">Typography</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-group col-md-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="category-heading">Advanced Elements</p>
+                                                <div class="submenu-item">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li class="nav-item"><a class="nav-link" href="clint-list.html">Clint List</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="customer.html">Customer</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="blank.html">Blank Page</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="profile-2.html">Profile - 2</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="light-box.html">Light box gallery</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="modals.html">Modal</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="ribbons.html">Ribbons</a></li>
+                                                                <li class="nav-item"><a class="nav-link" href="sweet.html">Sweet Alert</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="ti-clipboard menu-icon"></i>
+                                <span class="menu-title">Mail</span>
+                                <i class="menu-arrow"></i></a>
+                            <div class="submenu">
+                                <ul class="submenu-item">
+                                    <li class="nav-item"><a class="nav-link" href="mail-inbox.html">Inbox</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="mail-view.html">Mail view</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="compose-mail.html">Compose</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item mega-menu">
+                            <a href="#" class="nav-link">
+                                <i class="ti-layers menu-icon"></i>
+                                <span class="menu-title">Other Pages</span>
+                                <i class="menu-arrow"></i></a>
+                            <div class="submenu">
+                                <div class="col-group-wrapper row">
+                                    <div class="col-group col-md-4">
+                                        <p class="category-heading">Forms</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="basic-form.html">Basic Form</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="advanced-elements.html">Elements</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="form-validation.html">Validation</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="form-wizard.html">Wizard</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="form-input-mask.html">Input Mask</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="file-upload.html">File Upload</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="rating.html">Rating</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-group col-md-4">
+                                        <p class="category-heading">Custom</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="slider.html">Slider</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="range.html">Range Slider</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="forget-password.html">Forget Password</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="lock-screen.html">Lock screen</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-group col-md-4">
+                                        <p class="category-heading">Table</p>
+                                        <ul class="submenu-item">
+                                            <li class="nav-item"><a class="nav-link" href="basic-table.html">Basic table</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="data-table.html">Data Table</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="price-table.html">Price Table</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Page -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="card mb-30">
+                                <img src="img/blog-img/4.jpg" class="profile-cover-img" alt="thumb">
+                                <div class="card-body text-center">
+                                    <h6 class="font-20 mb-1">Jhon Alin Deo</h6>
+                                    <p class="font-13 text-dark">Web Developer</p>
+                                    <p class="description px-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime mollitia.</p>
+                                    <div class="hire">
+                                        <button class="btn btn-danger btn-sm mr-2 mb-2">Hire me</button>
+                                        <button class="btn btn-success btn-sm mb-2">Follow me</button>
+                                    </div>
+                                    <!-- Icon -->
+                                    <div class="profile-social-icon mt-15 justify-content-center d-flex">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" data-toggle="tooltip" title="Dribbble">
+                                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" data-toggle="tooltip" title="Twitter">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" data-toggle="tooltip" title="Instagram">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./profile -->
+
+                            <div class="card address mb-30">
+                                <div class="card-body">
+                                    <h4 class="font-16 mb-15">Contact :</h4>
+                                    <div class="mt-0 d-flex align-items-center">
+                                        <i class="fa fa-home pr-2"></i>
+                                        <h6 class="font-14 mb-0">example@.com</h6>
+                                    </div>
+                                    <div class="mt-3 d-flex align-items-center">
+                                        <i class="fa fa-phone pr-2"></i>
+                                        <h6 class="font-14 mb-0">+91 656 887 245</h6>
+                                    </div>
+                                    <div class="mt-3 d-flex align-items-center">
+                                        <i class="fa fa-map pr-2 align-self-start"></i>
+                                        <h6 class="font-14 mb-0">Van Barneveldlaan 98, Netherlands</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./address -->
+                        </div>
+
+                        <div class="col-12 col-md-8">
+                            <div class="profile-crm-area">
+                                <div class="card mb-30">
+                                    <div class="card-body">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs profile-tab" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">Basic</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="invoice-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="invoice" aria-selected="false">Invoice</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <!--first tab-->
+                                            <div class="tab-pane fade active show" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                                                <div class="card-body">
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Full Name</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">Jhon Alin Deo</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Email</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">example@example.com</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Country</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">Netherland</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Address</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">Van Barneveldlaan 98 7031 ZK Wehl</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Contact</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">+88 586 887 245</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Date Of Birth</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">1995-05-15</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row profile-row">
+                                                        <div class="col-xs-5 col-sm-3">
+                                                            <span class="profile-cat">Gender</span>
+                                                        </div>
+                                                        <div class="col-xl-7 col-sm-9">
+                                                            <span class="profile-info">Male</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!--second tab-->
+                                            <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
+                                                <div class="card-body pb-0">
+                                                    <div class="table-content table-responsive">
+                                                        <div class="table-body">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Order No</th>
+                                                                        <th>Image</th>
+                                                                        <th>Product</th>
+                                                                        <th>Quantity</th>
+                                                                        <th>Total</th>
+                                                                        <th class="text-center">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>UAFQA58D</td>
+                                                                        <td><img class="chat-img" src="img/member-img/1.png" alt="Product image "></td>
+                                                                        <td>Jane Austin</td>
+                                                                        <td>10</td>
+                                                                        <td>24</td>
+                                                                        <td class="action-buttons text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>N89528GU</td>
+                                                                        <td><img class="chat-img" src="img/member-img/2.png" alt="Product image "></td>
+                                                                        <td>Frogo Meltor</td>
+                                                                        <td>6</td>
+                                                                        <td>26</td>
+                                                                        <td class="action-buttons text-center text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>D35AA9FQ</td>
+                                                                        <td><img class="chat-img" src="img/member-img/8.png" alt="Product image "></td>
+                                                                        <td>Lashunda Magyar</td>
+                                                                        <td>3</td>
+                                                                        <td>93</td>
+                                                                        <td class="action-buttons text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>55FS5SSG</td>
+                                                                        <td><img class="chat-img" src="img/member-img/9.png" alt="Product image "></td>
+                                                                        <td>Boris Sandoval</td>
+                                                                        <td>9</td>
+                                                                        <td>96</td>
+                                                                        <td class="action-buttons text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>D5DDNA2D</td>
+                                                                        <td><img class="chat-img" src="img/member-img/10.png" alt="Product image "></td>
+                                                                        <td>Tuan Cothren</td>
+                                                                        <td>4</td>
+                                                                        <td>73</td>
+                                                                        <td class="action-buttons text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td>925935NA</td>
+                                                                        <td><img class="chat-img" src="img/member-img/11.png" alt="Product image "></td>
+                                                                        <td>Aldo Iacovelli</td>
+                                                                        <td>5</td>
+                                                                        <td>69</td>
+                                                                        <td class="action-buttons text-center">
+                                                                            <a href="invoice.html">
+                                                                                <i class="fa fa-eye text-dark font-16"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-6 height-card box-margin">
+                                        <!-- Project status -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h6 class="card-title">Project status</h6>
+                                                <div class="row mb-3">
+                                                    <div class="col-9">
+                                                        <div class="progress-wrapper">
+                                                            <span class="progress-label text-dark">Web design</span>
+                                                            <div class="progress mt-2 mb-2" style="height: 5px;">
+                                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 align-self-end text-right">
+                                                        <span class="text-dark mb-0">80%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-9">
+                                                        <div class="progress-wrapper">
+                                                            <span class="progress-label text-dark">Website Markup</span>
+                                                            <div class="progress mt-2 mb-2" style="height: 5px;">
+                                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 align-self-end text-right">
+                                                        <span class="text-dark mb-0">72%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-9">
+                                                        <div class="progress-wrapper">
+                                                            <span class="progress-label text-dark">One page</span>
+                                                            <div class="progress mt-2 mb-2" style="height: 5px;">
+                                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 align-self-end text-right">
+                                                        <span class="text-dark mb-0">89%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-9">
+                                                        <div class="progress-wrapper">
+                                                            <span class="progress-label text-dark">Mobile Template</span>
+                                                            <div class="progress mt-2 mb-2" style="height: 5px;">
+                                                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 align-self-end text-right">
+                                                        <span class="text-dark mb-0">55%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-6 height-card box-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="bg-transparent d-flex align-items-center justify-content-between">
+                                                    <div class="widgets-card-title">
+                                                        <h5 class="card-title">Recent files</h5>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Download File -->
+                                                <div class="widget-download-file d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center mr-3">
+                                                        <div class="download-file-icon mr-3">
+                                                            <img src="img/filemanager-img/1.png" alt="">
+                                                        </div>
+                                                        <div class="user-text-table">
+                                                            <h6 class="d-inline-block font-14 mb-0">File</h6>
+                                                            <p class="mb-0">Lorem ipsum</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="download-link badge badge-primary badge-pill">Download</a>
+                                                </div>
+
+                                                <!-- Single Download File -->
+                                                <div class="widget-download-file d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center mr-3">
+                                                        <div class="download-file-icon mr-3">
+                                                            <img src="img/filemanager-img/5.png" alt="">
+                                                        </div>
+                                                        <div class="user-text-table">
+                                                            <h6 class="d-inline-block font-14 mb-0">Bandwidth</h6>
+                                                            <p class="mb-0">Lorem ipsum</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="download-link badge badge-info badge-pill">Download</a>
+                                                </div>
+
+                                                <!-- Single Download File -->
+                                                <div class="widget-download-file d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center mr-3">
+                                                        <div class="download-file-icon mr-3">
+                                                            <img src="img/filemanager-img/6.png" alt="">
+                                                        </div>
+                                                        <div class="user-text-table">
+                                                            <h6 class="d-inline-block font-14 mb-0">Projects</h6>
+                                                            <p class="mb-0">Lorem ipsum</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="download-link badge badge-success badge-pill">Download</a>
+                                                </div>
+
+                                                <!-- Single Download File -->
+                                                <div class="widget-download-file d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center mr-3">
+                                                        <div class="download-file-icon mr-3">
+                                                            <img src="img/filemanager-img/7.png" alt="">
+                                                        </div>
+                                                        <div class="user-text-table">
+                                                            <h6 class="d-inline-block font-14 mb-0">Download</h6>
+                                                            <p class="mb-0">Lorem ipsum</p>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="download-link badge badge-primary badge-pill">Download</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Footer Area -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Footer Area -->
+                            <footer class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
+                                <!-- Copywrite Text -->
+                                <div class="copywrite-text">
+                                    <p>Created by @<a href="#">Theme-zome</a></p>
+                                </div>
+                                <div class="fotter-icon text-center">
+                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Pinterest">
+                                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+
+    <!-- Plugins Js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bundle.js"></script>
+
+    <!-- Active JS -->
+    <script src="js/canvas.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/default-assets/active.js"></script>
+
+</body>
+
+</html>
