@@ -51,12 +51,16 @@
         <!-- Top bar area -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="{{ route('beranda') }}"><img src="{{ asset('storage/img/core-img/logo.png') }}" class="mr-2" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="{{ route('beranda') }}"><img src="{{ asset('storage/img/core-img/small-logo.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo mr-5" href="{{ route('beranda') }}"><img
+                        src="{{ asset('storage/img/core-img/logo.png') }}" class="mr-2 img-fluid" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{{ route('beranda') }}"><img
+                        src="{{ asset('storage/img/core-img/small-logo.png') }}" class="img-fluid" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-menu">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -70,11 +74,13 @@
                 </ul>
                 <ul class="top-navbar-area navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown dropdown-animate">
-                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
                             <span class="count"></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="notificationDropdown">
                             <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
                             <a class="dropdown-item preview-item d-flex align-items-center">
                                 <div class="notification-thumbnail">
@@ -138,16 +144,28 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="{{ asset('storage/img/member-img/contact-2.jpg') }}" alt="profile" />
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top" aria-labelledby="profileDropdown">
-                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-account profile-icon" aria-hidden="true"></i> My profile</a>
-                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-email-open profile-icon" aria-hidden="true"></i> Messages</a>
-                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon" aria-hidden="true"></i> Settings</a>
-                            <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon" aria-hidden="true"></i> Sign-out</a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top"
+                            aria-labelledby="profileDropdown">
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-account profile-icon"
+                                    aria-hidden="true"></i> My profile</a>
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-email-open profile-icon"
+                                    aria-hidden="true"></i> Messages</a>
+                            <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon"
+                                    aria-hidden="true"></i> Settings</a>
+                            <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon" aria-hidden="true"></i>
+                                Sign-out</a>
                         </div>
                     </li>
                 </ul>
-                <button class="navbar-toggler navbar-toggler-right d-xl-none align-self-center" type="button" data-toggle="offcanvas">
-                    <span class="ti-layout-grid2"></span>
+                <button class="navbar-toggler navbar-toggler-right d-xl-none align-self-center pr-0" type="button"
+                    data-toggle="offcanvas">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-menu text-primary">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
                 </button>
             </div>
         </nav>
@@ -158,287 +176,137 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box link-icon">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-bar-chart-2 link-icon">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#transaksi" aria-expanded="false"
+                            aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-repeat link-icon">
+                                <polyline points="17 1 21 5 17 9"></polyline>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                <polyline points="7 23 3 19 7 15"></polyline>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                            </svg>
+                            <span class="menu-title">Transaksi</span>
+                            <i class="ti-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="transaksi">
+                            <ul class="nav flex-column mt-0">
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Riwayat
+                                        Pembelian</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#produk" aria-expanded="false"
+                            aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-package link-icon">
+                                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
                                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
                             </svg>
-                            <span class="menu-title">Dasbor</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calendar.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar link-icon">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                            <span class="menu-title">Calendar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#advanced" aria-expanded="false" aria-controls="advanced">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit link-icon">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                            <span class="menu-title">Advanced</span>
+                            <span class="menu-title">Produk</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="advanced">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="clint-list.html">Clint list</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="customer.html">Customer</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="blank.html">Blank page</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="gallery.html">Gallery</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="light-box.html">Light box gallery</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="modals.html">Modals</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="profile.html">Profile</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="profile-2.html">Profile 2</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="ribbons.html">Ribbons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="sweet.html">Sweet alert</a></li>
+                        <div class="collapse" id="produk">
+                            <ul class="nav flex-column mt-0">
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Prabayar</a>
+                                </li>
+                                <li class="nav-item pl-4"> <a class="nav-link disabled text-muted" href="customer.html"
+                                        tabindex="-1" role="button" aria-disabled="true">Pascabayar <span
+                                            class="badge badge-pill badge-light"><i class="fa fa-clock-o"
+                                                aria-hidden="true"></i></span></a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#job" aria-expanded="false" aria-controls="job">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell link-icon">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        <a class="nav-link" href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-percent link-icon">
+                                <line x1="19" y1="5" x2="5" y2="19"></line>
+                                <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                                <circle cx="17.5" cy="17.5" r="2.5"></circle>
                             </svg>
-                            <span class="menu-title">Job</span>
-                            <i class="ti-angle-right"></i>
+                            <span class="menu-title">Voucher</span>
                         </a>
-                        <div class="collapse" id="job">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="job.html">Job news</a></li>
-                                <li class="nav-item"><a class="nav-link" href="job-description.html">Description</a></li>
-                            </ul>
-                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#app" aria-expanded="false" aria-controls="app">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-command link-icon">
-                                <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
-                            </svg>
-                            <span class="menu-title">Apps</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="app">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="widgets.html">Widget</a></li>
-                                <li class="nav-item"><a class="nav-link" href="chat-box.html">Chat box</a></li>
-                                <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#email" aria-expanded="false" aria-controls="email">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail link-icon">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span class="menu-title">Email</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="email">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="mail-inbox.html">Inbox</a></li>
-                                <li class="nav-item"><a class="nav-link" href="mail-view.html">Mail view</a></li>
-                                <li class="nav-item"><a class="nav-link" href="compose-mail.html">Compose mail</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#elements" aria-expanded="false" aria-controls="elements">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather link-icon">
-                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                                <line x1="16" y1="8" x2="2" y2="22"></line>
-                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
-                            </svg>
-                            <span class="menu-title">Ui Kits</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="elements">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="alert.html">Alert</a></li>
-                                <li class="nav-item"><a class="nav-link" href="avatar.html">Avatar</a></li>
-                                <li class="nav-item"><a class="nav-link" href="buttons.html">Button</a></li>
-                                <li class="nav-item"><a class="nav-link" href="card.html">Card</a></li>
-                                <li class="nav-item"><a class="nav-link" href="notification.html">Notification</a></li>
-                                <li class="nav-item"><a class="nav-link" href="general.html">General</a></li>
-                                <li class="nav-item"><a class="nav-link" href="progressbar.html">Progressbar</a></li>
-                                <li class="nav-item"><a class="nav-link" href="preloader.html">Preloader</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tab.html">Tab</a></li>
-                                <li class="nav-item"><a class="nav-link" href="dropdown.html">Dropdown</a></li>
-                                <li class="nav-item"><a class="nav-link" href="typography.html">Typography</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="team.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users link-icon">
+                        <a class="nav-link" data-toggle="collapse" href="#pelanggan" aria-expanded="false"
+                            aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-users link-icon">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
-                            <span class="menu-title">Members</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general" aria-expanded="false" aria-controls="general">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard link-icon">
-                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                            </svg>
-                            <span class="menu-title">Pages</span>
+                            <span class="menu-title">Pelanggan</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="general">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="slider.html">Slider</a></li>
-                                <li class="nav-item"><a class="nav-link" href="range.html">Range Slider</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                                <li class="nav-item"><a class="nav-link" href="forget-password.html">Forget Password</a></li>
-                                <li class="nav-item"><a class="nav-link" href="lock-screen.html">Lock Screen</a></li>
-                                <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
-
+                        <div class="collapse" id="pelanggan">
+                            <ul class="nav flex-column mt-0">
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Anggota</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Ulasan</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart link-icon">
+                        <a class="nav-link" data-toggle="collapse" href="#statistik" aria-expanded="false"
+                            aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-pie-chart link-icon">
                                 <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
                                 <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                             </svg>
-                            <span class="menu-title">Charts</span>
+                            <span class="menu-title">Statistik</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="charts">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="apex-chart.html">Apex chart</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="chartist.html">Chartist Chart</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="chart-js.html">Chart js</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="morris-chart.html">Morris chart</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="c3-charts.html">C3 chart</a></li>
+                        <div class="collapse" id="statistik">
+                            <ul class="nav flex-column mt-0">
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html"></a>
+                                </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="task.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list link-icon">
-                                <line x1="8" y1="6" x2="21" y2="6"></line>
-                                <line x1="8" y1="12" x2="21" y2="12"></line>
-                                <line x1="8" y1="18" x2="21" y2="18"></line>
-                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        <a class="nav-link" data-toggle="collapse" href="#pengaturan" aria-expanded="false"
+                            aria-controls="advanced">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-settings link-icon">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
                             </svg>
-                            <span class="menu-title">Task Zone</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tablet link-icon">
-                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                            <span class="menu-title">Tables</span>
+                            <span class="menu-title">Pengaturan</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="tables">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="data-table.html">Data table</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="price-table.html">Price table</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#form" aria-expanded="false" aria-controls="form">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-minus link-icon">
-                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                                <line x1="9" y1="14" x2="15" y2="14"></line>
-                            </svg>
-                            <span class="menu-title">Forms</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="form">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="basic-form.html">Basic form</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="advanced-elements.html">Elements</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="form-validation.html">Validation</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="form-wizard.html">Form Wizard</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="form-input-mask.html">Input mask</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="file-upload.html">File upload</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="rating.html">Rating</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ecommerce" aria-expanded="false" aria-controls="ecommerce">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart link-icon">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <span class="menu-title">Ecommerce</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="ecommerce">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="product.html">Product</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="product-details.html">Single Product</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="order.html">Order</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="cart.html">Cart</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="checkout.html">Checkout</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="invoice.html">Invoice</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-aperture link-icon">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-                                <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-                                <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-                                <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-                                <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-                                <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-                            </svg>
-                            <span class="menu-title">Icons</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="icons">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="font-awesome.html">Font Awesome</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pe-7-stroke.html">Pe-7 stroke</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="matarial-icons.html">Materialize</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="themify-icons.html">Themify</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="elegant-icons.html">Elegant</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="et-line-icons.html">Et-line</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin link-icon">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span class="menu-title">Maps</span>
-                            <i class="ti-angle-right"></i>
-                        </a>
-                        <div class="collapse" id="maps">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="vector-map.html">Vector</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="google-map.html">Google</a></li>
+                        <div class="collapse" id="pengaturan">
+                            <ul class="nav flex-column mt-0">
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Kategori Produk</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Akun</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Toko</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Pembayaran</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Integrasi API</a></li>
                             </ul>
                         </div>
                     </li>
@@ -524,7 +392,9 @@
                                                     <div class="col">
                                                         <!-- Progress -->
                                                         <div class="progress h-5">
-                                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                                style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -575,7 +445,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center mb-50">
-                                            <h4 class="card-title mb-0">Order <span class="break-320-480-none">Summary</span></h4>
+                                            <h4 class="card-title mb-0">Order <span
+                                                    class="break-320-480-none">Summary</span></h4>
                                             <div class="d-flex">
                                                 <button type="button" class="btn btn-primary btn-sm mr-2">Month</button>
                                                 <button type="button" class="btn btn-secondary btn-sm">Week</button>
@@ -598,7 +469,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Latest Update</h5>
                                         <div class="transaction-area">
-                                            <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
+                                            <div
+                                                class="d-flex flex-row list-group-item align-items-center justify-content-between">
                                                 <div class="media d-flex justify-content-center align-items-center">
                                                     <div class="icon-section bg-primary-soft">
                                                         <i class="fa fa-file-code-o"></i>
@@ -614,7 +486,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
+                                            <div
+                                                class="d-flex flex-row list-group-item align-items-center justify-content-between">
                                                 <div class="media d-flex justify-content-center align-items-center">
                                                     <div class="icon-section bg-danger-soft">
                                                         <i class="fa fa-newspaper-o"></i>
@@ -630,7 +503,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
+                                            <div
+                                                class="d-flex flex-row list-group-item align-items-center justify-content-between">
                                                 <div class="media d-flex justify-content-center align-items-center">
                                                     <div class="icon-section bg-success-soft">
                                                         <i class="fa fa-clone"></i>
@@ -646,7 +520,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex flex-row list-group-item align-items-center justify-content-between">
+                                            <div
+                                                class="d-flex flex-row list-group-item align-items-center justify-content-between">
                                                 <div class="media d-flex justify-content-center align-items-center">
                                                     <div class="icon-section bg-danger-soft">
                                                         <i class="icon-wallet"></i>
@@ -695,14 +570,19 @@
                                                     </h3>
                                                 </div>
                                                 <div class="kt-portlet__head-toolbar">
-                                                    <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-brand nav-tabs-bold" role="tablist">
+                                                    <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-brand nav-tabs-bold"
+                                                        role="tablist">
                                                         <li class="nav-item">
-                                                            <a class="nav-link active" data-toggle="tab" href="#kt_portlet_tabs_1_1_1_content" role="tab" aria-selected="true">
+                                                            <a class="nav-link active" data-toggle="tab"
+                                                                href="#kt_portlet_tabs_1_1_1_content" role="tab"
+                                                                aria-selected="true">
                                                                 Week
                                                             </a>
                                                         </li>
                                                         <li class="nav-item">
-                                                            <a class="nav-link" data-toggle="tab" href="#kt_portlet_tabs_1_1_3_content" role="tab" aria-selected="false">
+                                                            <a class="nav-link" data-toggle="tab"
+                                                                href="#kt_portlet_tabs_1_1_3_content" role="tab"
+                                                                aria-selected="false">
                                                                 Month
                                                             </a>
                                                         </li>
@@ -711,22 +591,29 @@
                                             </div>
                                             <div class="kt-portlet__body" id="notificationBox">
                                                 <div class="tab-content">
-                                                    <div class="tab-pane fade active show" id="kt_portlet_tabs_1_1_1_content" role="tabpanel">
-                                                        <div class="kt-scroll ps ps--active-y" data-scroll="true" data-mobile-height="350">
+                                                    <div class="tab-pane fade active show"
+                                                        id="kt_portlet_tabs_1_1_1_content" role="tabpanel">
+                                                        <div class="kt-scroll ps ps--active-y" data-scroll="true"
+                                                            data-mobile-height="350">
                                                             <!--Begin::Timeline -->
                                                             <div class="kt-timeline">
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--success">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--success">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_mail_alt text-primary font-weight-bold"></i>
+                                                                                <i
+                                                                                    class="icon_mail_alt text-primary font-weight-bold"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">02:30 PM</span>
+                                                                        <span class="kt-timeline__item-datetime">02:30
+                                                                            PM</span>
                                                                     </div>
 
-                                                                    <a href="" class="kt-timeline__item-text">Xviten created new layout whith tens of new options for Keen Admin panel</a>
+                                                                    <a href="" class="kt-timeline__item-text">Xviten
+                                                                        created new layout whith tens of new options for
+                                                                        Keen Admin panel</a>
                                                                     <div class="kt-timeline__item-info">
                                                                         HTML,CSS,VueJS
                                                                     </div>
@@ -734,18 +621,22 @@
                                                                 <!--End::Item -->
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--danger">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--danger">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_genius font-weight-bold text-danger"></i>
+                                                                                <i
+                                                                                    class="icon_genius font-weight-bold text-danger"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">01:20 AM</span>
+                                                                        <span class="kt-timeline__item-datetime">01:20
+                                                                            AM</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        New secyrity alert by Firewall &amp; order to take aktion on User Preferences
+                                                                        New secyrity alert by Firewall &amp; order to
+                                                                        take aktion on User Preferences
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Security, Fieewall
@@ -758,14 +649,17 @@
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_gift_alt font-weight-bold text-success"></i>
+                                                                                <i
+                                                                                    class="icon_gift_alt font-weight-bold text-success"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">Yestardey</span>
+                                                                        <span
+                                                                            class="kt-timeline__item-datetime">Yestardey</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        FlyMore design mock-ups been uploadet by designers Bob, Naomi, Richard
+                                                                        FlyMore design mock-ups been uploadet by
+                                                                        designers Bob, Naomi, Richard
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         PSD, Sketch, AJ
@@ -775,18 +669,22 @@
 
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--danger">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--danger">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_genius font-weight-bold text-danger"></i>
+                                                                                <i
+                                                                                    class="icon_genius font-weight-bold text-danger"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">01:20 AM</span>
+                                                                        <span class="kt-timeline__item-datetime">01:20
+                                                                            AM</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        New secyrity alert by Firewall &amp; order to take aktion on User Preferences
+                                                                        New secyrity alert by Firewall &amp; order to
+                                                                        take aktion on User Preferences
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Security, Fieewall
@@ -795,18 +693,23 @@
                                                                 <!--End::Item -->
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--warning">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--warning">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_datareport font-weight-bold text-warning"></i>
+                                                                                <i
+                                                                                    class="icon_datareport font-weight-bold text-warning"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">Aug 13,2019</span>
+                                                                        <span class="kt-timeline__item-datetime">Aug
+                                                                            13,2019</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        Meeting with Ken Digital Corp ot Unit14, 3 Edigor Buildings, George Street, Loondon<br> England, BA12FJ
+                                                                        Meeting with Ken Digital Corp ot Unit14, 3
+                                                                        Edigor Buildings, George Street, Loondon<br>
+                                                                        England, BA12FJ
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Meeting, Customer
@@ -816,22 +719,30 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="kt_portlet_tabs_1_1_3_content" role="tabpanel">
-                                                        <div class="kt-scroll ps" data-scroll="true" style="height: 420px; overflow: hidden;" data-mobile-height="350">
+                                                    <div class="tab-pane fade" id="kt_portlet_tabs_1_1_3_content"
+                                                        role="tabpanel">
+                                                        <div class="kt-scroll ps" data-scroll="true"
+                                                            style="height: 420px; overflow: hidden;"
+                                                            data-mobile-height="350">
                                                             <!--Begin::Timeline -->
                                                             <div class="kt-timeline">
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--success">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--success">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_mail_alt text-primary font-weight-bold"></i>
+                                                                                <i
+                                                                                    class="icon_mail_alt text-primary font-weight-bold"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">01:30 PM</span>
+                                                                        <span class="kt-timeline__item-datetime">01:30
+                                                                            PM</span>
                                                                     </div>
 
-                                                                    <a href="" class="kt-timeline__item-text">Created new layout whith tens of new options for Keen Admin panel</a>
+                                                                    <a href="" class="kt-timeline__item-text">Created
+                                                                        new layout whith tens of new options for Keen
+                                                                        Admin panel</a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Vue,CSS,VueJS
                                                                     </div>
@@ -839,18 +750,22 @@
                                                                 <!--End::Item -->
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--danger">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--danger">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_genius font-weight-bold text-danger"></i>
+                                                                                <i
+                                                                                    class="icon_genius font-weight-bold text-danger"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">01:20 AM</span>
+                                                                        <span class="kt-timeline__item-datetime">01:20
+                                                                            AM</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        Secyrity alert by Firewall &amp; order to take aktion on User Preferences
+                                                                        Secyrity alert by Firewall &amp; order to take
+                                                                        aktion on User Preferences
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Security, Fieewall
@@ -863,14 +778,17 @@
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_gift_alt font-weight-bold text-success"></i>
+                                                                                <i
+                                                                                    class="icon_gift_alt font-weight-bold text-success"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">Yestardey</span>
+                                                                        <span
+                                                                            class="kt-timeline__item-datetime">Yestardey</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        FlyMore design mock-ups been uploadet by designers Bob, Naomi, Richard
+                                                                        FlyMore design mock-ups been uploadet by
+                                                                        designers Bob, Naomi, Richard
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Hadrla, Sketch, AJ
@@ -880,18 +798,22 @@
 
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--danger">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--danger">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_genius font-weight-bold text-danger"></i>
+                                                                                <i
+                                                                                    class="icon_genius font-weight-bold text-danger"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">01:20 AM</span>
+                                                                        <span class="kt-timeline__item-datetime">01:20
+                                                                            AM</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        New secyrity alert by Firewall &amp; order to take aktion on User Preferences
+                                                                        New secyrity alert by Firewall &amp; order to
+                                                                        take aktion on User Preferences
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Security, Fieewall
@@ -900,18 +822,23 @@
                                                                 <!--End::Item -->
 
                                                                 <!--Begin::Item -->
-                                                                <div class="kt-timeline__item kt-timeline__item--warning">
+                                                                <div
+                                                                    class="kt-timeline__item kt-timeline__item--warning">
                                                                     <div class="kt-timeline__item-section">
                                                                         <div class="kt-timeline__item-section-border">
                                                                             <div class="kt-timeline__item-section-icon">
-                                                                                <i class="icon_datareport font-weight-bold text-warning"></i>
+                                                                                <i
+                                                                                    class="icon_datareport font-weight-bold text-warning"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <span class="kt-timeline__item-datetime">Aug 15,2019</span>
+                                                                        <span class="kt-timeline__item-datetime">Aug
+                                                                            15,2019</span>
                                                                     </div>
 
                                                                     <a href="" class="kt-timeline__item-text">
-                                                                        With Xita Digital Corp ot Unit14, 3 Edigor Buildings, George Street, Loondon<br> England, BA12FJ
+                                                                        With Xita Digital Corp ot Unit14, 3 Edigor
+                                                                        Buildings, George Street, Loondon<br> England,
+                                                                        BA12FJ
                                                                     </a>
                                                                     <div class="kt-timeline__item-info">
                                                                         Meeting, Clint
@@ -935,7 +862,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <a href="calendar.html">
-                                            <h4 class="card-title mb-15">View full calenar <i class="fa fa-angle-double-right ml-1"></i></h4>
+                                            <h4 class="card-title mb-15">View full calenar <i
+                                                    class="fa fa-angle-double-right ml-1"></i></h4>
                                         </a>
                                     </div>
                                     <div class="card-body p-0">
@@ -1014,14 +942,19 @@
                             <!-- Support Ticket -->
                             <div class="col-xl-6 height-card box-margin">
                                 <div class="card">
-                                    <div class="card-header bg-transparent user-area d-flex align-items-center justify-content-between">
+                                    <div
+                                        class="card-header bg-transparent user-area d-flex align-items-center justify-content-between">
                                         <h6 class="card-title mb-0">Support Tickets</h6>
                                         <ul class="nav nav-tabs mb-0" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link show active" id="sell-03-tab" data-toggle="tab" href="#sell-03" role="tab" aria-controls="sell-03" aria-selected="true">Today</a>
+                                                <a class="nav-link show active" id="sell-03-tab" data-toggle="tab"
+                                                    href="#sell-03" role="tab" aria-controls="sell-03"
+                                                    aria-selected="true">Today</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link mr-0" id="rent-04-tab" data-toggle="tab" href="#rent-04" role="tab" aria-controls="rent-04" aria-selected="false">Week</a>
+                                                <a class="nav-link mr-0" id="rent-04-tab" data-toggle="tab"
+                                                    href="#rent-04" role="tab" aria-controls="rent-04"
+                                                    aria-selected="false">Week</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1029,17 +962,21 @@
                                     <!-- Tab -->
                                     <div class="card-body">
                                         <div class="tab-content" id="ticketList">
-                                            <div class="tab-pane fade active show" id="sell-03" role="tabpanel" aria-labelledby="sell-03-tab">
+                                            <div class="tab-pane fade active show" id="sell-03" role="tabpanel"
+                                                aria-labelledby="sell-03-tab">
                                                 <ul class="ticket-data-list">
                                                     <li>
                                                         <div class="avatar-area d-flex">
-                                                            <span class="avatar avatar-pending primary-color mr-3">Z</span>
+                                                            <span
+                                                                class="avatar avatar-pending primary-color mr-3">Z</span>
                                                             <div class="avatar-text">
                                                                 <div class="d-flex align-items-center">
                                                                     <h6 class="mr-2 mb-0">Zara Smith</h6>
                                                                     <p class="ticket-time mb-0 font-12">(9:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor amet, consectetur adipisicing elit Nisila Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                                                <p>Lorem ipsum dolor amet, consectetur adipisicing elit
+                                                                    Nisila Lorem ipsum dolor sit amet, consectetur
+                                                                    adipisicing.</p>
                                                                 <span class="badge badge-pill badge-primary">Open</span>
                                                             </div>
                                                         </div>
@@ -1053,8 +990,11 @@
                                                                     <h6 class="mr-2 mb-0">Ajoy Das</h6>
                                                                     <p class="ticket-time mb-0 font-12">(8:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi eos recusandae obcaecati repudiandae harum quae.</p>
-                                                                <span class="badge badge-pill badge-secondary">Closed</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit. Nisi eos recusandae obcaecati repudiandae
+                                                                    harum quae.</p>
+                                                                <span
+                                                                    class="badge badge-pill badge-secondary">Closed</span>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -1067,8 +1007,11 @@
                                                                     <h6 class="mr-2 mb-0">Jhon Deo</h6>
                                                                     <p class="ticket-time mb-0 font-12">(7:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur...</p>
-                                                                <span class="badge badge-pill badge-warning">Pending</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit Lorem ipsum dolor Lorem ipsum dolor sit amet,
+                                                                    consectetur...</p>
+                                                                <span
+                                                                    class="badge badge-pill badge-warning">Pending</span>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -1076,7 +1019,8 @@
                                             </div>
 
                                             <!-- Tab 2 -->
-                                            <div class="tab-pane fade" id="rent-04" role="tabpanel" aria-labelledby="rent-04-tab">
+                                            <div class="tab-pane fade" id="rent-04" role="tabpanel"
+                                                aria-labelledby="rent-04-tab">
                                                 <ul class="ticket-data-list">
                                                     <li>
                                                         <div class="avatar-area d-flex">
@@ -1086,7 +1030,9 @@
                                                                     <h6 class="mr-2 mb-0">Jhon Deo</h6>
                                                                     <p class="ticket-time mb-0 font-12">(9:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor amet, consectetur adipisicing elit Nisila Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                                                <p>Lorem ipsum dolor amet, consectetur adipisicing elit
+                                                                    Nisila Lorem ipsum dolor sit amet, consectetur
+                                                                    adipisicing.</p>
                                                                 <span class="badge badge-pill badge-primary">Open</span>
                                                             </div>
                                                         </div>
@@ -1100,22 +1046,29 @@
                                                                     <h6 class="mr-2 mb-0">Lara Jhon</h6>
                                                                     <p class="ticket-time mb-0 font-12">(8:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi eos recusandae obcaecati repudiandae harum quae.</p>
-                                                                <span class="badge badge-pill badge-secondary">Closed</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit. Nisi eos recusandae obcaecati repudiandae
+                                                                    harum quae.</p>
+                                                                <span
+                                                                    class="badge badge-pill badge-secondary">Closed</span>
                                                             </div>
                                                         </div>
                                                     </li>
 
                                                     <li>
                                                         <div class="avatar-area d-flex">
-                                                            <span class="avatar avatar-online primary-color mr-3">J</span>
+                                                            <span
+                                                                class="avatar avatar-online primary-color mr-3">J</span>
                                                             <div class="avatar-text">
                                                                 <div class="d-flex align-items-center">
                                                                     <h6 class="mr-2 mb-0">Jhon Deo</h6>
                                                                     <p class="ticket-time mb-0 font-12">(7:40 PM)</p>
                                                                 </div>
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur...</p>
-                                                                <span class="badge badge-pill badge-warning">Pending</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit Lorem ipsum dolor Lorem ipsum dolor sit amet,
+                                                                    consectetur...</p>
+                                                                <span
+                                                                    class="badge badge-pill badge-warning">Pending</span>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -1148,8 +1101,10 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">
-                                                            <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill">
-                                                                <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary btn-icon rounded-pill">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fa fa-download"></i></span>
                                                                 <span class="btn-inner--text">Invoice</span>
                                                             </button>
                                                         </th>
@@ -1167,15 +1122,20 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-end">
-                                                                <button type="button" class="btn btn-rounded btn-outline-success">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-outline-success">
                                                                     <span class="btn-inner--text">Paid</span>
                                                                 </button>
                                                                 <!-- Actions -->
                                                                 <div class="actions ml-3">
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Edit">
                                                                         <i class="fa fa-pencil"></i>
                                                                     </a>
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Archive">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Archive">
                                                                         <i class="fa fa-archive"></i>
                                                                     </a>
                                                                 </div>
@@ -1184,8 +1144,10 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill">
-                                                                <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary btn-icon rounded-pill">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fa fa-download"></i></span>
                                                                 <span class="btn-inner--text">Invoice</span>
                                                             </button>
                                                         </th>
@@ -1203,15 +1165,20 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-end">
-                                                                <button type="button" class="btn btn-rounded btn-outline-warning">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-outline-warning">
                                                                     <span class="btn-inner--text">Pay now</span>
                                                                 </button>
                                                                 <!-- Actions -->
                                                                 <div class="actions ml-3">
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Edit">
                                                                         <i class="fa fa-pencil"></i>
                                                                     </a>
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Archive">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Archive">
                                                                         <i class="fa fa-archive"></i>
                                                                     </a>
                                                                 </div>
@@ -1220,8 +1187,10 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill">
-                                                                <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary btn-icon rounded-pill">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fa fa-download"></i></span>
                                                                 <span class="btn-inner--text">Invoice</span>
                                                             </button>
                                                         </th>
@@ -1239,15 +1208,20 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-end">
-                                                                <button type="button" class="btn btn-rounded btn-outline-danger">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-outline-danger">
                                                                     <span class="btn-inner--text">Delayed</span>
                                                                 </button>
                                                                 <!-- Actions -->
                                                                 <div class="actions ml-3">
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Edit">
                                                                         <i class="fa fa-pencil"></i>
                                                                     </a>
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Archive">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Archive">
                                                                         <i class="fa fa-archive"></i>
                                                                     </a>
                                                                 </div>
@@ -1257,8 +1231,10 @@
 
                                                     <tr>
                                                         <th scope="row">
-                                                            <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill">
-                                                                <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary btn-icon rounded-pill">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fa fa-download"></i></span>
                                                                 <span class="btn-inner--text">Invoice</span>
                                                             </button>
                                                         </th>
@@ -1276,15 +1252,20 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-end">
-                                                                <button type="button" class="btn btn-rounded btn-outline-success">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-outline-success">
                                                                     <span class="btn-inner--text">Paid</span>
                                                                 </button>
                                                                 <!-- Actions -->
                                                                 <div class="actions ml-3">
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Edit">
                                                                         <i class="fa fa-pencil"></i>
                                                                     </a>
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Archive">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Archive">
                                                                         <i class="fa fa-archive"></i>
                                                                     </a>
                                                                 </div>
@@ -1293,8 +1274,10 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill">
-                                                                <span class="btn-inner--icon"><i class="fa fa-download"></i></span>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-secondary btn-icon rounded-pill">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fa fa-download"></i></span>
                                                                 <span class="btn-inner--text">Invoice</span>
                                                             </button>
                                                         </th>
@@ -1312,15 +1295,20 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center justify-content-end">
-                                                                <button type="button" class="btn btn-rounded btn-outline-success">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-outline-success">
                                                                     <span class="btn-inner--text">Paid</span>
                                                                 </button>
                                                                 <!-- Actions -->
                                                                 <div class="actions ml-3">
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Edit">
                                                                         <i class="fa fa-pencil"></i>
                                                                     </a>
-                                                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Archive">
+                                                                    <a href="#" class="action-item mr-2"
+                                                                        data-toggle="tooltip" title=""
+                                                                        data-original-title="Archive">
                                                                         <i class="fa fa-archive"></i>
                                                                     </a>
                                                                 </div>
@@ -1341,7 +1329,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- Footer Area -->
-                                <footer class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
+                                <footer
+                                    class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
                                     <!-- Copywrite Text -->
                                     <div class="copywrite-text">
                                         <p>Created by @<a href="#">Theme-zome</a></p>
