@@ -152,8 +152,14 @@
                                     aria-hidden="true"></i> Messages</a>
                             <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon"
                                     aria-hidden="true"></i> Settings</a>
-                            <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon" aria-hidden="true"></i>
-                                Sign-out</a>
+							<form method="POST" action="{{ route('logout') }}">
+								@csrf
+								<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
+									<i class="ti-unlink profile-icon" aria-hidden="true"></i>
+									Sign-out
+								</a>
+							</form>
+                            
                         </div>
                     </li>
                 </ul>
