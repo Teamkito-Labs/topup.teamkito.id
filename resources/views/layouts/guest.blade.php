@@ -126,7 +126,7 @@
                                     </div>
                                 </li>
     
-                                <div x-data="{loggedIn: true}">
+                                <div x-data="{loggedIn: false}">
                                     <div x-show="loggedIn" class="mt-1">
                                         <li class="nav-item nav-profile dropdown dropdown-animate">
                                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -162,7 +162,7 @@
                         <section id="footer-top" class="py-3">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
-                                    <img src="{{ asset('storage/img/core-img/logo.png') }}" alt="logo" style="height: 30px;" />
+                                    <img src="{{ asset('storage/img/core-img/logo.png') }}" alt="logo" style="height: 50px;" />
                                     <p class="my-3">
                                         Top up game murah dan cepat di topup.teamkito.id. Dukung permainan Anda dengan top up untuk game populer seperti Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Nikmati harga terjangkau dan proses instan hanya di topup.teamkito.id.
                                     </p>
