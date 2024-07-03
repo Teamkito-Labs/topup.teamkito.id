@@ -1,0 +1,11 @@
+/* Kustom CSS untuk memastikan card mengisi tinggi penuh */
+.full-height {
+    height: 100vh; /* 100% dari tinggi viewport */
+}
+.card.full-height {
+    display: flex;
+    flex-direction: column;
+}
+.card-body {
+    flex: 1 1 auto; /* Membuat card-body fleksibel dan mengisi ruang yang tersisa */
+}

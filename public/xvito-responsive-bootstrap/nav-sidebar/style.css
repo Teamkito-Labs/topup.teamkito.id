@@ -115,12 +115,10 @@ Last Updated: July 24, 2020
 /* Import Fonts & CSS Files */
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap");
 @import url(../css/bootstrap.min.css);
-@import url(../css/owl.carousel.min.css);
 @import url(../css/animate.css);
 @import url(../css/nice-select.css);
 @import url(../css/jquery-ui.min.css);
 @import url(../css/default-assets/themify-icons.css);
-/* @import url(../css/typicons.min.css); */
 @import url(../css/font-awesome.min.css);
 @import url(../css/pe-icon-7-stroke.min.css);
 @import url(../css/style.css);
