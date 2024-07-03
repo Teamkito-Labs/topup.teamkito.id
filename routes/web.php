@@ -19,12 +19,14 @@ Route::get('/pembayaran', function () {
 Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
 
 Route::prefix('pengaturan')->group(function () {
-	Route::prefix('kategori-produk')
+	Route::prefix('kategori')
 	->group(function() {
-		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori-produk');
+		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori');
 
-		Route::post('/kategori-produk/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori-produk.produk.store');
-		Route::post('/kategori-produk/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori-produk.kategori.store');
+		Route::post('/kategori/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori.produk.store');
+		Route::post('/kategori/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori.kategori.store');
+		Route::post('/kategori/brand/store', [KategoriProdukController::class, 'brand_store'])->name('kategori.brand.store');
+		Route::post('/kategori/tipe/store', [KategoriProdukController::class, 'tipe_store'])->name('kategori.tipe.store');
 	});
     
     Route::get('/users', function () {  });

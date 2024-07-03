@@ -1,4 +1,4 @@
-@section('title', 'Kategori Produk')
+@section('title', 'Pengaturan Kategori')
 @section('description', 'Top Up game murah dan cepat di topup.teamkito.id! Dukung permainan Anda dengan Top Up untuk
 Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Proses instan!')
 @section('keywords', 'Top Up game murah, Top Up game cepat, Top Up Free Fire murah, Top Up Mobile Legends cepat, Top Up
@@ -8,7 +8,7 @@ layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top
 up game mobile, Top Up game terbaik
 ')
 <x-app-layout>
-    <h3 class="card-title mb-4">Kategori Produk</h3>
+    <h3 class="card-title mb-4">Pengaturan Kategori</h3>
     <div class="row">
         <div class="col-6 shadow-sm rounded-lg card height-card box-margin mx-0 px-0">
             <div class="card-body">
@@ -51,7 +51,7 @@ up game mobile, Top Up game terbaik
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="modal-produk">
-										<form action="{{ route('kategori-produk.produk.store') }}" method="post">
+										<form action="{{ route('kategori.produk.store') }}" method="post">
 											@csrf
 											<div class="form-group mb-3">
 												<label for="nama_produk">Nama Produk</label>
@@ -61,7 +61,7 @@ up game mobile, Top Up game terbaik
 										</form>
                                     </div>
                                     <div class="tab-pane" id="modal-kategori">
-                                        <form action="{{ route('kategori-produk.kategori.store') }}" method="post">
+                                        <form action="{{ route('kategori.kategori.store') }}" method="post">
 											@csrf
 											<div class="form-group mb-3">
 												<label for="produk_id">Produk</label>
@@ -82,10 +82,46 @@ up game mobile, Top Up game terbaik
 										</form>
                                     </div>
                                     <div class="tab-pane" id="modal-brand">
-                                        <p>Modal Brand</p>
+                                        <form action="{{ route('kategori.brand.store') }}" method="post">
+											@csrf
+											<div class="form-group mb-3">
+												<label for="kategori_id">Kategori</label>
+												<select class="form-control" id="kategori_id" name="kategori_id" required>
+													<option value="" hidden>-- Pilih nama kategori --</option>
+													@forelse ($kategori as $item)
+													<option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+													@empty
+														
+													@endforelse
+												</select>
+											</div>
+											<div class="form-group mb-3">
+												<label for="nama_brand">Nama Brand</label>
+												<input type="text" id="nama_brand" class="form-control @error('nama_brand') is-invalid @enderror" name="nama_brand" placeholder="Nama Brand" required>
+											</div>
+											<button type="submit" class="btn btn-primary">Simpan</button>
+										</form>
                                     </div>
                                     <div class="tab-pane" id="modal-tipe">
-                                        <p>Modal Tipe</p>
+                                        <form action="{{ route('kategori.tipe.store') }}" method="post">
+											@csrf
+											<div class="form-group mb-3">
+												<label for="kategori_id">Kategori</label>
+												<select class="form-control" id="kategori_id" name="kategori_id" required>
+													<option value="" hidden>-- Pilih nama kategori --</option>
+													@forelse ($kategori as $item)
+													<option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+													@empty
+														
+													@endforelse
+												</select>
+											</div>
+											<div class="form-group mb-3">
+												<label for="nama_tipe">Nama Tipe</label>
+												<input type="text" id="nama_tipe" class="form-control @error('nama_tipe') is-invalid @enderror" name="nama_tipe" placeholder="Nama Tipe" required>
+											</div>
+											<button type="submit" class="btn btn-primary">Simpan</button>
+										</form>
                                     </div>
                                 </div>
                             </div>
@@ -198,17 +234,108 @@ up game mobile, Top Up game terbaik
 						</div>
                     </div>
                     <div class="tab-pane" id="menu-brand">
-                        <p>Ini Menu Merek</p>
+                        <div class="table-responsive">
+							<table class="table table-borderless">
+								<thead class="bg-light">
+									<tr>
+										<th>#</th>
+										<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+										<th><i class="ti-link align-middle"></i> Slug</th>
+										<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+										<th class="text-center"></th>
+									</tr>
+								</thead>
+								<tbody>
+									@forelse ($brand as $item)
+									<tr>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $item->nama_brand }}</td>
+										<td class="hidden-sm">{{ $item->slug }}</td>
+										<td>
+											@if ($item->aktif == 'Y')
+												<span class="badge badge-success">Aktif</span>
+											@else
+												<span class="badge badge-danger">Tidak Aktif</span>
+											@endif
+										</td>
+										<td class="text-right">
+											<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-edit"></i></button><button type="button"
+												class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-delete"></i></button>
+										</td>
+									</tr>
+									@empty
+									<tr>
+										<td colspan="5">Data masih kosong</td>
+									</tr>
+									@endforelse
+								</tbody>
+							</table>
+						</div>
                     </div>
                     <div class="tab-pane" id="menu-tipe">
-                        <p>Ini Menu Tipe</p>
+                        <div class="table-responsive">
+							<table class="table table-borderless">
+								<thead class="bg-light">
+									<tr>
+										<th>#</th>
+										<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+										<th><i class="ti-link align-middle"></i> Slug</th>
+										<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+										<th class="text-center"></th>
+									</tr>
+								</thead>
+								<tbody>
+									@forelse ($tipe as $item)
+									<tr>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $item->nama_tipe }}</td>
+										<td class="hidden-sm">{{ $item->slug }}</td>
+										<td>
+											@if ($item->aktif == 'Y')
+												<span class="badge badge-success">Aktif</span>
+											@else
+												<span class="badge badge-danger">Tidak Aktif</span>
+											@endif
+										</td>
+										<td class="text-right">
+											<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-edit"></i></button><button type="button"
+												class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-delete"></i></button>
+										</td>
+									</tr>
+									@empty
+									<tr>
+										<td colspan="5">Data masih kosong</td>
+									</tr>
+									@endforelse
+								</tbody>
+							</table>
+						</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     @push('styles')
+	<link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">
     @endpush
     @push('scripts')
+	<script src="{{ url('xvito-responsive-bootstrap/js/default-assets/sweetalert2.min.js') }}"></script>
+	@if(session()->has('success'))
+		<script>
+			Swal.fire({
+				title: 'Sukses!',
+				text: '{{ session()->get("success") }}',
+				type: 'success',
+				showConfirmButton: false, // Hide the confirm button
+				showCancelButton: false, // Hide the confirm button
+				timer: 1500, // Close automatically after 1500ms (1,5 seconds)
+				allowOutsideClick: false,
+			});
+		</script>
+	@endif
     @endpush
 </x-app-layout>

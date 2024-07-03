@@ -11,12 +11,12 @@ class ProdukRepository implements ProdukInterface
 {
 	public function getAllProduk()
 	{
-		return Produk::latest()->get();
+		return Produk::orderBy('nama_produk', 'ASC')->get();
 	}
 
 	public function getAllProdukStatus($status)
 	{
-		return Produk::where('aktif', $status)->latest()->get();
+		return Produk::where('aktif', $status)->orderBy('nama_produk', 'ASC')->get();
 	}
 
 	public function storeNewProduk(ProdukRequest $request)
