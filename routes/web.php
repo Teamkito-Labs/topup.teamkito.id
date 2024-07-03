@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\OauthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,14 @@ Route::get('/free-fire', function () {
 Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
 
 Route::prefix('pengaturan')->group(function () {
-    Route::get('/kategori-produk', function () { return view('pemilik/kategori-produk'); })->name('kategori-produk');
+	Route::prefix('kategori-produk')
+	->group(function() {
+		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori-produk');
+
+		Route::post('/kategori-produk/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori-produk.produk.store');
+		Route::post('/kategori-produk/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori-produk.kategori.store');
+	});
+    
     Route::get('/users', function () {  });
     Route::get('/settings', function () {  });
 });

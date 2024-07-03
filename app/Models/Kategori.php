@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory;
+
+	public $table = 'kategori';
+
+	public function produk()
+	{
+		return $this->belongsTo(Produk::class);
+	}
 }

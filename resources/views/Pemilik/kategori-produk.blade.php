@@ -29,62 +29,63 @@ up game mobile, Top Up game terbaik
                             <div class="modal-body">
                                 <ul class="nav nav-tabs nav-bordered">
                                     <li class="nav-item">
-                                        <a href="#produk-modal" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                        <a href="#modal-produk" data-toggle="tab" aria-expanded="false" class="nav-link active">
                                             Produk
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#kategori-modal" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                        <a href="#modal-kategori" data-toggle="tab" aria-expanded="true" class="nav-link">
                                             Kategori
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#merek-modal" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                            Merek
+                                        <a href="#modal-brand" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Brand
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#tipe-modal" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                        <a href="#modal-tipe" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             Tipe
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane show active" id="produk-modal">
+                                    <div class="tab-pane show active" id="modal-produk">
+										<form action="{{ route('kategori-produk.produk.store') }}" method="post">
+											@csrf
+											<div class="form-group mb-3">
+												<label for="nama_produk">Nama Produk</label>
+												<input type="text" id="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror" name="nama_produk" placeholder="Nama Produk" required>
+											</div>
+											<button type="submit" class="btn btn-primary">Simpan</button>
+										</form>
                                     </div>
-                                    <div class="tab-pane" id="kategori-modal">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-6 mb-sm-30">
-                                                <p class="mb-0">2Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                                                    enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                                    pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi.
-                                                    Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-                                                    eleifend ac, enim.</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img src="img/bg-img/bg-3.jpg" alt="">
-                                            </div>
-                                        </div>
+                                    <div class="tab-pane" id="modal-kategori">
+                                        <form action="{{ route('kategori-produk.kategori.store') }}" method="post">
+											@csrf
+											<div class="form-group mb-3">
+												<label for="produk_id">Produk</label>
+												<select class="form-control" id="produk_id" name="produk_id" required>
+													<option value="" hidden>-- Pilih nama produk --</option>
+													@forelse ($produk as $item)
+													<option value="{{ $item->id }}">{{ $item->nama_produk }}</option>
+													@empty
+														
+													@endforelse
+												</select>
+											</div>
+											<div class="form-group mb-3">
+												<label for="nama_kategori">Nama Kategori</label>
+												<input type="text" id="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror" name="nama_kategori" placeholder="Nama Kategori" required>
+											</div>
+											<button type="submit" class="btn btn-primary">Simpan</button>
+										</form>
                                     </div>
-                                    <div class="tab-pane" id="merek-modal">
-                                        <p>3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                                            consequat massa quis enim.</p>
-                                        <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-                                            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-                                            pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
-                                            eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                    <div class="tab-pane" id="modal-brand">
+                                        <p>Modal Brand</p>
                                     </div>
-                                    <div class="tab-pane" id="tipe-modal">
-                                        <p>4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                                            consequat massa quis enim.</p>
-                                        <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-                                            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-                                            pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
-                                            eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                    <div class="tab-pane" id="modal-tipe">
+                                        <p>Modal Tipe</p>
                                     </div>
                                 </div>
                             </div>
@@ -93,103 +94,114 @@ up game mobile, Top Up game terbaik
                 </div>
                 <ul class="nav nav-tabs nav-bordered">
                     <li class="nav-item">
-                        <a href="#produk" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                        <a href="#menu-produk" data-toggle="tab" aria-expanded="false" class="nav-link active">
                             Produk
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#kategori" data-toggle="tab" aria-expanded="true" class="nav-link">
+                        <a href="#menu-kategori" data-toggle="tab" aria-expanded="false" class="nav-link">
                             Kategori
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#merek" data-toggle="tab" aria-expanded="false" class="nav-link">
-                            Merek
+                        <a href="#menu-brand" data-toggle="tab" aria-expanded="false" class="nav-link">
+                            Brand
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tipe" data-toggle="tab" aria-expanded="false" class="nav-link">
+                        <a href="#menu-tipe" data-toggle="tab" aria-expanded="false" class="nav-link">
                             Tipe
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane show active" id="produk">
+                    <div class="tab-pane show active" id="menu-produk">
                         <div class="table-responsive">
-                            <div class="table-responsive">
-                                <table class="table table-borderless">
-                                    <thead class="bg-light">
-                                        <tr>
-                                            <th>#</th>
-                                            <th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-                                            <th><i class="ti-link align-middle"></i> Slug</th>
-                                            <th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
-                                            <th class="text-center"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Prabayar</td>
-                                            <td class="hidden-sm">Otto</td>
-                                            <td>@mdo</td>
-                                            <td class="text-right">
-                                                <button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-                                                        class="zmdi zmdi-edit"></i></button><button type="button"
-                                                    class="btn btn-link btn-sm px-2 text-dark"><i
-                                                        class="zmdi zmdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Pascabayar</td>
-                                            <td class="hidden-sm">Thornton</td>
-                                            <td>@fat</td>
-                                            <td class="text-right">
-                                                <button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-                                                        class="zmdi zmdi-edit"></i></button><button type="button"
-                                                    class="btn btn-link btn-sm px-2 text-dark"><i
-                                                        class="zmdi zmdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+							<table class="table table-borderless">
+								<thead class="bg-light">
+									<tr>
+										<th>#</th>
+										<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+										<th><i class="ti-link align-middle"></i> Slug</th>
+										<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+										<th class="text-center"></th>
+									</tr>
+								</thead>
+								<tbody>
+									@forelse ($produk as $item)
+									<tr>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $item->nama_produk }}</td>
+										<td class="hidden-sm">{{ $item->slug }}</td>
+										<td>
+											@if ($item->aktif == 'Y')
+												<span class="badge badge-success">Aktif</span>
+											@else
+												<span class="badge badge-danger">Tidak Aktif</span>
+											@endif
+										</td>
+										<td class="text-right">
+											<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-edit"></i></button><button type="button"
+												class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-delete"></i></button>
+										</td>
+									</tr>
+									@empty
+									<tr>
+										<td colspan="4">Data masih kosong</td>
+									</tr>
+									@endforelse
+								</tbody>
+							</table>
+						</div>
                     </div>
-                    <div class="tab-pane" id="kategori">
-                        <div class="row align-items-center">
-                            <div class="col-md-6 mb-sm-30">
-                                <p class="mb-0">2Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-                                    enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi.
-                                    Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-                                    eleifend ac, enim.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="img/bg-img/bg-3.jpg" alt="">
-                            </div>
-                        </div>
+                    <div class="tab-pane" id="menu-kategori">
+                        <div class="table-responsive">
+							<table class="table table-borderless">
+								<thead class="bg-light">
+									<tr>
+										<th>#</th>
+										<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+										<th><i class="ti-link align-middle"></i> Slug</th>
+										<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+										<th class="text-center"></th>
+									</tr>
+								</thead>
+								<tbody>
+									@forelse ($kategori as $item)
+									<tr>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $item->nama_kategori }}</td>
+										<td class="hidden-sm">{{ $item->slug }}</td>
+										<td>
+											@if ($item->aktif == 'Y')
+												<span class="badge badge-success">Aktif</span>
+											@else
+												<span class="badge badge-danger">Tidak Aktif</span>
+											@endif
+										</td>
+										<td class="text-right">
+											<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-edit"></i></button><button type="button"
+												class="btn btn-link btn-sm px-2 text-dark"><i
+													class="zmdi zmdi-delete"></i></button>
+										</td>
+									</tr>
+									@empty
+									<tr>
+										<td colspan="5">Data masih kosong</td>
+									</tr>
+									@endforelse
+								</tbody>
+							</table>
+						</div>
                     </div>
-                    <div class="tab-pane" id="merek">
-                        <p>3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                            consequat massa quis enim.</p>
-                        <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-                            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-                            pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
-                            eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                    <div class="tab-pane" id="menu-brand">
+                        <p>Ini Menu Merek</p>
                     </div>
-                    <div class="tab-pane" id="tipe">
-                        <p>4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                            consequat massa quis enim.</p>
-                        <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-                            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-                            pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
-                            eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                    <div class="tab-pane" id="menu-tipe">
+                        <p>Ini Menu Tipe</p>
                     </div>
                 </div>
             </div>
