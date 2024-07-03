@@ -143,7 +143,7 @@ up game mobile, top up game terbaik
                                                     <h5 class="card-title mb-0 mt-2">200 Diamond</h5>
                                                 </div>
                                                 <div class="card-footer text-muted font-weight-lighter">
-                                                    <span class="text-primary font-weight-bold">Rp10.000,-</span>
+                                                    <span class="text-primary font-weight-bold">Rp20.000,-</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,46 +156,7 @@ up game mobile, top up game terbaik
                                                     <h5 class="card-title mb-0 mt-2">500 Diamond</h5>
                                                 </div>
                                                 <div class="card-footer text-muted font-weight-lighter">
-                                                    <span class="text-primary font-weight-bold">Rp10.000,-</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                            <div class="card shadow-sm rounded-lg border nominal" data-value="100">
-                                                <input type="radio" class="radio-input" name="diamond" id="diamond100"
-                                                    value="100" x-model="nominalTopup">
-                                                <div class="card-body text-left p-3">
-                                                    <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                    <h5 class="card-title mb-0 mt-2">100 Diamond</h5>
-                                                </div>
-                                                <div class="card-footer text-muted font-weight-lighter">
-                                                    <span class="text-primary font-weight-bold">Rp10.000,-</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                            <div class="card shadow-sm rounded-lg border nominal" data-value="200">
-                                                <input type="radio" class="radio-input" name="diamond" id="diamond200"
-                                                    value="200" x-model="nominalTopup">
-                                                <div class="card-body text-left p-3">
-                                                    <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                    <h5 class="card-title mb-0 mt-2">200 Diamond</h5>
-                                                </div>
-                                                <div class="card-footer text-muted font-weight-lighter">
-                                                    <span class="text-primary font-weight-bold">Rp10.000,-</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                            <div class="card shadow-sm rounded-lg border nominal" data-value="500">
-                                                <input type="radio" class="radio-input" name="diamond" id="diamond500"
-                                                    value="500" x-model="nominalTopup">
-                                                <div class="card-body text-left p-3">
-                                                    <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                    <h5 class="card-title mb-0 mt-2">500 Diamond</h5>
-                                                </div>
-                                                <div class="card-footer text-muted font-weight-lighter">
-                                                    <span class="text-primary font-weight-bold">Rp10.000,-</span>
+                                                    <span class="text-primary font-weight-bold">Rp50.000,-</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -214,12 +175,27 @@ up game mobile, top up game terbaik
                         </div>
                         <div class="card shadow-sm rounded-lg mb-3">
                             <div class="card-body">
-                                <label class="h5 text-body mb-3"><span
-                                        class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                        style="font-size: 15px;">04</span> Pilih Metode Pembayaran</label>
+                                <label class="h5 text-body mb-3">
+									<span class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1" style="font-size: 15px;">04</span> 
+									Pilih Metode Pembayaran
+								</label>
                                 <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6 p-2">
+                                    <div class="row justify-content-center">
+										@forelse ($data['data'] as $item)
+										<div class="col-md-3 col-sm-6 p-2">
+                                            <div class="card shadow-sm rounded-lg border pembayaran" data-value="{{ $item['fee_customer']['flat'] }}">
+                                                <input type="radio" class="radio-input" name="metode" id="metode100"
+                                                    value="{{ $item['fee_customer']['flat'] }}" x-model="metodePembayaran">
+                                                <div class="card-body text-left p-3">
+                                                    <img src="{{ $item['icon_url'] }}" />
+                                                    {{-- <h5 class="card-title mb-0 mt-3 text-left">Biaya Layanan : Rp.{{ $item['total_fee']['flat'] }}</h5> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+										@empty
+											
+										@endforelse
+                                        {{-- <div class="col-md-6 p-2">
                                             <div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
                                                 <input type="radio" class="radio-input" name="metode" id="metode100"
                                                     value="100" x-model="metodePembayaran">
@@ -240,7 +216,7 @@ up game mobile, top up game terbaik
                                                     <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

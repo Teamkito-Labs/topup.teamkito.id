@@ -3,12 +3,22 @@
 use App\Http\Controllers\OauthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Nekoding\Tripay\Networks\HttpClient;
+use Nekoding\Tripay\Tripay;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('beranda');
 
-Route::get('/free-fire', function () { return view('guest.proses-topup-diamond'); })->name('topup');
+Route::get('/free-fire', function () {
+	$tripay = new Tripay(new HttpClient(env('TRIPAY_API_KEY')));
+
+	$data = $tripay->getChannelPembayaran();
+
+	//dd($data);
+
+	return view('guest.proses-topup-diamond', compact('data')); 
+})->name('topup');
 
 Route::get('/admin', function () { return view('layouts/app'); })->name('admin');
 
