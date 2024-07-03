@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <meta name="keywords" content="@yield('keywords')">
-        <meta name="robots" content="index, follow">
+        <meta name="robots" content="@yield('robots')">
         <meta name="author" content="Teamkito Labs">
 
         <meta property="og:title" content="Top Up Game @yield('title') Murah dan Cepat di {{ config('app.name') }}">
