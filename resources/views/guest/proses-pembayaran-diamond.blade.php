@@ -15,11 +15,10 @@ up game mobile, top up game terbaik
             <li class="breadcrumb-item active" aria-current="page">#TUTK378247494729FF</li>
         </ol>
     </nav>
-    <section id="proses-topup"
-        x-data="{ informasiAkun: '', nominalTopup: '', kodePromo: '', metodePembayaran: '', informasiKontak: '' }">
+    <section id="proses-topup" x-data="{ informasiAkun: '', nominalTopup: '', kodePromo: '', metodePembayaran: '', informasiKontak: '' }">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                <div class="col-md-7 col-lg-7">
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
                             <label class="h5 text-body mb-3"><span
@@ -104,54 +103,39 @@ up game mobile, top up game terbaik
                             </label>
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    {{-- @forelse ($data['data'] as $item)
-										<div class="col-md-3 col-sm-6 p-2">
-                                            <div class="card shadow-sm rounded-lg border pembayaran" data-value="{{ $item['fee_customer']['flat'] }}">
-                                    <input type="radio" class="radio-input" name="metode" id="metode100"
-                                        value="{{ $item['fee_customer']['flat'] }}" x-model="metodePembayaran">
-                                    <div class="card-body text-left p-3">
-                                        <img src="{{ $item['icon_url'] }}" />
-                                        <h5 class="card-title mb-0 mt-3 text-left">Biaya Layanan :
-                                            Rp.{{ $item['total_fee']['flat'] }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            @empty
-
-                            @endforelse --}}
-                            <div class="col-md-6 p-2">
-                                <div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
-                                    <input type="radio" class="radio-input" name="metode" id="metode100" value="100"
-                                        x-model="metodePembayaran">
-                                    <div class="card-body text-left p-3">
-                                        <img
-                                            src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
-                                        <h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-2">
-                                <div class="card shadow-sm rounded-lg border pembayaran" data-value="200">
-                                    <input type="radio" class="radio-input" name="metode" id="metode200" value="200"
-                                        x-model="metodePembayaran">
-                                    <div class="card-body text-left p-3">
-                                        <img
-                                            src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
-                                        <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
-                                    </div>
-                                </div>
-                            </div>
+									<div class="col-md-6 p-2">
+										<div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
+											<input type="radio" class="radio-input" name="metode" id="metode100" value="100"
+												x-model="metodePembayaran">
+											<div class="card-body text-left p-3">
+												<img
+													src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
+												<h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 p-2">
+										<div class="card shadow-sm rounded-lg border pembayaran" data-value="200">
+											<input type="radio" class="radio-input" name="metode" id="metode200" value="200"
+												x-model="metodePembayaran">
+											<div class="card-body text-left p-3">
+												<img
+													src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
+												<h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="col-md-5 col-lg-5">
                     <img class="shadow-sm rounded-lg mb-3"
                         src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
                         alt="Slide 1" />
-
                     <div id="langkah-topup" class="mt-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
-                        <label class="font-weight-bold h4 text-body">Langkah Mudah Top-Up Voucher Game di
-                            Teamkito</label>
+                        <label class="font-weight-bold h4 text-body">Langkah Mudah Top-Up Voucher Game di Teamkito</label>
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
