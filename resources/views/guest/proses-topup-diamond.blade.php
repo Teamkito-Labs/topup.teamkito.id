@@ -7,6 +7,7 @@ diamond Mobile Legends, top up UC PUBG murah, top up Genesis Crystal Genshin Imp
 layanan top up game instan, top up game resmi, harga top up game terjangkau, top up game populer, top up game aman, top
 up game mobile, top up game terbaik
 ')
+@section('robots', 'index, follow')
 <x-guest-layout>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -16,7 +17,6 @@ up game mobile, top up game terbaik
     </nav>
     <section id="proses-topup"
         x-data="{ informasiAkun: '', nominalTopup: '', kodePromo: '', metodePembayaran: '', informasiKontak: '' }">
-        <div class="row">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-5">
@@ -24,7 +24,8 @@ up game mobile, top up game terbaik
                             src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
                             alt="Slide 1" />
 
-                        <section id="langkah-topup" class="mt-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+                        <div id="langkah-topup"
+                            class="mt-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
                             <label class="font-weight-bold h4 text-body">Langkah Mudah Top-Up Voucher Game di
                                 Teamkito</label>
                             <div class="container">
@@ -94,7 +95,7 @@ up game mobile, top up game terbaik
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                         <div class="card shadow-sm rounded-lg mb-3">
@@ -176,70 +177,111 @@ up game mobile, top up game terbaik
                         <div class="card shadow-sm rounded-lg mb-3">
                             <div class="card-body">
                                 <label class="h5 text-body mb-3">
-									<span class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1" style="font-size: 15px;">04</span> 
-									Pilih Metode Pembayaran
-								</label>
+                                    <span class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
+                                        style="font-size: 15px;">04</span>
+                                    Pilih Metode Pembayaran
+                                </label>
                                 <div class="container">
                                     <div class="row justify-content-center">
-										@forelse ($data['data'] as $item)
+                                        {{-- @forelse ($data['data'] as $item)
 										<div class="col-md-3 col-sm-6 p-2">
                                             <div class="card shadow-sm rounded-lg border pembayaran" data-value="{{ $item['fee_customer']['flat'] }}">
-                                                <input type="radio" class="radio-input" name="metode" id="metode100"
-                                                    value="{{ $item['fee_customer']['flat'] }}" x-model="metodePembayaran">
-                                                <div class="card-body text-left p-3">
-                                                    <img src="{{ $item['icon_url'] }}" />
-                                                    {{-- <h5 class="card-title mb-0 mt-3 text-left">Biaya Layanan : Rp.{{ $item['total_fee']['flat'] }}</h5> --}}
-                                                </div>
-                                            </div>
+                                        <input type="radio" class="radio-input" name="metode" id="metode100"
+                                            value="{{ $item['fee_customer']['flat'] }}" x-model="metodePembayaran">
+                                        <div class="card-body text-left p-3">
+                                            <img src="{{ $item['icon_url'] }}" />
+                                            <h5 class="card-title mb-0 mt-3 text-left">Biaya Layanan :
+                                                Rp.{{ $item['total_fee']['flat'] }}</h5>
                                         </div>
-										@empty
-											
-										@endforelse
-                                        {{-- <div class="col-md-6 p-2">
-                                            <div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
-                                                <input type="radio" class="radio-input" name="metode" id="metode100"
-                                                    value="100" x-model="metodePembayaran">
-                                                <div class="card-body text-left p-3">
-                                                    <img
-                                                        src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
-                                                    <h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
+                                @empty
+
+                                @endforelse --}}
+                                <div class="col-md-6 p-2">
+                                    <div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
+                                        <input type="radio" class="radio-input" name="metode" id="metode100" value="100"
+                                            x-model="metodePembayaran">
+                                        <div class="card-body text-left p-3">
+                                            <img
+                                                src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
+                                            <h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
                                         </div>
-                                        <div class="col-md-6 p-2">
-                                            <div class="card shadow-sm rounded-lg border pembayaran" data-value="200">
-                                                <input type="radio" class="radio-input" name="metode" id="metode200"
-                                                    value="200" x-model="metodePembayaran">
-                                                <div class="card-body text-left p-3">
-                                                    <img
-                                                        src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
-                                                    <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
-                                                </div>
-                                            </div>
-                                        </div> --}}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-2">
+                                    <div class="card shadow-sm rounded-lg border pembayaran" data-value="200">
+                                        <input type="radio" class="radio-input" name="metode" id="metode200" value="200"
+                                            x-model="metodePembayaran">
+                                        <div class="card-body text-left p-3">
+                                            <img
+                                                src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
+                                            <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card shadow-sm rounded-lg mb-3">
-                            <div class="card-body">
-                                <label class="h5 text-body mb-3"><span
-                                        class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                        style="font-size: 15px;">05</span> Masukkan
-                                    Informasi Kontak</label>
-                                <input type="text" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
-                                    placeholder="Masukkan Email (opsional)" x-model="informasiKontak">
-                                <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
-                                    Masukkan detail ini untuk mendapatkan bukti transaksi.
-                                </p>
+                    </div>
+                </div>
+                <div class="card shadow-sm rounded-lg mb-3">
+                    <div class="card-body">
+                        <label class="h5 text-body mb-3"><span
+                                class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
+                                style="font-size: 15px;">05</span> Masukkan
+                            Informasi Kontak</label>
+                        <input type="text" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
+                            placeholder="Masukkan Email (opsional)" x-model="informasiKontak">
+                        <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
+                            Masukkan detail ini untuk mendapatkan bukti transaksi.
+                        </p>
+                    </div>
+                </div>
+                <div class="card fixed-bottom">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-md-4">
+                                    <div class="media">
+                                        <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
+                                            class="align-self-center rounded-lg mr-3 d-none d-sm-block"
+                                            style="height: 64px;" alt="...">
+                                        <div class="media-body">
+                                            <h6 class="my-0">Free Fire</h6>
+                                            <h5 class="mt-0 text-primary">Rp10.000,-</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-4 text-sm-left text-right">
+                                    <p class="my-2 h6">100 Diamond </p>
+                                    <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75"
+                                        style="height:20px;" />
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4">
+                                    <button type="button" class="btn btn-primary btn-rounded btn-block my-2"
+                                        data-toggle="modal" data-target="#exampleModal"><i
+                                            class="fa fa-rocket align-middle mr-1"></i> Bayar Sekarang</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="card shadow-sm rounded-lg mb-3">
-                            <div class="card-body">
-                                <label class="h5 text-body mb-3"><span
-                                        class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                        style="font-size: 15px;">05</span> Konfirmasi Pembelian</label>
-                                <div class="container-md">
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade pr-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <label class="h5 text-body mb-0"><span
+                                            class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
+                                            style="font-size: 15px;">05</span> Konfirmasi Pembelian</label></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-md my-3">
                                     <div class="card shadow-none">
                                         <div class="row no-gutters">
                                             <div class="col-3 col-sm-3 col-md-3 col-lg-3">
@@ -250,13 +292,21 @@ up game mobile, top up game terbaik
                                                 <div class="card-body py-0 px-3">
                                                     <h5 class="card-title text-uppercase mb-0">Informasi Akun</h5>
                                                     <div class="row my-2">
+                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8">Nickname</div>
+                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 font-weight-bold"
+                                                            x-text="informasiAkun">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row my-2">
                                                         <div class="col-12 col-sm-8 col-md-8 col-lg-8">ID Game</div>
-                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 font-weight-bold" x-text="informasiAkun">
+                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 font-weight-bold"
+                                                            x-text="informasiAkun">
                                                         </div>
                                                     </div>
                                                     <div class="row my-2">
                                                         <div class="col-12 col-sm-8 col-md-8 col-lg-8">Email</div>
-                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 font-weight-bold" x-text="informasiKontak">
+                                                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 font-weight-bold"
+                                                            x-text="informasiKontak">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -298,11 +348,12 @@ up game mobile, top up game terbaik
                                                         </tr>
                                                         <tr>
                                                             <td class="font-weight-lighter">
-                                                                <p class="my-0">Biaya Layanan</p>
+                                                                <p class="my-0">Metode Pembayaran</p>
+                                                            </td class="font-weight-lighter">
+                                                            <td class="text-right font-weight-bold">
                                                                 <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75"
                                                                     style="height:25px;" />
-                                                            </td class="font-weight-lighter">
-                                                            <td class="text-right font-weight-bold"></td>
+                                                            </td>
                                                         </tr>
                                                         <tr class="bg-light">
                                                             <td class="border-top border-top-2">
@@ -329,42 +380,17 @@ up game mobile, top up game terbaik
                                                 menghindari kesalahan transaksi.
                                             </p>
                                         </div>
-                                    </div> <!-- / .row -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card fixed-bottom">
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-6 col-sm-6 col-md-4">
-                                            <div class="media">
-                                                <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
-                                                    class="align-self-center rounded-lg mr-3 d-none d-sm-block" style="height: 64px;"
-                                                    alt="...">
-                                                <div class="media-body">
-                                                    <h6 class="my-0">Free Fire</h6>
-                                                    <h5 class="mt-0 text-primary">Rp10.000,-</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-sm-6 col-md-4 text-sm-left text-right">
-                                            <p class="my-2 h6">100 Diamond </p>
-                                            <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75"
-                                                style="height:20px;" />
-                                        </div>
-                                        <div class="col-12 col-sm-12 col-md-4">
-                                            <button type="button" class="btn btn-primary btn-rounded btn-block my-2"><i
-                                                    class="fa fa-rocket align-middle mr-1"></i> Bayar Sekarang</button>
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-rounded " data-dismiss="modal">Batal</button>
+                                    <button type="sumbit" class="btn btn-primary btn-rounded ">Konfirmasi</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <section id="penawaran-eksklusif" class="mt-5">
         <label class="font-weight-bold h4 text-body"><img src="{{ asset('storage/img/flat-icon/discount.png') }}"
@@ -613,12 +639,6 @@ up game mobile, top up game terbaik
     </section>
 
     @push('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @vite([
-    'resources/css/welcome.css',
-    ])
     <style>
         .nominal {
             cursor: pointer;
@@ -635,31 +655,7 @@ up game mobile, top up game terbaik
     </style>
     @endpush
     @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 10,
-                autoplay: false,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: false,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    600: {
-                        items: 2
-                    }
-                }
-            });
-        });
         $(document).ready(function () {
             $('.nominal').click(function () {
                 var value = $(this).data('value');
