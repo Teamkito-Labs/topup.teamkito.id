@@ -122,7 +122,7 @@ up game mobile, top up game terbaik
 							<div class="container">
 								<div class="row">
 									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-										<div class="card shadow-sm rounded-lg border nominal" data-value="100">
+										<div class="card shadow-sm rounded-lg nominal border" data-value="100">
 											<input type="radio" class="radio-input" name="diamond" id="diamond100"
 												value="100" x-model.number="nominalTopup">
 											<div class="card-body text-left p-3">
@@ -135,7 +135,7 @@ up game mobile, top up game terbaik
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-										<div class="card shadow-sm rounded-lg border nominal" data-value="200">
+										<div class="card shadow-sm rounded-lg nominal border" data-value="200">
 											<input type="radio" class="radio-input" name="diamond" id="diamond200"
 												value="200" x-model.number="nominalTopup">
 											<div class="card-body text-left p-3">
@@ -148,7 +148,7 @@ up game mobile, top up game terbaik
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-										<div class="card shadow-sm rounded-lg border nominal" data-value="500">
+										<div class="card shadow-sm rounded-lg nominal border" data-value="500">
 											<input type="radio" class="radio-input" name="diamond" id="diamond500"
 												value="500" x-model.number="nominalTopup">
 											<div class="card-body text-left p-3">
