@@ -10,7 +10,11 @@ use Nekoding\Tripay\Tripay;
 Route::get('/', function () { return view('welcome'); })->name('beranda');
 
 Route::get('/free-fire', function () {
-	return view('guest.proses-topup-diamond'); 
+	$tripay = new Tripay(new HttpClient(env('TRIPAY_API_KEY')));
+
+	$data = $tripay->getChannelPembayaran();
+
+	return view('guest.proses-topup-diamond', compact('data')); 
 })->name('topup');
 Route::get('/pembayaran', function () {
 	return view('guest.proses-pembayaran-diamond'); 

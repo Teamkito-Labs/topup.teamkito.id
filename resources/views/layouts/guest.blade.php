@@ -38,12 +38,12 @@
     </head>
     <body>
         <!-- Preloader -->
-        <div id="preloader-area">
+        {{-- <div id="preloader-area">
             <div class="lds-ripple">
                 <div></div>
                 <div></div>
             </div>
-        </div>
+        </div> --}}
         <!-- Preloader -->
         <div class="main-container-wrapper">
             <div class="horizontal-menu">
