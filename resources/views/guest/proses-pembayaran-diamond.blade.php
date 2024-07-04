@@ -11,197 +11,56 @@ up game mobile, top up game terbaik
 <x-guest-layout>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route("beranda") }}">Top Up</a></li>
             <li class="breadcrumb-item"><a href="{{ route("topup") }}">Free Fire</a></li>
-            <li class="breadcrumb-item active" aria-current="page">#TUTK378247494729FF</li>
+            <li class="breadcrumb-item active" aria-current="page">#TK378247494729FF</li>
         </ol>
     </nav>
-    <section id="proses-topup" x-data="{ informasiAkun: '', nominalTopup: '', kodePromo: '', metodePembayaran: '', informasiKontak: '' }">
+    <section id="proses-topup">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-lg-7">
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
-                            <label class="h5 text-body mb-3"><span
-                                    class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                    style="font-size: 15px;">01</span> Masukkan
-                                Informasi Akun</label><button type="button"
-                                class="btn btn-link btn-sm text-primary font-weight-bold px-2"><i
-                                    class="fa fa-info-circle" aria-hidden="true"></i> Panduan</button>
-                            <input type="number" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
-                                placeholder="Masukkan Game ID Free Fire Anda" x-model.number="informasiAkun">
-                            <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
-                                Tap avatar di sudut kiri atas. ID Game muncul di bawah nama.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            <label class="h5 text-body mb-3"><span
-                                    class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                    style="font-size: 15px;">02</span> Pilih Nominal Top
-                                Up</label>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                        <div class="card shadow-sm rounded-lg border nominal" data-value="100">
-                                            <input type="radio" class="radio-input" name="diamond" id="diamond100"
-                                                value="100" x-model="nominalTopup">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">100 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                <span class="text-primary font-weight-bold">Rp10.000,- </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                        <div class="card shadow-sm rounded-lg border nominal" data-value="200">
-                                            <input type="radio" class="radio-input" name="diamond" id="diamond200"
-                                                value="200" x-model="nominalTopup">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">200 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted font-weight-lighter">
-                                                <span class="text-primary font-weight-bold">Rp20.000,-</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-                                        <div class="card shadow-sm rounded-lg border nominal" data-value="500">
-                                            <input type="radio" class="radio-input" name="diamond" id="diamond500"
-                                                value="500" x-model="nominalTopup">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">500 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted font-weight-lighter">
-                                                <span class="text-primary font-weight-bold">Rp50.000,-</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-2 pr-0">
+                                    <img src="{{ asset('storage/img/flat-icon/payment.png') }}" />
+                                </div>
+                                <div class="col-md-7 pl-0">
+                                    <h5 class="m-0">Menunggu Pembayaran</h5>
+                                    <p class="m-0">Anda akan diarahkan ke halaman pembayaran setelah melakukan pembayaran</p>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <span class="font-weight-bold"><i class="zmdi zmdi-time"></i> 29m 48d</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
-                            <label class="h5 text-body mb-3"><span
-                                    class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                    style="font-size: 15px;">03</span> Masukkan Kode Promo</label>
-                            <input type="text" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
-                                placeholder="Masukkan Kode Promo (Opsional)" x-model="kodePromo">
+                            da
                         </div>
                     </div>
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
-                            <label class="h5 text-body mb-3">
-                                <span class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                    style="font-size: 15px;">04</span>
-                                Pilih Metode Pembayaran
-                            </label>
-                            <div class="container">
-                                <div class="row justify-content-center">
-									<div class="col-md-6 p-2">
-										<div class="card shadow-sm rounded-lg border pembayaran" data-value="100">
-											<input type="radio" class="radio-input" name="metode" id="metode100" value="100"
-												x-model="metodePembayaran">
-											<div class="card-body text-left p-3">
-												<img
-													src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
-												<h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 p-2">
-										<div class="card shadow-sm rounded-lg border pembayaran" data-value="200">
-											<input type="radio" class="radio-input" name="metode" id="metode200" value="200"
-												x-model="metodePembayaran">
-											<div class="card-body text-left p-3">
-												<img
-													src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
-												<h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                            
+                        </div>
+                    </div>
+                    <div class="card shadow-sm rounded-lg mb-3">
+                        <div class="card-body">
+                            
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-5">
-                    <img class="shadow-sm rounded-lg mb-3"
-                        src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
-                        alt="Slide 1" />
-                    <div id="langkah-topup" class="mt-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
-                        <label class="font-weight-bold h4 text-body">Langkah Mudah Top-Up Voucher Game di Teamkito</label>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
-                                    <div class="row">
-                                        <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/ghost.png') }}" />
-                                            <h1>01</h1>
-                                        </div>
-                                        <div class="col-9 col-sm-8 col-md-8 col-lg-9">
-                                            <h5>Pilih Game</h5>
-                                            <p>Pilih game yang ingin Anda top-up dari daftar game yang tersedia.
-                                                Kami menawarkan
-                                                berbagai game populer, baik untuk platform mobile maupun PC. Gunakan
-                                                fitur pencarian
-                                                untuk menemukan game dengan cepat.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
-                                    <div class="row">
-                                        <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/diamond.png') }}" />
-                                            <h1 class="mb-0">02</h1>
-                                        </div>
-                                        <div class="col-9 col-sm-8 col-md-8 col-lg-9">
-                                            <h6>Pilih Nominal Top-Up</h6>
-                                            <p>Tentukan nominal top-up yang Anda inginkan. Kami menyediakan berbagai
-                                                pilihan nominal
-                                                untuk memenuhi kebutuhan Anda, mulai dari jumlah kecil hingga besar.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
-                                    <div class="row">
-                                        <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/payment-method.png') }}" />
-                                            <h1>03</h1>
-                                        </div>
-                                        <div class="col-9 col-sm-8 col-md-8 col-lg-9">
-                                            <h6>Lakukan Pembayaran</h6>
-                                            <p>Pilih metode pembayaran yang Anda inginkan. Kami menerima berbagai
-                                                metode pembayaran,
-                                                termasuk kartu kredit, transfer bank, dan e-wallet. Pastikan semua
-                                                informasi yang Anda
-                                                masukkan sudah benar sebelum melanjutkan.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
-                                    <div class="row">
-                                        <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/startup.png') }}" />
-                                            <h1>04</h1>
-                                        </div>
-                                        <div class="col-9 col-sm-8 col-md-8 col-lg-9">
-                                            <h6>Voucher Dikirim Secara Instan</h6>
-                                            <p>Setelah pembayaran berhasil, voucher game akan langsung dikirim ke
-                                                akun Anda. Anda akan
-                                                menerima notifikasi melalui aplikasi dan email. Voucher siap
-                                                digunakan untuk
-                                                meningkatkan pengalaman bermain game Anda.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card shadow-sm rounded-lg mb-3">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                    <div class="card shadow-sm rounded-lg mb-3">
+                        <div class="card-body">
+                            
                         </div>
                     </div>
                 </div>
@@ -433,24 +292,6 @@ up game mobile, top up game terbaik
                 </div>
             </div>
 
-        </div>
-    </section>
-    <section id="topup-teamkito" class="mt-5">
-        <div class="card shadow-sm rounded-lg">
-            <div class="card-body p-4">
-                <label class="font-weight-bold h4 text-body"><img
-                        src="{{ asset('storage/img/flat-icon/verified.png') }}" /> Top Up Teamkito ID</label>
-                <h6>Top Up Game Murah dan Cepat di topup.teamkito.id</h6>
-                <p class="text-muted mb-0">
-                    Situs resmi yang berdedikasi untuk memberikan pengalaman top up game yang mudah, cepat, dan
-                    terjangkau bagi para gamer di Indonesia. Situs ini beroperasi dengan lisensi dan peraturan yang
-                    sesuai dengan hukum yang berlaku di Indonesia dan berkomitmen untuk menjaga transparansi dan
-                    integritas dalam setiap transaksi. Top Up Teamkito ID juga bekerja sama dengan penyedia game resmi
-                    untuk menyediakan layanan top up yang sah dan terpercaya. Keamanan data pengguna dijaga dengan
-                    teknologi enkripsi terbaru dan tim layanan pelanggan siap membantu dengan pertanyaan atau masalah
-                    yang mungkin dihadapi pengguna.
-                </p>
-            </div>
         </div>
     </section>
 

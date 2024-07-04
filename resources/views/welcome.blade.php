@@ -481,24 +481,6 @@ up game mobile, Top Up game terbaik
 
         </div>
     </section>
-    <section id="topup-teamkito" class="mt-5">
-        <div class="card shadow-sm rounded-lg">
-            <div class="card-body p-4">
-                <label class="font-weight-bold h4 text-body"><img
-                        src="{{ asset('storage/img/flat-icon/verified.png') }}" /> Top Up Teamkito ID</label>
-                <h6>Top Up Game Murah dan Cepat di topup.teamkito.id</h6>
-                <p class="text-muted mb-0">
-                    Situs resmi yang berdedikasi untuk memberikan pengalaman Top Up game yang mudah, cepat, dan
-                    terjangkau bagi para gamer di Indonesia. Situs ini beroperasi dengan lisensi dan peraturan yang
-                    sesuai dengan hukum yang berlaku di Indonesia dan berkomitmen untuk menjaga transparansi dan
-                    integritas dalam setiap transaksi. <br>Top Up Teamkito ID juga bekerja sama dengan penyedia game resmi
-                    untuk menyediakan layanan Top Up yang sah dan terpercaya. Keamanan data pengguna dijaga dengan
-                    teknologi enkripsi terbaru dan tim layanan pelanggan siap membantu dengan pertanyaan atau masalah
-                    yang mungkin dihadapi pengguna.
-                </p>
-            </div>
-        </div>
-    </section>
 
     @push('styles')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"

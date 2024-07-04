@@ -9,18 +9,13 @@ use Nekoding\Tripay\Tripay;
 
 Route::get('/', function () { return view('welcome'); })->name('beranda');
 
-Route::get('/free-fire', function () {
-	return view('guest.proses-topup-diamond'); 
-})->name('topup');
-Route::get('/pembayaran', function () {
-	return view('guest.proses-pembayaran-diamond'); 
-})->name('pembayaran');
+Route::get('/free-fire', function () { return view('guest.proses-topup-diamond'); })->name('topup');
+Route::get('/pembayaran', function () { return view('guest.proses-pembayaran-diamond'); })->name('pembayaran');
 
 Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
 
 Route::prefix('pengaturan')->group(function () {
-	Route::prefix('kategori-produk')
-	->group(function() {
+	Route::prefix('kategori-produk')->group(function() {
 		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori-produk');
 
 		Route::post('/kategori-produk/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori-produk.produk.store');
