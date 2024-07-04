@@ -32,11 +32,11 @@ up game mobile, top up game terbaik
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
                                     <div class="row">
                                         <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/ghost.png') }}" />
+                                            <img src="{{ asset('storage/img/flat-icon/ghost.png') }}" x-on:click="calculateTotalHarga()" />
                                             <h1>01</h1>
                                         </div>
                                         <div class="col-9 col-sm-8 col-md-8 col-lg-9">
-                                            <h5>Pilih Game</h5>
+                                            <h5 >Pilih Game</h5>
                                             <p>Pilih game yang ingin Anda top-up dari daftar game yang tersedia.
                                                 Kami menawarkan
                                                 berbagai game populer, baik untuk platform mobile maupun PC. Gunakan
@@ -197,7 +197,7 @@ up game mobile, top up game terbaik
 
                             @endforelse --}}
                             <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'DANA'; pilihPembayaranClass = metodePembayaran === 'DANA' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran">
+                                x-on:click="metodePembayaran = 'DANA'; pilihPembayaranClass = metodePembayaran === 'DANA' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran;">
                             <div class="card shadow-sm rounded-lg border"
                                 :class="{ 'border border-primary': metodePembayaran === 'DANA' }">
                                 <div class="card-body text-left p-3">
@@ -208,7 +208,7 @@ up game mobile, top up game terbaik
                                 </div>
                             </div>
                             <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'GoPay'; pilihPembayaranClass = metodePembayaran === 'GoPay' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran ">
+                                x-on:click="metodePembayaran = 'GoPay'; pilihPembayaranClass = metodePembayaran === 'GoPay' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran;">
                             <div class="card shadow-sm rounded-lg border"
                                 :class="{ 'border border-primary': metodePembayaran === 'GoPay' }">
                                 <div class="card-body text-left p-3">
@@ -246,7 +246,7 @@ up game mobile, top up game terbaik
                                         style="height: 64px;" alt="...">
                                     <div class="media-body">
                                         <h6 class="my-0">Free Fire</h6>
-                                        <h5 class="mt-0 text-primary">Rp10.000,-</h5>
+                                        <h5 class="mt-0 text-primary" id="totalHarga"></h5>
                                     </div>
                                 </div>
                             </div>
@@ -644,21 +644,19 @@ up game mobile, top up game terbaik
         function calculateTotalHarga() {
             let harga = document.getElementById('hargaInput').value;
             let kodePembayaran = document.getElementById('metodePembayaranInput').value;
-            fetch('/total-harga', {
-            method: 'GET', // Replace with your API's preferred method (POST, GET, etc.)
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                harga: ,
-                kodePembayaran: kodePembayaran
-            })
-            })
-            .then(response => response.json())
-            .then(data => {
-                totalHarga = data; // Assuming your API response has a 'totalHarga' property
-            })
-            .catch(error => console.error('Error calculating total price:', error));
+            $.ajax({
+                url: "/api/total-harga",
+                type: 'GET',
+                data: {
+                    harga: harga,
+                    kodePembayaran: kodePembayaran
+                },
+                async: false,
+                dataType: 'json',
+                success: function (response) {
+                    $('#totalHarga').text(response);
+                }
+            });
         }
         $(document).ready(function () {
             $('.nominal').click(function () {

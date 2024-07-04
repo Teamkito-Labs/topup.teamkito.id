@@ -10,11 +10,11 @@ class APIController extends Controller
 {
     public function getTotalHarga(Request $request)
 	{
-		$number = $request->amount;
+		$number = $request->harga;
 
 		$tripay = new Tripay(new HttpClient(env('TRIPAY_API_KEY')));
 
-		$data = $tripay->getBiayaTransaksi($number, $request->payCode);
+		$data = $tripay->getBiayaTransaksi($number, $request->kodePembayaran);
 
 		// dd($data['data'][0]['total_fee']['customer']);
 
