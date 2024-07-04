@@ -40,12 +40,12 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader-area">
+    {{-- <div id="preloader-area">
         <div class="lds-ripple">
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> --}}
     <!-- Preloader -->
     <div class="main-container-wrapper">
         <!-- Top bar area -->
@@ -292,7 +292,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item @if(Request::segment(1) == 'pengaturan') active @endif">
                         <a class="nav-link" data-toggle="collapse" href="#pengaturan" aria-expanded="false"
                             aria-controls="advanced">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -306,9 +306,13 @@
                             <span class="menu-title">Pengaturan</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="pengaturan">
+                        <div class="collapse @if(Request::segment(1) == 'pengaturan') show @endif" id="pengaturan">
                             <ul class="nav flex-column mt-0">
-                                <li class="nav-item pl-4"> <a class="nav-link" href="{{ route('kategori-produk') }}">Kategori Produk</a></li>
+                                <li class="nav-item pl-4 @if(Request::segment(2) == 'kategori') active @endif"> 
+									<a class="nav-link" href="{{ route('kategori') }}">
+										Pengaturan Kategori
+									</a>
+								</li>
                                 <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Akun</a></li>
                                 <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Toko</a></li>
                                 <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Pembayaran</a></li>

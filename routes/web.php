@@ -9,17 +9,28 @@ use Nekoding\Tripay\Tripay;
 
 Route::get('/', function () { return view('welcome'); })->name('beranda');
 
-Route::get('/free-fire', function () { return view('guest.proses-topup-diamond'); })->name('topup');
-Route::get('/pembayaran', function () { return view('guest.proses-pembayaran-diamond'); })->name('pembayaran');
+Route::get('/free-fire', function () {
+	$tripay = new Tripay(new HttpClient(env('TRIPAY_API_KEY')));
+
+	$data = $tripay->getChannelPembayaran();
+
+	return view('guest.proses-topup-diamond', compact('data')); 
+})->name('topup');
+Route::get('/pembayaran', function () {
+	return view('guest.proses-pembayaran-diamond'); 
+})->name('pembayaran');
 
 Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
 
 Route::prefix('pengaturan')->group(function () {
-	Route::prefix('kategori-produk')->group(function() {
-		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori-produk');
+	Route::prefix('kategori')
+	->group(function() {
+		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori');
 
-		Route::post('/kategori-produk/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori-produk.produk.store');
-		Route::post('/kategori-produk/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori-produk.kategori.store');
+		Route::post('/kategori/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori.produk.store');
+		Route::post('/kategori/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori.kategori.store');
+		Route::post('/kategori/brand/store', [KategoriProdukController::class, 'brand_store'])->name('kategori.brand.store');
+		Route::post('/kategori/tipe/store', [KategoriProdukController::class, 'tipe_store'])->name('kategori.tipe.store');
 	});
     
     Route::get('/users', function () {  });

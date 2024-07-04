@@ -11,12 +11,12 @@ class KategoriRepository implements KategoriInterface
 {
 	public function getAllKategori()
 	{
-		return Kategori::latest()->get();
+		return Kategori::orderBy('produk_id', 'ASC')->get();
 	}
 
 	public function getAllKategoriStatus($status)
 	{
-		return Kategori::where('aktif', $status)->latest()->get();
+		return Kategori::where('aktif', $status)->orderBy('produk_id', 'ASC')->get();
 	}
 
 	public function storeNewKategori(KategoriRequest $request)
