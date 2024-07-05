@@ -22,11 +22,18 @@ Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')
 	->group(function() {
 		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori');
+		Route::get('/tambah/{jenis}', [KategoriProdukController::class, 'create'])->name('kategori.create');
+		Route::get('/edit/{jenis}/{slug}', [KategoriProdukController::class, 'edit'])->name('kategori.edit');
 
 		Route::post('/kategori/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori.produk.store');
 		Route::post('/kategori/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori.kategori.store');
 		Route::post('/kategori/brand/store', [KategoriProdukController::class, 'brand_store'])->name('kategori.brand.store');
 		Route::post('/kategori/tipe/store', [KategoriProdukController::class, 'tipe_store'])->name('kategori.tipe.store');
+
+		Route::post('/kategori/produk/update/{id}', [KategoriProdukController::class, 'produk_update'])->name('kategori.produk.update');
+		Route::post('/kategori/kategori/update/{id}', [KategoriProdukController::class, 'kategori_update'])->name('kategori.kategori.update');
+		Route::post('/kategori/brand/update/{id}', [KategoriProdukController::class, 'brand_update'])->name('kategori.brand.update');
+		Route::post('/kategori/tipe/update/{id}', [KategoriProdukController::class, 'tipe_update'])->name('kategori.tipe.update');
 	});
     
     Route::get('/users', function () {  });

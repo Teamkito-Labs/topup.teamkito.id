@@ -10,4 +10,9 @@ class Tipe extends Model
     use HasFactory;
 
 	public $table = 'tipe';
+
+	public function kategori()
+	{
+		return $this->belongsTo(Kategori::class);
+	}
 }

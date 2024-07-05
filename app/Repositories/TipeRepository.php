@@ -14,14 +14,30 @@ class TipeRepository implements TipeInterface
 		return Tipe::orderBy('nama_tipe', 'ASC')->get();
 	}
 
-	public function getAllTipeStatus($status)
+	public function getAllTipeByStatus($status)
 	{
 		return Tipe::where('aktif', $status)->orderBy('nama_tipe', 'ASC')->get();
+	}
+
+	public function getTipeBySlug($slug)
+	{
+		return Tipe::where('slug', $slug)->first();
 	}
 
 	public function storeNewTipe(TipeRequest $request)
 	{
 		$data = new Tipe();
+		$data->kategori_id = $request->kategori_id;
+		$data->nama_tipe = $request->nama_tipe;
+		$data->slug = Str::slug($request->nama_tipe, '-');
+		$data->save();
+
+		return $data;
+	}
+
+	public function updateTipe(TipeRequest $request, $id)
+	{
+		$data = Tipe::findOrFail($id);
 		$data->kategori_id = $request->kategori_id;
 		$data->nama_tipe = $request->nama_tipe;
 		$data->slug = Str::slug($request->nama_tipe, '-');

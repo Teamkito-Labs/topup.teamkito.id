@@ -14,14 +14,29 @@ class ProdukRepository implements ProdukInterface
 		return Produk::orderBy('nama_produk', 'ASC')->get();
 	}
 
-	public function getAllProdukStatus($status)
+	public function getAllProdukByStatus($status)
 	{
 		return Produk::where('aktif', $status)->orderBy('nama_produk', 'ASC')->get();
+	}
+
+	public function getProdukBySlug($slug)
+	{
+		return Produk::where('slug', $slug)->first();
 	}
 
 	public function storeNewProduk(ProdukRequest $request)
 	{
 		$data = new Produk();
+		$data->nama_produk = $request->nama_produk;
+		$data->slug = Str::slug($request->nama_produk, '-');
+		$data->save();
+
+		return $data;
+	}
+
+	public function updateProduk(ProdukRequest $request, $id)
+	{
+		$data = Produk::findOrFail($id);
 		$data->nama_produk = $request->nama_produk;
 		$data->slug = Str::slug($request->nama_produk, '-');
 		$data->save();

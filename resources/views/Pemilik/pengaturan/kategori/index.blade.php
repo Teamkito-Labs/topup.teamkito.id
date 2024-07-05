@@ -10,7 +10,7 @@ up game mobile, Top Up game terbaik
 <x-app-layout>
     <h3 class="card-title mb-4">Pengaturan Kategori</h3>
     <div class="row">
-		<div class="col-12 col-sm-12 col-md-7 col-lg-7">
+		<div class="col-7">
 			<div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
 				<div class="card-body">
 					<ul class="nav nav-tabs nav-bordered">
@@ -47,8 +47,8 @@ up game mobile, Top Up game terbaik
 										<tr>
 											<th>#</th>
 											<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-											<th class="hidden-sm"><i class="ti-link align-middle"></i> Slug</th>
-											<th><i class="ti-check-box align-middle"></i> Status</th>
+											<th><i class="ti-link align-middle"></i> Slug</th>
+											<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 											<th class="text-center"></th>
 										</tr>
 									</thead>
@@ -93,8 +93,8 @@ up game mobile, Top Up game terbaik
 											<th>#</th>
 											<th><i class="ti-layers align-middle"></i> Produk</th>
 											<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-											<th class="hidden-sm"><i class="ti-link align-middle"></i> Slug</th>
-											<th"><i class="ti-check-box align-middle"></i> Status</th>
+											<th><i class="ti-link align-middle"></i> Slug</th>
+											<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 											<th class="text-center"></th>
 										</tr>
 									</thead>
@@ -139,8 +139,8 @@ up game mobile, Top Up game terbaik
 											<th>#</th>
 											<th><i class="ti-layers align-middle"></i> Kategori</th>
 											<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-											<th class="hidden-sm"><i class="ti-link align-middle"></i> Slug</th>
-											<th><i class="ti-check-box align-middle"></i> Status</th>
+											<th><i class="ti-link align-middle"></i> Slug</th>
+											<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 											<th class="text-center"></th>
 										</tr>
 									</thead>
@@ -185,8 +185,8 @@ up game mobile, Top Up game terbaik
 											<th>#</th>
 											<th><i class="ti-layers align-middle"></i> Ketegori</th>
 											<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-											<th class="hidden-sm"><i class="ti-link align-middle"></i> Slug</th>
-											<th><i class="ti-check-box align-middle"></i> Status</th>
+											<th><i class="ti-link align-middle"></i> Slug</th>
+											<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 											<th class="text-center"></th>
 										</tr>
 									</thead>
@@ -223,9 +223,7 @@ up game mobile, Top Up game terbaik
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-sm-12 col-md-5 col-lg-5">
-			@include('pemilik.partials.hapus-kategori')
-		</div>
+		@include('pemilik.partials.tambah-kategori')
     </div>
     @push('styles')
 	<link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">

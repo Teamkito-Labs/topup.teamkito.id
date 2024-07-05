@@ -37,30 +37,82 @@ class KategoriProdukController extends Controller
 		$brand = $this->brandRepository->getAllBrand();
 		$tipe = $this->tipeRepository->getAllTipe();
 
-		return view('pemilik.pengaturan.kategori-produk', compact('produk', 'kategori', 'brand', 'tipe')); 
+		return view('pemilik.pengaturan.kategori.index', compact('produk', 'kategori', 'brand', 'tipe')); 
+	}
+
+	function create() : View {
+		$produk = $this->produkRepository->getAllProduk();
+		$kategori = $this->kategoriRepository->getAllKategori();
+		$brand = $this->brandRepository->getAllBrand();
+		$tipe = $this->tipeRepository->getAllTipe();
+
+		return view('pemilik.pengaturan.kategori.create', compact('produk', 'kategori', 'brand', 'tipe')); 
+	}
+
+	function edit($jenis, $slug) : View {
+		$produk = $this->produkRepository->getAllProduk();
+		$kategori = $this->kategoriRepository->getAllKategori();
+		$brand = $this->brandRepository->getAllBrand();
+		$tipe = $this->tipeRepository->getAllTipe();
+		
+		if ($jenis == 'produk') {
+			$data = $this->produkRepository->getProdukBySlug($slug);
+		} elseif ($jenis == 'kategori') {
+			$data = $this->kategoriRepository->getKategoriBySlug($slug);
+		} elseif ($jenis == 'brand') {
+			$data = $this->brandRepository->getBrandBySlug($slug);
+		} elseif ($jenis == 'tipe') {
+			$data = $this->tipeRepository->getTipeBySlug($slug);
+		}
+
+		return view('pemilik.pengaturan.kategori.edit', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
 	}
 
     function produk_store(ProdukRequest $request) : RedirectResponse {
 		$this->produkRepository->storeNewProduk($request);
 
-		return to_route('kategori-produk')->with('success', 'Berhasil menambah kategori produk');
+		return to_route('kategori')->with('success', 'Berhasil menambah kategori produk');
 	}
 
 	function kategori_store(KategoriRequest $request) : RedirectResponse {
 		$this->kategoriRepository->storeNewKategori($request);
 
-		return to_route('kategori-produk')->with('success', 'Berhasil menambah kategori');
+		return to_route('kategori')->with('success', 'Berhasil menambah kategori');
 	}
 
 	function brand_store(BrandRequest $request) : RedirectResponse {
 		$this->brandRepository->storeNewBrand($request);
 
-		return to_route('kategori-produk')->with('success', 'Berhasil menambah kategori brand');
+		return to_route('kategori')->with('success', 'Berhasil menambah kategori brand');
 	}
 
 	function tipe_store(TipeRequest $request) : RedirectResponse {
 		$this->tipeRepository->storeNewTipe($request);
 
-		return to_route('kategori-produk')->with('success', 'Berhasil menambah kategori tipe');
+		return to_route('kategori')->with('success', 'Berhasil menambah kategori tipe');
+	}
+
+	function produk_update(ProdukRequest $request, $id) : RedirectResponse {
+		$this->produkRepository->updateProduk($request, $id);
+
+		return to_route('kategori')->with('success', 'Berhasil mengubah kategori produk');
+	}
+
+	function kategori_update(KategoriRequest $request, $id) : RedirectResponse {
+		$this->kategoriRepository->updateKategori($request, $id);
+
+		return to_route('kategori')->with('success', 'Berhasil mengubah kategori');
+	}
+
+	function brand_update(BrandRequest $request, $id) : RedirectResponse {
+		$this->brandRepository->updateBrand($request, $id);
+
+		return to_route('kategori')->with('success', 'Berhasil mengubah kategori brand');
+	}
+
+	function tipe_update(TipeRequest $request, $id) : RedirectResponse {
+		$this->tipeRepository->updateTipe($request, $id);
+
+		return to_route('kategori')->with('success', 'Berhasil mengubah kategori tipe');
 	}
 }
