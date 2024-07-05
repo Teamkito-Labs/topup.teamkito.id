@@ -10,11 +10,8 @@ use App\Interfaces\BrandInterface;
 use App\Interfaces\KategoriInterface;
 use App\Interfaces\ProdukInterface;
 use App\Interfaces\TipeInterface;
-use App\Repositories\KategoriRepository;
-use App\Repositories\ProdukRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class KategoriProdukController extends Controller
 {
@@ -46,7 +43,7 @@ class KategoriProdukController extends Controller
 		$brand = $this->brandRepository->getAllBrand();
 		$tipe = $this->tipeRepository->getAllTipe();
 
-		return view('pemilik.pengaturan.kategori.create', compact('produk', 'kategori', 'brand', 'tipe')); 
+		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe')); 
 	}
 
 	function edit($jenis, $slug) : View {
@@ -65,7 +62,26 @@ class KategoriProdukController extends Controller
 			$data = $this->tipeRepository->getTipeBySlug($slug);
 		}
 
-		return view('pemilik.pengaturan.kategori.edit', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
+		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
+	}
+
+	function delete($jenis, $slug) : View {
+		$produk = $this->produkRepository->getAllProduk();
+		$kategori = $this->kategoriRepository->getAllKategori();
+		$brand = $this->brandRepository->getAllBrand();
+		$tipe = $this->tipeRepository->getAllTipe();
+		
+		if ($jenis == 'produk') {
+			$data = $this->produkRepository->getProdukBySlug($slug);
+		} elseif ($jenis == 'kategori') {
+			$data = $this->kategoriRepository->getKategoriBySlug($slug);
+		} elseif ($jenis == 'brand') {
+			$data = $this->brandRepository->getBrandBySlug($slug);
+		} elseif ($jenis == 'tipe') {
+			$data = $this->tipeRepository->getTipeBySlug($slug);
+		}
+
+		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
 	}
 
     function produk_store(ProdukRequest $request) : RedirectResponse {

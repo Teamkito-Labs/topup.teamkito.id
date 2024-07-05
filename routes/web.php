@@ -24,6 +24,7 @@ Route::prefix('pengaturan')->group(function () {
 		Route::get('/', [KategoriProdukController::class, 'index'])->name('kategori');
 		Route::get('/tambah/{jenis}', [KategoriProdukController::class, 'create'])->name('kategori.create');
 		Route::get('/edit/{jenis}/{slug}', [KategoriProdukController::class, 'edit'])->name('kategori.edit');
+		Route::get('/hapus/{jenis}/{slug}', [KategoriProdukController::class, 'delete'])->name('kategori.delete');
 
 		Route::post('/kategori/produk/store', [KategoriProdukController::class, 'produk_store'])->name('kategori.produk.store');
 		Route::post('/kategori/kategori/store', [KategoriProdukController::class, 'kategori_store'])->name('kategori.kategori.store');
