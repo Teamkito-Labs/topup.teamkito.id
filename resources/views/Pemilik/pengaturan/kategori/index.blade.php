@@ -37,10 +37,9 @@ up game mobile, Top Up game terbaik
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane show active" id="menu-produk">
-							<button type="button" class="btn btn-primary btn-rounded btn-sm align-right mb-3" data-toggle="modal"
-								data-target="#exampleModal">
+							<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'produk') }}">
 								<i class="zmdi zmdi-plus align-middle"></i> Produk
-							</button>
+							</a>
 							<div class="table-responsive">
 								<table class="table table-borderless">
 									<thead class="bg-light">
@@ -66,10 +65,12 @@ up game mobile, Top Up game terbaik
 												@endif
 											</td>
 											<td class="text-right">
-												<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-edit"></i></button><button type="button"
-													class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-delete"></i></button>
+												<a href="{{ route('kategori.edit', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-edit"></i>
+												</a>
+												<button type="button" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-delete"></i>
+												</button>
 											</td>
 										</tr>
 										@empty
@@ -82,10 +83,9 @@ up game mobile, Top Up game terbaik
 							</div>
 						</div>
 						<div class="tab-pane" id="menu-kategori">
-							<button type="button" class="btn btn-primary btn-rounded btn-sm align-right mb-3" data-toggle="modal"
-								data-target="#exampleModal">
+							<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'kategori') }}">
 								<i class="zmdi zmdi-plus align-middle"></i> Kategori
-							</button>
+							</a>
 							<div class="table-responsive">
 								<table class="table table-borderless">
 									<thead class="bg-light">
@@ -102,6 +102,7 @@ up game mobile, Top Up game terbaik
 										@forelse ($kategori as $item)
 										<tr>
 											<td>{{ $loop->iteration }}</td>
+											<td>{{ $item->produk->nama_produk }}</td>
 											<td>{{ $item->nama_kategori }}</td>
 											<td class="hidden-sm">{{ $item->slug }}</td>
 											<td>
@@ -112,10 +113,12 @@ up game mobile, Top Up game terbaik
 												@endif
 											</td>
 											<td class="text-right">
-												<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-edit"></i></button><button type="button"
-													class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-delete"></i></button>
+												<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-edit"></i>
+												</a>
+												<button type="button" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-delete"></i>
+												</button>
 											</td>
 										</tr>
 										@empty
@@ -128,10 +131,9 @@ up game mobile, Top Up game terbaik
 							</div>
 						</div>
 						<div class="tab-pane" id="menu-brand">
-							<button type="button" class="btn btn-primary btn-rounded btn-sm align-right mb-3" data-toggle="modal"
-								data-target="#exampleModal">
+							<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'brand') }}">
 								<i class="zmdi zmdi-plus align-middle"></i> Brand
-							</button>
+							</a>
 							<div class="table-responsive">
 								<table class="table table-borderless">
 									<thead class="bg-light">
@@ -148,6 +150,7 @@ up game mobile, Top Up game terbaik
 										@forelse ($brand as $item)
 										<tr>
 											<td>{{ $loop->iteration }}</td>
+											<td>{{ $item->kategori->nama_kategori }}</td>
 											<td>{{ $item->nama_brand }}</td>
 											<td class="hidden-sm">{{ $item->slug }}</td>
 											<td>
@@ -158,10 +161,12 @@ up game mobile, Top Up game terbaik
 												@endif
 											</td>
 											<td class="text-right">
-												<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-edit"></i></button><button type="button"
-													class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-delete"></i></button>
+												<a href="{{ route('kategori.edit', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-edit"></i>
+												</a>
+												<button type="button" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-delete"></i>
+												</button>
 											</td>
 										</tr>
 										@empty
@@ -174,16 +179,15 @@ up game mobile, Top Up game terbaik
 							</div>
 						</div>
 						<div class="tab-pane" id="menu-tipe">
-							<button type="button" class="btn btn-primary btn-rounded btn-sm align-right mb-3" data-toggle="modal"
-								data-target="#exampleModal">
+							<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'tipe') }}">
 								<i class="zmdi zmdi-plus align-middle"></i> Tipe
-							</button>
+							</a>
 							<div class="table-responsive">
 								<table class="table table-borderless">
 									<thead class="bg-light">
 										<tr>
 											<th>#</th>
-											<th><i class="ti-layers align-middle"></i> Ketegori</th>
+											<th><i class="ti-layers align-middle"></i> Kategori</th>
 											<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
 											<th><i class="ti-link align-middle"></i> Slug</th>
 											<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
@@ -194,6 +198,7 @@ up game mobile, Top Up game terbaik
 										@forelse ($tipe as $item)
 										<tr>
 											<td>{{ $loop->iteration }}</td>
+											<td>{{ $item->kategori->nama_kategori }}</td>
 											<td>{{ $item->nama_tipe }}</td>
 											<td class="hidden-sm">{{ $item->slug }}</td>
 											<td>
@@ -204,10 +209,12 @@ up game mobile, Top Up game terbaik
 												@endif
 											</td>
 											<td class="text-right">
-												<button type="button" class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-edit"></i></button><button type="button"
-													class="btn btn-link btn-sm px-2 text-dark"><i
-														class="zmdi zmdi-delete"></i></button>
+												<a href="{{ route('kategori.edit', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-edit"></i>
+												</a>
+												<button type="button" class="btn btn-link btn-sm px-2 text-dark">
+													<i class="zmdi zmdi-delete"></i>
+												</button>
 											</td>
 										</tr>
 										@empty
@@ -223,7 +230,6 @@ up game mobile, Top Up game terbaik
 				</div>
 			</div>
 		</div>
-		@include('pemilik.partials.tambah-kategori')
     </div>
     @push('styles')
 	<link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">

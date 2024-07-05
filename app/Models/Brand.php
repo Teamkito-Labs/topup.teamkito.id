@@ -10,4 +10,9 @@ class Brand extends Model
     use HasFactory;
 
 	public $table = 'brand';
+
+	public function kategori()
+	{
+		return $this->belongsTo(Kategori::class);
+	}
 }
