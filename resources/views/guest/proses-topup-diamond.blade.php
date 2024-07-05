@@ -16,7 +16,7 @@ up game mobile, top up game terbaik
         </ol>
     </nav>
     <section id="proses-topup"
-        x-data="{ informasiAkun: '', nominalTopup: '-', kodePromo: '', metodePembayaran: null, logoPembayaran: { DANA: 'https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75', GoPay: 'https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75' }, pilihPembayaranClass: '',  informasiKontak: '', itemHargaTopup: null, totalHarga: null }">
+        x-data="{ informasiAkun: '', nominalTopup: '-', kodePromo: '', metodePembayaran: null, logoPembayaran: { DANA: 'https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75', OVO: 'https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75' }, pilihPembayaranClass: '',  informasiKontak: '', itemHargaTopup: null, totalHarga: null }">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-5 col-lg-5">
@@ -32,7 +32,7 @@ up game mobile, top up game terbaik
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-3">
                                     <div class="row">
                                         <div class="col-3 col-sm-4 col-md-4 col-lg-3 text-center">
-                                            <img src="{{ asset('storage/img/flat-icon/ghost.png') }}" x-on:click="calculateTotalHarga()" />
+                                            <img src="{{ asset('storage/img/flat-icon/ghost.png') }}" />
                                             <h1>01</h1>
                                         </div>
                                         <div class="col-9 col-sm-8 col-md-8 col-lg-9">
@@ -197,7 +197,7 @@ up game mobile, top up game terbaik
 
                             @endforelse --}}
                             <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'DANA'; pilihPembayaranClass = metodePembayaran === 'DANA' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran;">
+                                x-on:click="metodePembayaran = 'DANA'; pilihPembayaranClass = metodePembayaran === 'DANA' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran; calculateTotalHarga()">
                             <div class="card shadow-sm rounded-lg border"
                                 :class="{ 'border border-primary': metodePembayaran === 'DANA' }">
                                 <div class="card-body text-left p-3">
@@ -208,9 +208,9 @@ up game mobile, top up game terbaik
                                 </div>
                             </div>
                             <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'GoPay'; pilihPembayaranClass = metodePembayaran === 'GoPay' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran;">
+                                x-on:click="metodePembayaran = 'OVO'; pilihPembayaranClass = metodePembayaran === 'OVO' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran; calculateTotalHarga()">
                             <div class="card shadow-sm rounded-lg border"
-                                :class="{ 'border border-primary': metodePembayaran === 'GoPay' }">
+                                :class="{ 'border border-primary': metodePembayaran === 'OVO' }">
                                 <div class="card-body text-left p-3">
                                     <img src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
                                     <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
@@ -243,7 +243,7 @@ up game mobile, top up game terbaik
                                 <div class="media">
                                     <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
                                         class="align-self-center rounded-lg mr-3 d-none d-sm-block"
-                                        style="height: 64px;" alt="...">
+                                        style="height: 64px;" alt="..." x-on:click="calculateTotalHarga()">
                                     <div class="media-body">
                                         <h6 class="my-0">Free Fire</h6>
                                         <h5 class="mt-0 text-primary" id="totalHarga"></h5>
@@ -330,9 +330,9 @@ up game mobile, top up game terbaik
                                                 <tbody>
                                                     <tr>
                                                         <td class="font-weight-lighter">
-                                                            <p class="my-0">Nominal Top Up</p>100 Diamond
+                                                            <p class="my-0">Nominal Top Up</p><span x-text="`${nominalTopup} Diamond`"></span>
                                                         </td>
-                                                        <td class="text-right font-weight-bold" x-text="nominalTopup">
+                                                        <td class="text-right font-weight-bold" x-text="itemHargaTopup">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -349,7 +349,7 @@ up game mobile, top up game terbaik
                                                             <p class="my-0">Metode Pembayaran</p>
                                                         </td class="font-weight-lighter">
                                                         <td class="text-right font-weight-bold">
-                                                            <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75"
+                                                            <img x-bind:src="logoPembayaran[metodePembayaran]"
                                                                 style="height:25px;" />
                                                         </td>
                                                     </tr>
@@ -358,8 +358,8 @@ up game mobile, top up game terbaik
                                                             <strong>Total Pembayaran</strong>
                                                         </td>
                                                         <td colspan="2" class="text-right border-top border-top-2">
-                                                            <span class="font-20">
-                                                                Rp30.0000,-
+                                                            <span class="font-20" id="totalHarga2">
+                                                                -
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -655,6 +655,7 @@ up game mobile, top up game terbaik
                 dataType: 'json',
                 success: function (response) {
                     $('#totalHarga').text(response);
+                    $('#totalHarga2').text(response);
                 }
             });
         }
