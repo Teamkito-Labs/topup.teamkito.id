@@ -231,7 +231,7 @@
                         </a>
                         <div class="collapse" id="produk">
                             <ul class="nav flex-column mt-0">
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Prabayar</a>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="{{ route('prabayar') }}">Prabayar</a>
                                 </li>
                                 <li class="nav-item pl-4"> <a class="nav-link disabled text-muted" href="customer.html"
                                         tabindex="-1" role="button" aria-disabled="true">Pascabayar <span

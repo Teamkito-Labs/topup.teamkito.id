@@ -1,4 +1,4 @@
-@section('title', 'Prabayar')
+@section('title', 'Mobile Legends')
 @section('description', 'Top Up game murah dan cepat di topup.teamkito.id! Dukung permainan Anda dengan Top Up untuk
 Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Proses instan!')
 @section('keywords', 'Top Up game murah, Top Up game cepat, Top Up Free Fire murah, Top Up Mobile Legends cepat, Top Up
@@ -11,25 +11,15 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Prabayar</li>
+            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Produk</a></li>
+            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Games</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mobile Legends</li>
         </ol>
     </nav>
 	<div class="overflow-posisi-x">
-		<a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Games</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pulsa</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Data</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Voucher</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">E-Monay</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">PLN</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Paket SMS & Telpon</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Streaming</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">TV</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Aktivasi Voucher</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Masa Aktif</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Bundling</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Aktiviasi Oerdana</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pertagas</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">eSIM</a>
+		<a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Umum</a>
+		<a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Membership</a>
+		<a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Powered by Google Play</a>
 	</div>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
 		<div class="card-body">
@@ -38,18 +28,22 @@ up game mobile, Top Up game terbaik
 					<thead class="bg-light">
 						<tr>
 							<th>#</th>
-							<th><i class="ti-crown align-middle"></i> Brand</th>
-							<th><i class="ti-package align-middle"></i> Kategori</th>
-							<th><i class="ti-menu-alt align-middle"></i> Item</th>
+							<th><i class="ti-crown align-middle"></i> Kode</th>
+							<th><i class="pe-7s-diamond align-middle"></i> Item</th>
+							<th><i class="ti-money align-middle"></i> Jual</th>
+							<th><i class="ti-money align-middle"></i> Modal</th>
+							<th><i class="pe-7s-cash align-middle"></i> Profit</th>
 							<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>1</td>
-							<td>Mobile Legends</td>
-							<td>Games</td>
-							<td><a href="{{ route('item') }}" class="text-decoration-none">64 Item</a></td>
+							<td>FF5</td>
+							<td>5</td>
+							<td>Rp164.605</a></td>
+							<td>Rp64.605</a></td>
+							<td>Rp64.605</a></td>
 							<td><span class="badge badge-success">Aktif</span></td>
 						</tr>
 					</tbody>
@@ -57,6 +51,9 @@ up game mobile, Top Up game terbaik
 			</div>
 		</div>
 	</div>
+    <div class="container fixed-bottom d-flex justify-content-end mb-5">
+        <a href="{{ route("tambah") }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
+      </div>      
     @push('styles')
 	<link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">
 	<style>

@@ -18,6 +18,15 @@ Route::get('/pembayaran', function () {
 
 Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
 
+Route::prefix('produk')->group(function () {
+	Route::prefix('prabayar')
+	->group(function() {
+		Route::get('/', function () { return view('pemilik/produk/prabayar'); })->name('prabayar');
+		Route::get('/item', function () { return view('pemilik/produk/item'); })->name('item');
+		Route::get('/tambah', function () { return view('pemilik/produk/partials/tambah'); })->name('tambah');
+	});
+});
+
 Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')
 	->group(function() {
