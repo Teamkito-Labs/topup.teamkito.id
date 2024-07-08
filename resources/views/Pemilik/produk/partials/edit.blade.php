@@ -83,7 +83,14 @@ up game mobile, Top Up game terbaik
                         <input type="text" class="form-control" id="inputPassword4" value="Rp" disabled>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Kirim</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-rounded btn-block btn-secondary mt-2">Batal</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Kirim</button>
+                    </div>
+                </div>
             </form>
 		</div>
 	</div>      
