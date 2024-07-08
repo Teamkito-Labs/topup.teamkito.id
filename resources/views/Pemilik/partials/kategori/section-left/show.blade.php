@@ -61,7 +61,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang diedit..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+											<span class="sr-only">Loading...</span>
+										  </div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
@@ -72,7 +74,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang dilihat..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
 										<a href="{{ route('kategori.edit', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
@@ -133,7 +137,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang diedit..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+											<span class="sr-only">Loading...</span>
+										  </div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
@@ -144,7 +150,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang dilihat..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
 										<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
@@ -205,7 +213,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang diedit..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+											<span class="sr-only">Loading...</span>
+										  </div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
@@ -216,7 +226,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang dilihat..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
 										<a href="{{ route('kategori.edit', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
@@ -277,7 +289,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang diedit..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+											<span class="sr-only">Loading...</span>
+										  </div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
@@ -288,7 +302,9 @@
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 										@else
-										<span class="text-info">Sedang dilihat..</span>
+										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
 										<a href="{{ route('kategori.edit', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
