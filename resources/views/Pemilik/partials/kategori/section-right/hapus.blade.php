@@ -3,8 +3,7 @@
     <div class="card-body">
         <form action="{{ route('kategori.produk.store') }}" method="post">
             @csrf
-            <p class="mb-0">Apakah Anda yakin ingin menghapus data ini?</p>
-            <span class="font-weight-bold">Produk : {{ $data->nama_produk }}</span>
+            <p class="mb-0">Apakah Anda yakin ingin menghapus produk<span class="font-weight-bold"> {{ $data->nama_produk }}</span>?</p>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
                 <button type="submit" class="btn btn-primary btn-rounded btn-sm">Ubah</button>
@@ -17,8 +16,7 @@
     <div class="card-body">
         <form action="{{ route('kategori.produk.store') }}" method="post">
             @csrf
-            <p class="mb-0">Apakah Anda yakin ingin menghapus data ini?</p>
-            <span class="font-weight-bold">Kategori : {{ $data->nama_kategori }}</span>
+            <p class="mb-0">Apakah Anda yakin ingin menghapus kategori<span class="font-weight-bold"> {{ $data->nama_kategori }}</span>?</p>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
                 <button type="submit" class="btn btn-primary btn-rounded btn-sm">Ubah</button>
@@ -31,8 +29,7 @@
     <div class="card-body">
         <form action="{{ route('kategori.produk.store') }}" method="post">
             @csrf
-            <p class="mb-0">Apakah Anda yakin ingin menghapus data ini?</p>
-            <span class="font-weight-bold">Brand : {{ $data->nama_brand }}</span>
+            <p class="mb-0">Apakah Anda yakin ingin menghapus brand<span class="font-weight-bold"> {{ $data->nama_brand }}</span>?</p>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
                 <button type="submit" class="btn btn-primary btn-rounded btn-sm">Ubah</button>
@@ -45,8 +42,7 @@
     <div class="card-body">
         <form action="{{ route('kategori.produk.store') }}" method="post">
             @csrf
-            <p class="mb-0">Apakah Anda yakin ingin menghapus data ini?</p>
-            <span class="font-weight-bold">Tipe : {{ $data->nama_tipe }}</span>
+            <p class="mb-0">Apakah Anda yakin ingin menghapus tipe<span class="font-weight-bold"> {{ $data->nama_tipe }}</span>?</p>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
                 <button type="submit" class="btn btn-primary btn-rounded btn-sm">Ubah</button>

@@ -40,17 +40,17 @@ up game mobile, Top Up game terbaik
 							<th>#</th>
 							<th><i class="ti-crown align-middle"></i> Brand</th>
 							<th><i class="ti-package align-middle"></i> Kategori</th>
-							<th><i class="ti-menu-alt align-middle"></i> Item</th>
-							<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+							<th class="text-center"><i class="ti-menu-alt align-middle"></i> Item</th>
+							<th class="text-center"><i class="ti-check-box align-middle"></i> Status</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>1</td>
-							<td>Mobile Legends</td>
+							<td><a href="{{ route('item') }}" class="text-decoration-none">Mobile Legends</a></td>
 							<td>Games</td>
-							<td><a href="{{ route('item') }}" class="text-decoration-none">64 Item</a></td>
-							<td><span class="badge badge-success">Aktif</span></td>
+							<td class="text-center">64</td>
+							<td class="text-center"><span class="badge badge-success">Aktif</span></td>
 						</tr>
 					</tbody>
 				</table>
