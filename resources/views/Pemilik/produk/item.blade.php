@@ -11,8 +11,8 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Produk</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Games</a></li>
+            <li class="breadcrumb-item"><a href="{{ route("produk.prabayar") }}">Produk</a></li>
+            <li class="breadcrumb-item"><a href="{{ route("produk.prabayar") }}">Games</a></li>
             <li class="breadcrumb-item active" aria-current="page">Mobile Legends</li>
         </ol>
     </nav>
@@ -51,9 +51,9 @@ up game mobile, Top Up game terbaik
 			</div>
 		</div>
 	</div>
-    <div class="container fixed-bottom d-flex justify-content-end mb-5">
+    <div class="fixed-bottom d-flex justify-content-end mb-5 mr-5">
         <a href="{{ route("tambah") }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
-      </div>      
+    </div>      
     @push('styles')
 	<link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">
 	<style>

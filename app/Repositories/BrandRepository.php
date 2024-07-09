@@ -19,6 +19,11 @@ class BrandRepository implements BrandInterface
 		return Brand::where('aktif', $status)->orderBy('nama_brand', 'ASC')->get();
 	}
 
+	public function getAllBrandByKategoriId($kategoriId)
+	{
+		return Brand::withCount(['items'])->where('kategori_id', $kategoriId)->orderBy('nama_brand', 'ASC')->get();
+	}
+
 	public function getBrandBySlug($slug)
 	{
 		return Brand::where('slug', $slug)->first();

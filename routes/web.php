@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\OauthController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Nekoding\Tripay\Networks\HttpClient;
@@ -21,8 +22,9 @@ Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->nam
 Route::prefix('produk')->group(function () {
 	Route::prefix('prabayar')
 	->group(function() {
-		Route::get('/', function () { return view('pemilik/produk/prabayar'); })->name('prabayar');
-		Route::get('/item', function () { return view('pemilik/produk/item'); })->name('item');
+		Route::get('/', [ProdukController::class, 'index_prabayar'])->name('produk.prabayar');
+		Route::get('/show/{slug}', [ProdukController::class, 'show_prabayar'])->name('produk.prabayar.show');
+		Route::get('/item/{slug}', [ProdukController::class, 'show_item'])->name('produk.item');
 		Route::get('/tambah', function () { return view('pemilik/produk/partials/tambah'); })->name('tambah');
 	});
 });

@@ -15,4 +15,9 @@ class Brand extends Model
 	{
 		return $this->belongsTo(Kategori::class);
 	}
+
+	public function items()
+	{
+		return $this->hasMany(Item::class, 'brand_id', 'id');
+	}
 }

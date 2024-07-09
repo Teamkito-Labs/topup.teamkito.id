@@ -19,6 +19,11 @@ class TipeRepository implements TipeInterface
 		return Tipe::where('aktif', $status)->orderBy('nama_tipe', 'ASC')->get();
 	}
 
+	public function getAllTipeByKategoriId($kategoriId)
+	{
+		return Tipe::where('kategori_id', $kategoriId)->orderBy('nama_tipe', 'ASC')->get();
+	}
+
 	public function getTipeBySlug($slug)
 	{
 		return Tipe::where('slug', $slug)->first();

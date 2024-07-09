@@ -15,11 +15,14 @@ up game mobile, Top Up game terbaik
         </ol>
     </nav>
 	<div class="overflow-posisi-x">
-		<a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Games</a>
+		<a href="{{ route('produk.prabayar') }}" class="btn btn-dark btn-rounded btn-sm mb-3 mr-1">Semua</a>
+		@foreach ($kategori as $item)
+			<a href="{{ route('produk.prabayar.show', ['slug' => $item->slug]) }}" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_kategori }}</a>
+		@endforeach
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pulsa</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Data</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Voucher</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">E-Monay</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">E-Money</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">PLN</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Paket SMS & Telpon</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Streaming</a>
@@ -45,13 +48,25 @@ up game mobile, Top Up game terbaik
 						</tr>
 					</thead>
 					<tbody>
+						@forelse ($brand as $item)
 						<tr>
-							<td>1</td>
-							<td>Mobile Legends</td>
-							<td>Games</td>
-							<td><a href="{{ route('item') }}" class="text-decoration-none">64 Item</a></td>
-							<td><span class="badge badge-success">Aktif</span></td>
+							<td>{{ $loop->iteration }}</td>
+							<td>{{ $item->nama_brand }}</td>
+							<td>{{ $item->kategori->nama_kategori }}</td>
+							<td>
+								<a href="{{ route('produk.item', ['slug' => $item->slug]) }}" class="text-decoration-none">{{ $item->items_count }} Item</a>
+							</td>
+							<td>
+								@if ($item->aktif == 'Y')
+								<span class="badge badge-success">Aktif</span>									
+								@else
+								<span class="badge badge-danger">Tidak Aktif</span>									
+								@endif
+							</td>
 						</tr>
+						@empty
+							
+						@endforelse
 					</tbody>
 				</table>
 			</div>
