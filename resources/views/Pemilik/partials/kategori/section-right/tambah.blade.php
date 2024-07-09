@@ -27,7 +27,8 @@
                 <select class="form-control" id="produk_id" name="produk_id">
                     <option value="" hidden>-- Pilih Produk --</option>
                     @forelse ($produk as $item)
-                    <option value="{{ $item->id }}" @if(old('produk_id') == $item->id) selected @endif>{{ $item->nama_produk }}</option>
+                    <option value="{{ $item->id }}" @if(old('produk_id')==$item->id) selected
+                        @endif>{{ $item->nama_produk }}</option>
                     @empty
 
                     @endforelse
@@ -35,9 +36,8 @@
             </div>
             <div class="form-group">
                 <label for="nama_kategori">Nama Kategori</label>
-                <input type="text" id="nama_kategori"
-                    class="form-control @error('nama_kategori') is-invalid @enderror" name="nama_kategori"
-                    placeholder="Nama Kategori" value="{{ old('nama_kategori') }}" required>
+                <input type="text" id="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror"
+                    name="nama_kategori" placeholder="Nama Kategori" value="{{ old('nama_kategori') }}" required>
             </div>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
@@ -57,7 +57,8 @@
                 <select class="form-control" id="kategori_id" name="kategori_id">
                     <option value="" hidden>-- Pilih Kategori --</option>
                     @forelse ($kategori as $item)
-                    <option value="{{ $item->id }}" @if(old('kategori_id') == $item->id) selected @endif>{{ $item->nama_kategori }}</option>
+                    <option value="{{ $item->id }}" @if(old('kategori_id')==$item->id) selected
+                        @endif>{{ $item->nama_kategori }}</option>
                     @empty
 
                     @endforelse
@@ -67,6 +68,16 @@
                 <label for="nama_brand">Nama Brand</label>
                 <input type="text" id="nama_brand" class="form-control @error('nama_brand') is-invalid @enderror"
                     name="nama_brand" placeholder="Nama Brand" value="{{ old('nama_brand') }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nama_brand">Logo</label>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
             </div>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>
@@ -86,7 +97,8 @@
                 <select class="form-control" id="kategori_id" name="kategori_id">
                     <option value="" hidden>-- Pilih Kategori --</option>
                     @forelse ($kategori as $item)
-                    <option value="{{ $item->id }}" @if(old('kategori_id') == $item->id) selected @endif>{{ $item->nama_kategori }}</option>
+                    <option value="{{ $item->id }}" @if(old('kategori_id')==$item->id) selected
+                        @endif>{{ $item->nama_kategori }}</option>
                     @empty
 
                     @endforelse

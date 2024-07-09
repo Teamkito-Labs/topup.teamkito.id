@@ -52,12 +52,14 @@
 									@endif
 								</td>
 								<td class="text-right">
-									<a href="{{ route('kategori.edit', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-edit"></i>
-									</a>
-									<a href="{{ route('kategori.delete', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-delete"></i>
-									</a>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('kategori.edit', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('kategori.delete', ['jenis' => 'produk', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 								</td>
 							</tr>
 							@empty
@@ -100,12 +102,14 @@
 									@endif
 								</td>
 								<td class="text-right">
-									<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-edit"></i>
-									</a>
-									<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-delete"></i>
-									</a>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 								</td>
 							</tr>
 							@empty
@@ -148,12 +152,14 @@
 									@endif
 								</td>
 								<td class="text-right">
-									<a href="{{ route('kategori.edit', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-edit"></i>
-									</a>
-									<a href="{{ route('kategori.delete', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-delete"></i>
-									</a>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('kategori.edit', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('kategori.delete', ['jenis' => 'brand', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 								</td>
 							</tr>
 							@empty
@@ -196,12 +202,14 @@
 									@endif
 								</td>
 								<td class="text-right">
-									<a href="{{ route('kategori.edit', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-edit"></i>
-									</a>
-									<a href="{{ route('kategori.delete', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-										<i class="zmdi zmdi-delete"></i>
-									</a>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('kategori.edit', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('kategori.delete', ['jenis' => 'tipe', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 								</td>
 							</tr>
 							@empty

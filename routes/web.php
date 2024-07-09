@@ -26,6 +26,7 @@ Route::prefix('produk')->group(function () {
 		Route::get('/show/{slug}', [ProdukController::class, 'show_prabayar'])->name('produk.prabayar.show');
 		Route::get('/item/{slug}', [ProdukController::class, 'show_item'])->name('produk.item');
 		Route::get('/tambah', function () { return view('pemilik/produk/partials/tambah'); })->name('tambah');
+		Route::get('/edit', function () { return view('pemilik/produk/partials/edit'); })->name('edit');
 	});
 });
 

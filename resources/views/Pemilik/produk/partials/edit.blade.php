@@ -14,7 +14,7 @@ up game mobile, Top Up game terbaik
             <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Produk</a></li>
             <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Games</a></li>
             <li class="breadcrumb-item"><a href="{{ route("item") }}">Mobile Legends</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Tambah</li>
+            <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
@@ -22,16 +22,31 @@ up game mobile, Top Up game terbaik
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputEmail4" class="col-form-label">Produk</label>
-                        <input type="text" class="form-control" id="inputEmail4" value="Pascabayar" disabled>
+                        <label for="inputState" class="col-form-label">Produk</label>
+                        <select id="inputState" class="form-control">
+                            <option>Pilih</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputPassword4" class="col-form-label">Kategori</label>
-                        <input type="text" class="form-control" id="inputPassword4" value="Games" disabled>
+                        <label for="inputState" class="col-form-label">Kategori</label>
+                        <select id="inputState" class="form-control">
+                            <option>Pilih</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputPassword4" class="col-form-label">Brand</label>
-                        <input type="text" class="form-control" id="inputPassword4" value="Mobile Legends" disabled>
+                        <label for="inputState" class="col-form-label">Brand</label>
+                        <select id="inputState" class="form-control">
+                            <option>Pilih</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">
@@ -68,7 +83,14 @@ up game mobile, Top Up game terbaik
                         <input type="text" class="form-control" id="inputPassword4" value="Rp" disabled>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Simpan</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-rounded btn-block btn-secondary mt-2">Batal</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Kirim</button>
+                    </div>
+                </div>
             </form>
 		</div>
 	</div>      

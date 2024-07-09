@@ -43,8 +43,8 @@ up game mobile, Top Up game terbaik
 							<th>#</th>
 							<th><i class="ti-crown align-middle"></i> Brand</th>
 							<th><i class="ti-package align-middle"></i> Kategori</th>
-							<th><i class="ti-menu-alt align-middle"></i> Item</th>
-							<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
+							<th class="text-center"><i class="ti-menu-alt align-middle"></i> Item</th>
+							<th class="text-center"><i class="ti-check-box align-middle"></i> Status</th>
 						</tr>
 					</thead>
 					<tbody>
