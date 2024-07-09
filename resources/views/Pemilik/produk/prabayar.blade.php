@@ -51,10 +51,10 @@ up game mobile, Top Up game terbaik
 						@forelse ($brand as $item)
 						<tr>
 							<td>{{ $loop->iteration }}</td>
-							<td>{{ $item->nama_brand }}</td>
+							<td><a href="{{ route('produk.item', ['slug' => $item->slug]) }}" class="text-decoration-none">{{ $item->nama_brand }}</a></td>
 							<td>{{ $item->kategori->nama_kategori }}</td>
 							<td>
-								<a href="{{ route('produk.item', ['slug' => $item->slug]) }}" class="text-decoration-none">{{ $item->items_count }} Item</a>
+								{{ $item->items_count }} Item
 							</td>
 							<td>
 								@if ($item->aktif == 'Y')
