@@ -55,4 +55,9 @@ class KategoriRepository implements KategoriInterface
 
 		return $data;
 	}
+
+	public function destroyKategori($id)
+	{
+		return Kategori::where('id', $id)->delete();
+	}
 }

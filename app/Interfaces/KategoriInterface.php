@@ -13,4 +13,5 @@ interface KategoriInterface
 	public function getKategoriById($id);
 	public function storeNewKategori(KategoriRequest $request);
 	public function updateKategori(KategoriRequest $request, $id);
+	public function destroyKategori($id);
 }

@@ -50,4 +50,9 @@ class BrandRepository implements BrandInterface
 
 		return $data;
 	}
+
+	public function destroyBrand($id)
+	{
+		return Brand::where('id', $id)->delete();
+	}
 }

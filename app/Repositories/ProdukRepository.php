@@ -43,4 +43,9 @@ class ProdukRepository implements ProdukInterface
 
 		return $data;
 	}
+
+	public function destroyProduk($id)
+	{
+		return Produk::where('id', $id)->delete();
+	}
 }

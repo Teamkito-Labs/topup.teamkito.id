@@ -131,4 +131,28 @@ class KategoriProdukController extends Controller
 
 		return to_route('kategori')->with('success', 'Berhasil mengubah kategori tipe');
 	}
+
+	function produk_destroy($id) : RedirectResponse {
+		$this->produkRepository->destroyProduk($id);
+
+		return to_route('kategori')->with('success', 'Berhasil menghapus kategori produk');
+	}
+
+	function kategori_destroy($id) : RedirectResponse {
+		$this->kategoriRepository->destroyKategori($id);
+
+		return to_route('kategori')->with('success', 'Berhasil menghapus kategori');
+	}
+
+	function brand_destroy($id) : RedirectResponse {
+		$this->brandRepository->destroyBrand($id);
+
+		return to_route('kategori')->with('success', 'Berhasil menghapus kategori brand');
+	}
+
+	function tipe_destroy($id) : RedirectResponse {
+		$this->tipeRepository->destroyTipe($id);
+
+		return to_route('kategori')->with('success', 'Berhasil menghapus kategori tipe');
+	}
 }

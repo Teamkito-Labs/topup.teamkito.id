@@ -12,4 +12,5 @@ interface BrandInterface
 	public function getBrandBySlug($slug);
 	public function storeNewBrand(BrandRequest $request);
 	public function updateBrand(BrandRequest $request, $id);
+	public function destroyBrand($id);
 }
