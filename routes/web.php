@@ -48,6 +48,8 @@ Route::prefix('pengaturan')->group(function () {
 		Route::post('/kategori/brand/update/{id}', [KategoriProdukController::class, 'brand_update'])->name('kategori.brand.update');
 		Route::post('/kategori/tipe/update/{id}', [KategoriProdukController::class, 'tipe_update'])->name('kategori.tipe.update');
 	});
+
+	Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
     
     Route::get('/users', function () {  });
     Route::get('/settings', function () {  });
