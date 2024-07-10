@@ -11,15 +11,18 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route("produk.prabayar") }}">Produk</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("produk.prabayar") }}">Games</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mobile Legends</li>
+            <li class="breadcrumb-item"><a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}">Produk</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug]) }}">{{ $kategori->nama_kategori }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $brand->nama_brand }}</li>
         </ol>
     </nav>
     <div class="overflow-posisi-x">
-        <a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Umum</a>
-        <a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Membership</a>
-        <a href="#" class="btn btn-outline-dark btn-rounded btn-sm mb-3 mr-1">Powered by Google Play</a>
+		<a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}" class="btn @if(Request::segment(8) == '') btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">Semua</a>
+		@forelse ($tipe as $item)
+			<a href="{{ route('produk.brand.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'tipeSlug' => $item->slug]) }}" class="btn @if(Request::segment(8) == $item->slug) btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_tipe }}</a>
+		@empty
+			
+		@endforelse
     </div>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
         <div class="card-body">
@@ -38,14 +41,21 @@ up game mobile, Top Up game terbaik
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>FF5</td>
-                            <td>5</td>
+						@forelse ($items as $item)
+						<tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->kode_produk }}</td>
+                            <td>{{ $item->nama_item }}</td>
                             <td>Rp164.605</a></td>
                             <td>Rp64.605</a></td>
                             <td>Rp64.605</a></td>
-                            <td class="text-center"><span class="badge badge-success">Aktif</span></td>
+                            <td class="text-center">
+								@if ($item->aktif == 'Y')
+								<span class="badge badge-success">Aktif</span>									
+								@else
+								<span class="badge badge-danger">Tidak Aktif</span>									
+								@endif
+							</td>
                             <td class="text-right col-1">
                                 <div class="d-flex justify-content-start">
                                     <a href="{{ route("edit") }}" class="btn btn-link btn-sm px-2 text-dark">
@@ -58,6 +68,11 @@ up game mobile, Top Up game terbaik
                                 </div>
                             </td>
                         </tr>
+						@empty
+						<tr>
+							<td colspan="7">Data masih kosong..</td>
+						</tr>
+						@endforelse
                     </tbody>
                 </table>
             </div>
