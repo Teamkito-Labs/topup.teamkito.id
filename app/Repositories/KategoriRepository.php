@@ -19,9 +19,19 @@ class KategoriRepository implements KategoriInterface
 		return Kategori::where('aktif', $status)->orderBy('produk_id', 'ASC')->get();
 	}
 
+	public function getAllKategoriByProdukId($produkId)
+	{
+		return Kategori::where('produk_id', $produkId)->orderBy('produk_id', 'ASC')->get();
+	}
+
 	public function getKategoriBySlug($slug)
 	{
 		return Kategori::where('slug', $slug)->first();
+	}
+
+	public function getKategoriById($id)
+	{
+		return Kategori::where('id', $id)->first();
 	}
 
 	public function storeNewKategori(KategoriRequest $request)

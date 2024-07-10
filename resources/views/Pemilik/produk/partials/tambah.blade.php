@@ -11,9 +11,9 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Produk</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Games</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("item") }}">Mobile Legends</a></li>
+            <li class="breadcrumb-item"><a href="">Produk</a></li>
+            <li class="breadcrumb-item"><a href="">Games</a></li>
+            <li class="breadcrumb-item"><a href="">Mobile Legends</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tambah</li>
         </ol>
     </nav>

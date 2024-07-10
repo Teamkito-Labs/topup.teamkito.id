@@ -8,16 +8,16 @@ layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top
 up game mobile, Top Up game terbaik
 ')
 <x-app-layout>
-    <h3 class="card-title mb-4">Prabayar</h3>
+    <h3 class="card-title mb-4">{{ $produk->nama_produk }}</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Prabayar</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $produk->nama_produk }}</li>
         </ol>
     </nav>
 	<div class="overflow-posisi-x">
-		<a href="{{ route('produk.prabayar') }}" class="btn btn-dark btn-rounded btn-sm mb-3 mr-1">Semua</a>
+		<a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}" class="btn @if(Request::segment(4) == '') btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">Semua</a>
 		@foreach ($kategori as $item)
-			<a href="{{ route('produk.prabayar.show', ['slug' => $item->slug]) }}" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_kategori }}</a>
+			<a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $item->slug]) }}" class="btn @if(Request::segment(4) == $item->slug) btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_kategori }}</a>
 		@endforeach
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pulsa</a>
 		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Data</a>
@@ -51,12 +51,12 @@ up game mobile, Top Up game terbaik
 						@forelse ($brand as $item)
 						<tr>
 							<td>{{ $loop->iteration }}</td>
-							<td><a href="{{ route('produk.item', ['slug' => $item->slug]) }}" class="text-decoration-none">{{ $item->nama_brand }}</a></td>
+							<td><a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $item->kategori->slug, 'brandSlug' => $item->slug]) }}" class="text-decoration-none">{{ $item->nama_brand }}</a></td>
 							<td>{{ $item->kategori->nama_kategori }}</td>
-							<td>
+							<td class="text-center">
 								{{ $item->items_count }} Item
 							</td>
-							<td>
+							<td class="text-center">
 								@if ($item->aktif == 'Y')
 								<span class="badge badge-success">Aktif</span>									
 								@else

@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->id();
+			$table->foreignId('produk_id')->references('id')->on('produk');
+			$table->foreignId('kategori_id')->references('id')->on('kategori');
 			$table->foreignId('brand_id')->references('id')->on('brand');
 			$table->foreignId('tipe_id')->references('id')->on('tipe');
 			$table->string('kode_produk');
 			$table->string('nama_item');
 			$table->string('slug');
+			$table->double('modal', 15, 2);
+			$table->double('profit', 15, 2);
 			$table->enum('aktif', ['Y','N'])->default('Y');
             $table->timestamps();
         });
