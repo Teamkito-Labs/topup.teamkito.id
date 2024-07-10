@@ -152,14 +152,15 @@
                                     aria-hidden="true"></i> Messages</a>
                             <a href="#" class="dropdown-item"><i class="zmdi zmdi-brightness-7 profile-icon"
                                     aria-hidden="true"></i> Settings</a>
-							<form method="POST" action="{{ route('logout') }}">
-								@csrf
-								<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
-									<i class="ti-unlink profile-icon" aria-hidden="true"></i>
-									Sign-out
-								</a>
-							</form>
-                            
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="{{ route('logout') }}" class="dropdown-item"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">
+                                    <i class="ti-unlink profile-icon" aria-hidden="true"></i>
+                                    Sign-out
+                                </a>
+                            </form>
+
                         </div>
                     </li>
                 </ul>
@@ -292,6 +293,17 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-dollar-sign link-icon">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span class="menu-title">Pembayaran</span>
+                        </a>
+                    </li>
                     <li class="nav-item @if(Request::segment(1) == 'pengaturan') active @endif">
                         <a class="nav-link" data-toggle="collapse" href="#pengaturan" aria-expanded="false"
                             aria-controls="advanced">
@@ -308,15 +320,22 @@
                         </a>
                         <div class="collapse @if(Request::segment(1) == 'pengaturan') show @endif" id="pengaturan">
                             <ul class="nav flex-column mt-0">
-                                <li class="nav-item pl-4 @if(Request::segment(2) == 'kategori') active @endif"> 
-									<a class="nav-link" href="{{ route('kategori') }}">
-										Pengaturan Kategori
-									</a>
-								</li>
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Akun</a></li>
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Toko</a></li>
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan Pembayaran</a></li>
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Integrasi API</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan
+                                        Akun</a></li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Pengaturan
+                                        Toko</a></li>
+                                <li class="nav-item pl-4 @if(Request::segment(2) == 'kategori') active @endif">
+                                    <a class="nav-link" href="{{ route('kategori') }}">
+                                        Kategori Produk
+                                    </a>
+                                </li>
+                                <li class="nav-item pl-4 @if(Request::segment(2) == 'kategori') active @endif">
+                                    <a class="nav-link" href="{{ route('kategori') }}">
+                                        Kategori Pembayaran
+                                    </a>
+                                </li>
+                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Integrasi API</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -342,22 +361,28 @@
                                         <p>Dibuat oleh @ <a href="#">Teamkito Labs</a></p>
                                     </div>
                                     <div class="fotter-icon text-center">
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/facebook.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/instagram.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/twitter.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/youtube.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/tik-tok.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord" rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord"
+                                            rel="noopener noreferrer">
                                             <img src="{{ asset('storage/img/flat-icon/discord.png') }}" />
                                         </a>
                                     </div>
@@ -373,15 +398,15 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @vite([
-        'public/xvito-responsive-bootstrap/js/wow.min.js',
-        'public/xvito-responsive-bootstrap/js/popper.min.js',
-        'public/xvito-responsive-bootstrap/js/bootstrap.min.js',
-        'public/xvito-responsive-bootstrap/js/bundle.js',
-        'public/xvito-responsive-bootstrap/js/canvas.js',
-        'public/xvito-responsive-bootstrap/js/collapse.js',
-        'public/xvito-responsive-bootstrap/js/settings.js',
-        'public/xvito-responsive-bootstrap/js/template.js',
-        'public/xvito-responsive-bootstrap/js/default-assets/active.js',
+    'public/xvito-responsive-bootstrap/js/wow.min.js',
+    'public/xvito-responsive-bootstrap/js/popper.min.js',
+    'public/xvito-responsive-bootstrap/js/bootstrap.min.js',
+    'public/xvito-responsive-bootstrap/js/bundle.js',
+    'public/xvito-responsive-bootstrap/js/canvas.js',
+    'public/xvito-responsive-bootstrap/js/collapse.js',
+    'public/xvito-responsive-bootstrap/js/settings.js',
+    'public/xvito-responsive-bootstrap/js/template.js',
+    'public/xvito-responsive-bootstrap/js/default-assets/active.js',
     ])
     @stack('scripts')
 </body>

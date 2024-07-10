@@ -19,20 +19,20 @@ up game mobile, Top Up game terbaik
 		@foreach ($kategori as $item)
 			<a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $item->slug]) }}" class="btn @if(Request::segment(4) == $item->slug) btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_kategori }}</a>
 		@endforeach
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pulsa</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Data</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Voucher</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">E-Money</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">PLN</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Paket SMS & Telpon</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Streaming</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">TV</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Aktivasi Voucher</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Masa Aktif</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Bundling</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Aktiviasi Oerdana</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">Pertagas</a>
-		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-3 mr-1 disabled text-muted">eSIM</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Pulsa</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Data</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Voucher</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">E-Money</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">PLN</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Paket SMS & Telpon</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Streaming</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">TV</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Aktivasi Voucher</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Masa Aktif</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Bundling</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Aktiviasi Oerdana</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">Pertagas</a>
+		<a href="#" class="btn btn-outline-secondary btn-rounded btn-sm mb-2 mr-1 disabled text-muted">eSIM</a>
 	</div>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
 		<div class="card-body">
