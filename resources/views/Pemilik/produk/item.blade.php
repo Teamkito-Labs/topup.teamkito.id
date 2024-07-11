@@ -60,10 +60,10 @@ up game mobile, Top Up game terbaik
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->kode_produk }}</td>
                             <td>{{ $item->nama_item }}</td>
-                            <td>Rp164.605</a></td>
-                            <td>Rp64.605</a></td>
-                            <td>Rp64.605</a></td>
-                            <td>10 Juli 2024</a></td>
+                            <td>{{ formatRupiah($item->modal + $item->profit) }}</a></td>
+                            <td>{{ formatRupiah($item->modal) }}</a></td>
+                            <td>{{ formatRupiah($item->profit) }}</a></td>
+                            <td>{{ tanggal($item->updated_at) }} WIB</a></td>
                             <td class="text-center">
                                 @if ($item->aktif == 'Y')
                                 <span class="badge badge-success">Aktif</span>
@@ -73,7 +73,7 @@ up game mobile, Top Up game terbaik
                             </td>
                             <td class="text-right col-1">
                                 <div class="d-flex justify-content-start">
-                                    <a href="{{ route("edit") }}" class="btn btn-link btn-sm px-2 text-dark">
+                                    <a href="{{ route('produk.item.edit', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'itemSlug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
                                         <i class="zmdi zmdi-edit"></i>
                                     </a>
                                     <span href="" class="btn btn-link btn-sm px-2 text-dark" data-toggle="modal"
@@ -108,8 +108,8 @@ up game mobile, Top Up game terbaik
             </div>
         </div>
     </div>
-    <div class="container fixed-bottom d-flex justify-content-end mb-5">
-        <a href="{{ route("tambah") }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
+    <div class="fixed-bottom d-flex justify-content-end mb-4 mr-5">
+        <a href="{{ route('produk.item.tambah', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
     </div>
     @push('styles')
     <link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">
@@ -135,7 +135,19 @@ up game mobile, Top Up game terbaik
             timer: 1500, // Close automatically after 1500ms (1,5 seconds)
             allowOutsideClick: false,
         });
-
+    </script>
+    @endif
+	@if(session()->has('info'))
+    <script>
+        Swal.fire({
+			title: 'Perhatian!',
+			text: '{{ session()->get("info") }}',
+			type: 'info',
+			showConfirmButton: false, // Hide the confirm button
+			showCancelButton: false, // Hide the confirm button
+			timer: 1500, // Close automatically after 1500ms (1,5 seconds)
+			allowOutsideClick: false,
+		});
     </script>
     @endif
     @endpush

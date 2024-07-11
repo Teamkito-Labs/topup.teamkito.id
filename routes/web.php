@@ -24,10 +24,13 @@ Route::prefix('produk')->group(function () {
 	Route::get('/{produkSlug}/kategori/{kategoriSlug}', [ProdukController::class, 'show'])->name('produk.show');
 	Route::get('/{produkSlug}/kategori/{kategoriSlug}/brand/{brandSlug}', [ProdukController::class, 'index_brand'])->name('produk.brand');
 	Route::get('/{produkSlug}/kategori/{kategoriSlug}/brand/{brandSlug}/tipe/{tipeSlug}', [ProdukController::class, 'show_brand'])->name('produk.brand.show');
+	Route::get('/{produkSlug}/kategori/{kategoriSlug}/brand/{brandSlug}/item/tambah', [ProdukController::class, 'create_item'])->name('produk.item.tambah');
+	Route::get('/{produkSlug}/kategori/{kategoriSlug}/brand/{brandSlug}/item/edit/{itemSlug}', [ProdukController::class, 'edit_item'])->name('produk.item.edit');
+	Route::post('/item/tambah/simpan', [ProdukController::class, 'store_item'])->name('produk.item.store');
+	Route::get('/item/update/{itemId}', [ProdukController::class, 'update_item'])->name('produk.item.update');
 
 	Route::prefix('prabayar')
 	->group(function() {
-		Route::get('/tambah', function () { return view('pemilik/produk/partials/tambah'); })->name('tambah');
 		Route::get('/edit', function () { return view('pemilik/produk/partials/edit'); })->name('edit');
 	});
 });
@@ -69,28 +72,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::get('/test', function() {
-	$username = "wokupoDbBbND";
-	$apiKey = "dev-80ffdc60-26fc-11ef-a1aa-cb929488766d";
+	$result = checkHargaByKode('ml_3');
 	
-	$data = json_encode(array( 
-		'cmd' => 'deposit',
-		'username' => $username, // konstan
-		'sign' => md5("$username$apiKey" . "depo"),
-		'code' => 'ml_cu'
-	));
-	$header = array(
-		'Content-Type: application/json',
-	);
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, 'https://api.digiflazz.com/v1/price-list');
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	$result = curl_exec($ch);
-	
-	dd($result);
+	dd($result['product_name']);
 });
 
 require __DIR__.'/auth.php';

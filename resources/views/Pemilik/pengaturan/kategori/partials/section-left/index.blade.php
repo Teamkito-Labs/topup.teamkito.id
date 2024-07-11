@@ -180,7 +180,7 @@
 						<thead class="bg-light">
 							<tr>
 								<th>#</th>
-								<th><i class="ti-layers align-middle"></i> Ketegori</th>
+								<th><i class="ti-layers align-middle"></i> Kategori</th>
 								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>

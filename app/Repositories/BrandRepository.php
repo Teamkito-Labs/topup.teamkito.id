@@ -31,10 +31,16 @@ class BrandRepository implements BrandInterface
 
 	public function storeNewBrand(BrandRequest $request)
 	{
+		$image = $request->file('logo');
+		$extension = $image->extension();
+		$imageNames = uniqid('img_', microtime()) . '.' . $extension;
+		$image->move(public_path('images/brand-logo'), $imageNames);
+
 		$data = new Brand();
 		$data->kategori_id = $request->kategori_id;
 		$data->nama_brand = $request->nama_brand;
 		$data->slug = Str::slug($request->nama_brand, '-');
+		$data->logo = $imageNames;
 		$data->save();
 
 		return $data;

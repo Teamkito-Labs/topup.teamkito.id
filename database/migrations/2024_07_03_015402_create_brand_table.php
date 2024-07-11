@@ -16,6 +16,7 @@ return new class extends Migration
 			$table->foreignId('kategori_id')->references('id')->on('kategori');
 			$table->string('nama_brand');
 			$table->string('slug');
+			$table->string('logo');
 			$table->enum('aktif', ['Y','N'])->default('Y');
             $table->timestamps();
         });

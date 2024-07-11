@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemRequest;
 use App\Interfaces\BrandInterface;
 use App\Interfaces\ItemInterface;
 use App\Interfaces\KategoriInterface;
 use App\Interfaces\ProdukInterface;
 use App\Interfaces\TipeInterface;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -65,5 +67,42 @@ class ProdukController extends Controller
 		return view('pemilik.produk.item', compact('tipe', 'brand', 'kategori', 'produk', 'data', 'items'));
 	}
 
-	
+	function create_item($produkSlug, $kategoriSlug, $brandSlug) : View {
+		$produk = $this->produkRepository->getProdukBySlug($produkSlug);
+		$brand = $this->brandRepository->getBrandBySlug($brandSlug);
+		$kategori = $this->kategoriRepository->getKategoriById($brand->kategori_id);
+		$tipe = $this->tipeRepository->getAllTipeByKategoriId($brand->kategori_id);
+
+		return view('pemilik.produk.partials.tambah', compact('tipe', 'brand', 'kategori', 'produk'));
+	}
+
+	function store_item(ItemRequest $request) : RedirectResponse {
+		$result = checkHargaByKode($request->kode_produk);
+
+		if ($this->itemRepository->getItemByKodeProduk($request->kode_produk) == NULL) {
+			$this->itemRepository->storeNewItem($request, $result);
+
+			return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil menambah item baru');
+		} else {
+			return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('info', 'Kode produk sudah tersedia');
+		}		
+	}
+
+	function edit_item($produkSlug, $kategoriSlug, $brandSlug, $itemSlug) : View {
+		$produk = $this->produkRepository->getProdukBySlug($produkSlug);
+		$brand = $this->brandRepository->getBrandBySlug($brandSlug);
+		$kategori = $this->kategoriRepository->getKategoriById($brand->kategori_id);
+		$tipe = $this->tipeRepository->getAllTipeByKategoriId($brand->kategori_id);
+		$data = $this->itemRepository->getItemBySlug($itemSlug);
+
+		return view('pemilik.produk.partials.edit', compact('tipe', 'brand', 'kategori', 'produk', 'data'));
+	}
+
+	function update_item(ItemRequest $request, $id) : RedirectResponse {
+		$result = checkHargaByKode($request->kode_produk);
+
+		$this->itemRepository->updateItemById($request, $result, $id);
+
+		return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil mengubah data item');
+	}
 }

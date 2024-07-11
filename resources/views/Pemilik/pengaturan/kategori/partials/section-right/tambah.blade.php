@@ -50,7 +50,7 @@
 <div class="card shadow-lg rounded-lg height-card box-margin mx-0 px-0">
     <div class="card-body">
         <h3 class="card-title mb-4">Tambah Brand</h3>
-        <form action="{{ route('kategori.brand.store') }}" method="post">
+        <form action="{{ route('kategori.brand.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="kategori_id">Kategori</label>
@@ -73,9 +73,8 @@
                 <label for="nama_brand">Logo</label>
                 <div class="input-group mb-3">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01"
-                            aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        <input type="file" class="custom-file-input" id="logo" aria-describedby="logo" name="logo">
+                        <label class="custom-file-label" for="logo">Choose file</label>
                     </div>
                 </div>
             </div>

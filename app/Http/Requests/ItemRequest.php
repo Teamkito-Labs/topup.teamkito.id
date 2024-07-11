@@ -23,8 +23,8 @@ class ItemRequest extends FormRequest
     {
         return [
             'kode_produk' => 'required|string|max:10',
-			'nama_item' => 'required|string|max:255',
-			'modal' => 'required|numeric',
+			'tipe_id' => 'required',
+			'aktif' => 'required|in:Y,N'
         ];
     }
 }
