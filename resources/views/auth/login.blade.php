@@ -2,7 +2,9 @@
 @section('description', 'Masuk untuk melihat riwayat transaksi kamu dengan mudah dan cepat. Pantau semua transaksi di satu tempat dengan akses yang nyaman dan cepat.')
 <x-auth-layout>
     <!-- Logo -->
-    <img class="mb-3" src="{{ asset('storage/img/masuk/masuk-topup-teamkito-id.png') }}" alt="{{ asset('storage/img/masuk/masuk-topup-teamkito-id.png') }}" class="mx-auto mt-8">
+    <div class="text-center">
+        <img class="mb-3" src="{{ asset('storage/img/masuk/masuk-topup-teamkito-id.png') }}" alt="{{ asset('storage/img/masuk/masuk-topup-teamkito-id.png') }}" class="mt-8" style="width: 300px">
+    </div>
     
     <div class="form-group">
         <a class="btn btn-primary btn-rounded btn-block align-middle" href="{{ route('oauth.google') }}">

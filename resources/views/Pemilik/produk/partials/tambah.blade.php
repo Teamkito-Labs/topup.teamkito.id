@@ -11,9 +11,9 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Produk</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("prabayar") }}">Games</a></li>
-            <li class="breadcrumb-item"><a href="{{ route("item") }}">Mobile Legends</a></li>
+            <li class="breadcrumb-item"><a href="">Produk</a></li>
+            <li class="breadcrumb-item"><a href="">Games</a></li>
+            <li class="breadcrumb-item"><a href="">Mobile Legends</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tambah</li>
         </ol>
     </nav>
@@ -35,7 +35,11 @@ up game mobile, Top Up game terbaik
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4" class="col-form-label">Kode</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Masukkan harga modal Anda">
+                    </div>
+                    <div class="form-group col-md-4">
                         <label for="inputState" class="col-form-label">Tipe</label>
                         <select id="inputState" class="form-control">
                             <option>Pilih</option>
@@ -44,7 +48,7 @@ up game mobile, Top Up game terbaik
                             <option>Option 3</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="inputState" class="col-form-label">Status</label>
                         <select id="inputState" class="form-control">
                             <option>Pilih</option>

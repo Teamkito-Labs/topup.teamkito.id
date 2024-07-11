@@ -64,7 +64,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="4">Data masih kosong</td>
+								<td colspan="4">Data belum tersedia...</td>
 							</tr>
 							@endforelse
 						</tbody>
@@ -114,7 +114,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="5">Data masih kosong</td>
+								<td colspan="5">Data belum tersedia...</td>
 							</tr>
 							@endforelse
 						</tbody>
@@ -164,7 +164,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="5">Data masih kosong</td>
+								<td colspan="5">Data belum tersedia...</td>
 							</tr>
 							@endforelse
 						</tbody>
@@ -214,7 +214,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="5">Data masih kosong</td>
+								<td colspan="5">Data belum tersedia...</td>
 							</tr>
 							@endforelse
 						</tbody>

@@ -329,8 +329,8 @@
                                         Kategori Produk
                                     </a>
                                 </li>
-                                <li class="nav-item pl-4 @if(Request::segment(2) == 'kategori') active @endif">
-                                    <a class="nav-link" href="{{ route('kategori') }}">
+                                <li class="nav-item pl-4 @if(Request::segment(2) == 'pembayaran') active @endif">
+                                    <a class="nav-link" href="{{ route('pembayaran') }}">
                                         Kategori Pembayaran
                                     </a>
                                 </li>
