@@ -50,4 +50,9 @@ class TipeRepository implements TipeInterface
 
 		return $data;
 	}
+
+	public function destroyTipe($id)
+	{
+		return Tipe::where('id', $id)->delete();
+	}
 }

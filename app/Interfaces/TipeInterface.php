@@ -12,4 +12,5 @@ interface TipeInterface
 	public function getTipeBySlug($slug);
 	public function storeNewTipe(TipeRequest $request);
 	public function updateTipe(TipeRequest $request, $id);
+	public function destroyTipe($id);
 }
