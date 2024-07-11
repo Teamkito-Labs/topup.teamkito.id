@@ -21,7 +21,7 @@ return new class extends Migration
 			$table->string('nama_item');
 			$table->string('slug');
 			$table->double('modal', 15, 2);
-			$table->double('profit', 15, 2);
+			$table->double('profit', 15, 2)->nullable();
 			$table->enum('aktif', ['Y','N'])->default('Y');
             $table->timestamps();
         });

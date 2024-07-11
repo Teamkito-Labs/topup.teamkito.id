@@ -64,4 +64,6 @@ class ProdukController extends Controller
 
 		return view('pemilik.produk.item', compact('tipe', 'brand', 'kategori', 'produk', 'data', 'items'));
 	}
+
+	
 }
