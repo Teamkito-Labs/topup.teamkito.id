@@ -7,10 +7,10 @@ diamond Mobile Legends, Top Up UC PUBG murah, Top Up Genesis Crystal Genshin Imp
 layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top Up game populer, Top Up game aman, top
 up game mobile, Top Up game terbaik')
 <x-app-layout>
-    <h3 class="card-title mb-4">Kategori Produk</h3>
+    <h3 class="card-title mb-4">Kategori Pembayaran</h3>
     <div class="row">
 		<div class="col-12 col-sm-12 col-md-7 col-lg-7">
-			@include('pemilik.pengaturan.kategori.partials.section-left.index')
+			@include('pemilik.pengaturan.pembayaran.partials.section-left.index')
 		</div>
     </div>
     @push('styles')

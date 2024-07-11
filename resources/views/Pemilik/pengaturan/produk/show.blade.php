@@ -5,12 +5,22 @@ Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Proses instan!')
 PUBG Mobile murah, Top Up Genshin Impact cepat, Top Up game online, Top Up game Indonesia, beli diamond Free Fire, beli
 diamond Mobile Legends, Top Up UC PUBG murah, Top Up Genesis Crystal Genshin Impact, situs Top Up game terpercaya,
 layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top Up game populer, Top Up game aman, top
-up game mobile, Top Up game terbaik')
+up game mobile, Top Up game terbaik
+')
 <x-app-layout>
     <h3 class="card-title mb-4">Kategori Produk</h3>
     <div class="row">
 		<div class="col-12 col-sm-12 col-md-7 col-lg-7">
-			@include('pemilik.pengaturan.kategori.partials.section-left.index')
+			@include('pemilik.pengaturan.produk.partials.section-left.show')
+		</div>
+		<div class="col-12 col-sm-12 col-md-5 col-lg-5">
+			@if (Request::segment(3) == 'tambah')
+				@include('pemilik.pengaturan.produk.partials.section-right.tambah')
+			@elseif (Request::segment(3) == 'edit')
+				@include('pemilik.pengaturan.produk.partials.section-right.edit')
+			@elseif (Request::segment(3) == 'hapus')
+				@include('pemilik.pengaturan.produk.partials.section-right.hapus')
+			@endif
 		</div>
     </div>
     @push('styles')

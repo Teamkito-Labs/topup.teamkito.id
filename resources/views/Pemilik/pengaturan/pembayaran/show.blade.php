@@ -8,7 +8,7 @@ layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top
 up game mobile, Top Up game terbaik
 ')
 <x-app-layout>
-    <h3 class="card-title mb-4">Pengaturan Kategori</h3>
+    <h3 class="card-title mb-4">Pengaturan Pembayaran</h3>
     <div class="row">
 		<div class="col-12 col-sm-12 col-md-7 col-lg-7">
 			@include('pemilik.pengaturan.kategori.partials.section-left.show')

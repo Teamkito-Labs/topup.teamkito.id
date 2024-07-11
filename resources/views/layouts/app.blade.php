@@ -294,7 +294,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('pembayaran') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-dollar-sign link-icon">
@@ -330,7 +330,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item pl-4 @if(Request::segment(2) == 'pembayaran') active @endif">
-                                    <a class="nav-link" href="{{ route('pembayaran') }}">
+                                    <a class="nav-link" href="{{ route('a') }}">
                                         Kategori Pembayaran
                                     </a>
                                 </li>

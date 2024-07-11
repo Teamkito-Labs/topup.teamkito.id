@@ -13,7 +13,7 @@ Route::get('/', function () { return view('welcome'); })->name('beranda');
 Route::get('/free-fire', function () {
 	return view('guest.proses-topup-diamond'); 
 })->name('topup');
-Route::get('/pembayaran', function () {
+Route::get('/bayar', function () {
 	return view('guest.proses-pembayaran-diamond'); 
 })->name('pembayaran');
 
@@ -34,6 +34,9 @@ Route::prefix('produk')->group(function () {
 		Route::get('/edit', function () { return view('pemilik/produk/partials/edit'); })->name('edit');
 	});
 });
+
+Route::get('/pembayaran', function () { return view('pemilik.pembayaran.metode'); })->name('pembayaran');
+Route::get('/pembayaran/tambah', function () { return view('pemilik.pembayaran.partials.tambah'); })->name('pembayaran.tambah');
 
 Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')
@@ -58,8 +61,8 @@ Route::prefix('pengaturan')->group(function () {
 		Route::post('/kategori/brand/destroy/{id}', [KategoriProdukController::class, 'brand_destroy'])->name('kategori.brand.destroy');
 		Route::post('/kategori/tipe/destroy/{id}', [KategoriProdukController::class, 'tipe_destroy'])->name('kategori.tipe.destroy');
 	});
-
-		Route::get('/pembayaran', function () { return view('pengaturan.pembayaran.index'); })->name('pembayaran');
+		Route::get('/pengaturan/pembayaran', function () { return view('pemilik.pengaturan.pembayaran.index'); })->name('a');
+		Route::get('/pengaturan/pembayaran/tambah', function () { return view('pemilik.pengaturan.pembayaran.partials.section-left.index'); })->name('pembayarans.tambah');
 	});
 
 Route::get('oauth/google', [OauthController::class, 'redirectToProvider'])->name('oauth.google');  

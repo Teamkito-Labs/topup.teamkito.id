@@ -11,9 +11,9 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}">{{ $produk->nama_produk }}</a></li>
+            {{-- <li class="breadcrumb-item"><a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}">{{ $produk->nama_produk }}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug]) }}">{{ $kategori->nama_kategori }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}">{{ $brand->nama_brand }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}">{{ $brand->nama_brand }}</a></li> --}}
             <li class="breadcrumb-item active" aria-current="page">Tambah</li>
         </ol>
     </nav>
@@ -23,30 +23,40 @@ up game mobile, Top Up game terbaik
 				@csrf
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="inputEmail4" class="col-form-label">Produk</label>
-                        <input type="text" class="form-control" id="inputEmail4" value="{{ $produk->nama_produk }}" disabled>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputPassword4" class="col-form-label">Kategori</label>
-                        <input type="text" class="form-control" id="inputPassword4" value="{{ $kategori->nama_kategori }}" disabled>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputPassword4" class="col-form-label">Brand</label>
-                        <input type="text" class="form-control" id="inputPassword4" value="{{ $brand->nama_brand }}" disabled>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="kode_produk" class="col-form-label">Kode Item</label>
+                        <label for="kode_produk" class="col-form-label">Brand</label>
                         <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk') }}" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="tipe_id" class="col-form-label">Tipe</label>
+                        <label for="tipe_id" class="col-form-label">Penyedia</label>
                         <select id="tipe_id" class="form-control" name="tipe_id" required>
                             <option value="" hidden>-- Pilih tipe --</option>
-                            @forelse ($tipe as $item)
+                            {{-- @forelse ($tipe as $item)
 								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
 							@empty
 								
-							@endforelse
+							@endforelse --}}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tipe_id" class="col-form-label">Kategori</label>
+                        <select id="tipe_id" class="form-control" name="tipe_id" required>
+                            <option value="" hidden>-- Pilih tipe --</option>
+                            {{-- @forelse ($tipe as $item)
+								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
+							@empty
+								
+							@endforelse --}}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tipe_id" class="col-form-label">Kode Unik</label>
+                        <select id="tipe_id" class="form-control" name="tipe_id" required>
+                            <option value="" hidden>-- Pilih tipe --</option>
+                            {{-- @forelse ($tipe as $item)
+								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
+							@empty
+								
+							@endforelse --}}
                         </select>
                     </div>
                     <div class="form-group col-md-4">
@@ -57,13 +67,22 @@ up game mobile, Top Up game terbaik
 							<option value="N" @if(old('aktif') == 'N') selected @endif>Tidak Aktif</option>
                         </select>
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="nama_brand" class="col-form-label">Logo</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="logo" aria-describedby="logo" name="logo">
+                                <label class="custom-file-label" for="logo">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-				<input type="hidden" name="produk_id" value="{{ $produk->id }}">
+				{{-- <input type="hidden" name="produk_id" value="{{ $produk->id }}">
 				<input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
 				<input type="hidden" name="brand_id" value="{{ $brand->id }}">
 				<input type="hidden" name="produk_slug" value="{{ $produk->slug }}">
 				<input type="hidden" name="kategori_slug" value="{{ $kategori->slug }}">
-				<input type="hidden" name="brand_slug" value="{{ $brand->slug }}">
+				<input type="hidden" name="brand_slug" value="{{ $brand->slug }}"> --}}
                 <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Simpan</button>
             </form>
 		</div>

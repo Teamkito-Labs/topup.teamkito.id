@@ -34,7 +34,7 @@ class KategoriProdukController extends Controller
 		$brand = $this->brandRepository->getAllBrand();
 		$tipe = $this->tipeRepository->getAllTipe();
 
-		return view('pemilik.pengaturan.kategori.index', compact('produk', 'kategori', 'brand', 'tipe')); 
+		return view('pemilik.pengaturan.produk.index', compact('produk', 'kategori', 'brand', 'tipe')); 
 	}
 
 	function create() : View {
@@ -43,7 +43,7 @@ class KategoriProdukController extends Controller
 		$brand = $this->brandRepository->getAllBrand();
 		$tipe = $this->tipeRepository->getAllTipe();
 
-		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe')); 
+		return view('pemilik.pengaturan.produk.show', compact('produk', 'kategori', 'brand', 'tipe')); 
 	}
 
 	function edit($jenis, $slug) : View {
@@ -62,7 +62,7 @@ class KategoriProdukController extends Controller
 			$data = $this->tipeRepository->getTipeBySlug($slug);
 		}
 
-		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
+		return view('pemilik.pengaturan.produk.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
 	}
 
 	function delete($jenis, $slug) : View {
@@ -81,7 +81,7 @@ class KategoriProdukController extends Controller
 			$data = $this->tipeRepository->getTipeBySlug($slug);
 		}
 
-		return view('pemilik.pengaturan.kategori.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
+		return view('pemilik.pengaturan.produk.show', compact('produk', 'kategori', 'brand', 'tipe', 'data')); 
 	}
 
     function produk_store(ProdukRequest $request) : RedirectResponse {
