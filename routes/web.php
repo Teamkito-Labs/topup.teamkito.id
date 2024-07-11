@@ -56,11 +56,8 @@ Route::prefix('pengaturan')->group(function () {
 		Route::post('/kategori/tipe/destroy/{id}', [KategoriProdukController::class, 'tipe_destroy'])->name('kategori.tipe.destroy');
 	});
 
-	Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
-    
-    Route::get('/users', function () {  });
-    Route::get('/settings', function () {  });
-});
+		Route::get('/pembayaran', function () { return view('pengaturan.pembayaran.index'); })->name('pembayaran');
+	});
 
 Route::get('oauth/google', [OauthController::class, 'redirectToProvider'])->name('oauth.google');  
 Route::get('oauth/google/callback', [OauthController::class, 'handleProviderCallback'])->name('oauth.google.callback');
