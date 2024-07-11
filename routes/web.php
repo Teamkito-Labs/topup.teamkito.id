@@ -58,10 +58,6 @@ Route::prefix('pengaturan')->group(function () {
 
 		Route::get('/pembayaran', function () { return view('pengaturan.pembayaran.index'); })->name('pembayaran');
 	});
-    
-    Route::get('/users', function () {  });
-    Route::get('/settings', function () {  });
-});
 
 Route::get('oauth/google', [OauthController::class, 'redirectToProvider'])->name('oauth.google');  
 Route::get('oauth/google/callback', [OauthController::class, 'handleProviderCallback'])->name('oauth.google.callback');
