@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriPembayaranController;
 use App\Http\Controllers\KategoriProdukController;
+use App\Http\Controllers\MetodePembayaranController;
 use App\Http\Controllers\OauthController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
@@ -32,7 +33,18 @@ Route::prefix('produk')->group(function () {
 	Route::delete('/item/delete/{itemId}', [ProdukController::class, 'delete_item'])->name('produk.item.delete');
 });
 
-Route::get('/pembayaran', function () { return view('pemilik.pembayaran.metode'); })->name('pembayaran');
+Route::prefix('metode-pembayaran')
+	->group(function () {
+		Route::get('/', [MetodePembayaranController::class, 'index'])->name('metode-pembayaran');
+		Route::get('/kategori/{kategoriPembayaranSlug}', [MetodePembayaranController::class, 'show'])->name('metode-pembayaran.show');
+		Route::get('/tambah', [MetodePembayaranController::class, 'create'])->name('metode-pembayaran.create');
+		Route::get('/edit/{slug}', [MetodePembayaranController::class, 'edit'])->name('metode-pembayaran.edit');
+		Route::post('/store', [MetodePembayaranController::class, 'store'])->name('metode-pembayaran.store');
+		Route::patch('/update/{id}', [MetodePembayaranController::class, 'update'])->name('metode-pembayaran.update');
+		Route::delete('/destroy/{id}', [MetodePembayaranController::class, 'destroy'])->name('metode-pembayaran.destroy');
+	});
+
+
 Route::get('/pembayaran/tambah', function () { return view('pemilik.pembayaran.partials.tambah'); })->name('pembayaran.tambah');
 
 Route::prefix('pengaturan')->group(function () {

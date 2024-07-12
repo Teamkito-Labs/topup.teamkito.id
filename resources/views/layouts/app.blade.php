@@ -298,15 +298,15 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item @if(Request::segment(1) == 'pembayaran') active @endif">
-                        <a class="nav-link" href="{{ route('pembayaran') }}">
+                    <li class="nav-item @if(Request::segment(1) == 'metode-pembayaran') active @endif">
+                        <a class="nav-link" href="{{ route('metode-pembayaran') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-dollar-sign link-icon">
                                 <line x1="12" y1="1" x2="12" y2="23"></line>
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
-                            <span class="menu-title">Pembayaran</span>
+                            <span class="menu-title">Metode Pembayaran</span>
                         </a>
                     </li>
                     <li class="nav-item @if(Request::segment(1) == 'pengaturan') active @endif">
@@ -363,31 +363,25 @@
                                     class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
                                     <!-- Copywrite Text -->
                                     <div class="copywrite-text">
-                                        <p>Dibuat oleh @ <a href="#">Teamkito Labs</a></p>
+                                        <p>Dibuat oleh @ <a href="https://www.instagram.com/topup.teamkito.id/" target="_blank">Teamkito Labs</a></p>
                                     </div>
                                     <div class="fotter-icon text-center">
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook"
-                                            rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/facebook.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram"
-                                            rel="noopener noreferrer">
+                                        <a href="https://www.instagram.com/topup.teamkito.id/" class="action-item mr-2" data-toggle="tooltip" title="Instagram" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/instagram.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter"
-                                            rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/twitter.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube"
-                                            rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/youtube.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok"
-                                            rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/tik-tok.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord"
-                                            rel="noopener noreferrer">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord" rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/discord.png') }}" />
                                         </a>
                                     </div>

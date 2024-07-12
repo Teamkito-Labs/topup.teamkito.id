@@ -82,10 +82,10 @@ up game mobile, Top Up game terbaik
                                     <a href="{{ route('produk.item.edit', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'itemSlug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
                                         <i class="zmdi zmdi-edit"></i>
                                     </a>
-                                    <span href="" class="btn btn-link btn-sm px-2 text-dark" data-toggle="modal"
+                                    <a class="btn btn-link btn-sm px-2 text-dark" data-toggle="modal"
                                         data-target="#modalHapusItem{{ $item->id }}">
                                         <i class="zmdi zmdi-delete"></i>
-                                    </span>
+                                    </a>
 									<div class="modal fade" id="modalHapusItem{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered">
 											<div class="modal-content">
