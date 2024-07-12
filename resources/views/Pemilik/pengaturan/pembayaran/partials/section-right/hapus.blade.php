@@ -1,7 +1,7 @@
-@if (Request::segment(4) == 'produk')
+@if (Request::segment(4) == 'penyedia')
 <div class="card shadow-lg rounded-lg height-card box-margin mx-0 px-0 text-center">
     <div class="card-body">
-        <form action="{{ route('kategori.produk.store') }}" method="post">
+        <form action="{{ route('pembayaran.penyedia.destroy', ['id' => $data->id]) }}" method="post">
             @csrf
             <p class="mb-0">Apakah Anda yakin ingin menghapus penyedia<span class="font-weight-bold"> {{ $data->nama_produk }}</span>?</p>
             <div class="d-flex justify-content-center mt-1">
@@ -14,7 +14,7 @@
 @elseif (Request::segment(4) == 'kategori')
 <div class="card shadow-lg rounded-lg height-card box-margin mx-0 px-0 text-center">
     <div class="card-body">
-        <form action="{{ route('kategori.produk.store') }}" method="post">
+        <form action="{{ route('pembayaran.kategori.destroy', ['id' => $data->id]) }}" method="post">
             @csrf
             <p class="mb-0">Apakah Anda yakin ingin menghapus kategori<span class="font-weight-bold"> {{ $data->nama_kategori }}</span>?</p>
             <div class="d-flex justify-content-center mt-1">
@@ -24,3 +24,4 @@
         </form>
     </div>
 </div>
+@endif

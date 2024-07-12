@@ -14,7 +14,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane @if(Request::segment(4) == 'penyedia') show active @endif" id="menu-penyedia">
-				<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'penyedia') }}">
+				<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('pembayaran.create', ['jenis' => 'penyedia']) }}">
 					<i class="zmdi zmdi-plus align-middle"></i> Penyedia
 				</a>
 				<div class="table-responsive">
@@ -29,7 +29,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@forelse ($penyedia as $item)
+							@forelse ($penyediaPembayaran as $item)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->nama_penyedia }}</td>
@@ -45,25 +45,25 @@
 									@if (Request::segment(3) == 'edit')
 										@if (Request::segment(5) != $item->slug)
 										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-edit"></i>
 											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-delete"></i>
 											</a>
 										</div>
 										@else
 										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
 											<span class="sr-only">Loading...</span>
-										  </div> Data sedang diedit...</span>
+										</div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
 										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-edit"></i>
 											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-delete"></i>
 											</a>
 										</div>
@@ -73,14 +73,14 @@
 										</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
-										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-												<i class="zmdi zmdi-edit"></i>
-											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-												<i class="zmdi zmdi-delete"></i>
-											</a>
-										</div>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('pembayaran.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('pembayaran.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 									@endif
 								</td>
 							</tr>
@@ -94,7 +94,7 @@
 				</div>
 			</div>
 			<div class="tab-pane @if(Request::segment(4) == 'kategori') show active @endif" id="menu-kategori">
-				<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('kategori.create', 'kategori') }}">
+				<a class="btn btn-primary btn-rounded btn-sm align-right mb-3 text-white" href="{{ route('pembayaran.create', ['jenis' => 'kategori']) }}">
 					<i class="zmdi zmdi-plus align-middle"></i> Kategori
 				</a>
 				<div class="table-responsive">
@@ -109,7 +109,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@forelse ($kategori as $item)
+							@forelse ($kategoriPembayaran as $item)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->nama_kategori }}</td>
@@ -125,25 +125,25 @@
 									@if (Request::segment(3) == 'edit')
 										@if (Request::segment(5) != $item->slug)
 										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-edit"></i>
 											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-delete"></i>
 											</a>
 										</div>
 										@else
 										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
 											<span class="sr-only">Loading...</span>
-										  </div> Data sedang diedit...</span>
+										</div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)
 										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-edit"></i>
 											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<a href="{{ route('pembayaran.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 												<i class="zmdi zmdi-delete"></i>
 											</a>
 										</div>
@@ -153,14 +153,14 @@
 										</div> Data sedang dihapus...</span>
 										@endif
 									@elseif (Request::segment(3) == 'tambah')
-										<div class="d-flex justify-content-start">
-											<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-												<i class="zmdi zmdi-edit"></i>
-											</a>
-											<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
-												<i class="zmdi zmdi-delete"></i>
-											</a>
-										</div>
+									<div class="d-flex justify-content-start">
+										<a href="{{ route('pembayaran.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-edit"></i>
+										</a>
+										<a href="{{ route('pembayaran.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+											<i class="zmdi zmdi-delete"></i>
+										</a>
+									</div>
 									@endif
 								</td>
 							</tr>

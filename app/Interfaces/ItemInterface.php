@@ -11,8 +11,10 @@ interface ItemInterface
 	public function getAllItemByBrandId($brandId);
 	public function getAllItemByBrandIdAndTipeId($brandId, $tipeId);
 	public function storeNewItem(ItemRequest $request, $result);
+	public function getItemById($id);
 	public function getItemBySlug($slug);
 	public function getItemByKodeProduk($kodeProduk);
 	public function updateItemById(ItemRequest $request, $result, $id);
 	public function updateMoreItem(array $kodeProduk);
+	public function deleteItemById($id);
 }

@@ -214,7 +214,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item @if(Request::segment(1) == 'produk') active @endif">
                         <a class="nav-link" data-toggle="collapse" href="#produk" aria-expanded="false"
                             aria-controls="advanced">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -230,14 +230,19 @@
                             <span class="menu-title">Produk</span>
                             <i class="ti-angle-right"></i>
                         </a>
-                        <div class="collapse" id="produk">
+                        <div class="collapse @if(Request::segment(1) == 'produk') show @endif" id="produk">
                             <ul class="nav flex-column mt-0">
-                                <li class="nav-item pl-4"> <a class="nav-link" href="{{ route('produk', ['produkSlug' => 'prabayar']) }}">Prabayar</a>
+                                <li class="nav-item pl-4 @if(Request::segment(2) == 'prabayar') active @endif">
+									<a class="nav-link" href="{{ route('produk', ['produkSlug' => 'prabayar']) }}">Prabayar</a>
                                 </li>
-                                <li class="nav-item pl-4"> <a class="nav-link disabled text-muted" href="customer.html"
-                                        tabindex="-1" role="button" aria-disabled="true">Pascabayar <span
-                                            class="badge badge-pill badge-light"><i class="fa fa-clock-o"
-                                                aria-hidden="true"></i></span></a></li>
+                                <li class="nav-item pl-4"> 
+									<a class="nav-link disabled text-muted" href="customer.html" tabindex="-1" role="button" aria-disabled="true">
+										Pascabayar 
+										<span class="badge badge-pill badge-light">
+											<i class="fa fa-clock-o"aria-hidden="true"></i>
+										</span>
+									</a>
+								</li>
                             </ul>
                         </div>
                     </li>
@@ -293,7 +298,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item @if(Request::segment(1) == 'pembayaran') active @endif">
                         <a class="nav-link" href="{{ route('pembayaran') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -330,7 +335,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item pl-4 @if(Request::segment(2) == 'pembayaran') active @endif">
-                                    <a class="nav-link" href="{{ route('a') }}">
+                                    <a class="nav-link" href="{{ route('pembayaran') }}">
                                         Kategori Pembayaran
                                     </a>
                                 </li>

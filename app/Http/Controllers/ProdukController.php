@@ -79,13 +79,17 @@ class ProdukController extends Controller
 	function store_item(ItemRequest $request) : RedirectResponse {
 		$result = checkHargaByKode($request->kode_produk);
 
-		if ($this->itemRepository->getItemByKodeProduk($request->kode_produk) == NULL) {
-			$this->itemRepository->storeNewItem($request, $result);
-
-			return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil menambah item baru');
+		if ($result != '') {
+			if ($this->itemRepository->getItemByKodeProduk($request->kode_produk) == NULL) {
+				$this->itemRepository->storeNewItem($request, $result);
+	
+				return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil menambah item baru');
+			} else {
+				return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('info', 'Kode produk sudah tersedia');
+			}	
 		} else {
-			return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('info', 'Kode produk sudah tersedia');
-		}		
+			return to_route('produk.item.tambah', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('info', 'Kode produk tidak tersedia');
+		}
 	}
 
 	function edit_item($produkSlug, $kategoriSlug, $brandSlug, $itemSlug) : View {
@@ -104,5 +108,11 @@ class ProdukController extends Controller
 		$this->itemRepository->updateItemById($request, $result, $id);
 
 		return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil mengubah data item');
+	}
+
+	function delete_item(Request $request, $id) : RedirectResponse {
+		$this->itemRepository->deleteItemById($id);
+
+		return to_route('produk.brand', ['produkSlug' => $request->produk_slug, 'kategoriSlug' => $request->kategori_slug, 'brandSlug' => $request->brand_slug])->with('success', 'Berhasil menghapus data item');
 	}
 }

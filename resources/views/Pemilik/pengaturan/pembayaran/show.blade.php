@@ -11,15 +11,15 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Pengaturan Pembayaran</h3>
     <div class="row">
 		<div class="col-12 col-sm-12 col-md-7 col-lg-7">
-			@include('pemilik.pengaturan.kategori.partials.section-left.show')
+			@include('pemilik.pengaturan.pembayaran.partials.section-left.show')
 		</div>
 		<div class="col-12 col-sm-12 col-md-5 col-lg-5">
 			@if (Request::segment(3) == 'tambah')
-				@include('pemilik.pengaturan.kategori.partials.section-right.tambah')
+				@include('pemilik.pengaturan.pembayaran.partials.section-right.tambah')
 			@elseif (Request::segment(3) == 'edit')
-				@include('pemilik.pengaturan.kategori.partials.section-right.edit')
+				@include('pemilik.pengaturan.pembayaran.partials.section-right.edit')
 			@elseif (Request::segment(3) == 'hapus')
-				@include('pemilik.pengaturan.kategori.partials.section-right.hapus')
+				@include('pemilik.pengaturan.pembayaran.partials.section-right.hapus')
 			@endif
 		</div>
     </div>

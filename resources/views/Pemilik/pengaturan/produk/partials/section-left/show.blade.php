@@ -65,7 +65,7 @@
 										@else
 										<span class="text-info"><div class="spinner-border spinner-border-sm align-middle" role="status">
 											<span class="sr-only">Loading...</span>
-										  </div> Data sedang diedit...</span>
+										</div> Data sedang diedit...</span>
 										@endif
 									@elseif (Request::segment(3) == 'hapus')
 										@if (Request::segment(5) != $item->slug)

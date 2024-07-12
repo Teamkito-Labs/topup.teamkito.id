@@ -14,7 +14,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane show active" id="menu-penyedia">
-				<a href="{{ route('pembayarans.tambah') }}" class="btn btn-primary btn-rounded btn-sm align-right mb-3">
+				<a href="{{ route('pembayaran.create', ['jenis' => 'penyedia']) }}" class="btn btn-primary btn-rounded btn-sm align-right mb-3">
 					<i class="zmdi zmdi-plus align-middle"></i> Penyedia
 				</a>
 				<div class="table-responsive">
@@ -29,7 +29,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							{{-- @forelse ($penyedia as $item)
+							@forelse ($penyediaPembayaran as $item)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->nama_penyedia }}</td>
@@ -43,10 +43,10 @@
 								</td>
 								<td class="text-right">
 									<div class="d-flex justify-content-start">
-										<a href="{{ route('kategori.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+										<a href="{{ route('pembayaran.edit', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 											<i class="zmdi zmdi-edit"></i>
 										</a>
-										<a href="{{ route('kategori.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+										<a href="{{ route('pembayaran.delete', ['jenis' => 'penyedia', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 									</div>
@@ -56,13 +56,13 @@
 							<tr>
 								<td colspan="4">Data belum tersedia...</td>
 							</tr>
-							@endforelse --}}
+							@endforelse
 						</tbody>
 					</table>
 				</div>
 			</div>
 			<div class="tab-pane" id="menu-kategori">
-				<a href="{{ route('kategori.create', 'kategori') }}" class="btn btn-primary btn-rounded btn-sm align-right mb-3">
+				<a href="{{ route('pembayaran.create', ['jenis' => 'kategori']) }}" class="btn btn-primary btn-rounded btn-sm align-right mb-3">
 					<i class="zmdi zmdi-plus align-middle"></i> Kategori
 				</a>
 				<div class="table-responsive">
@@ -77,10 +77,9 @@
 							</tr>
 						</thead>
 						<tbody>
-							{{-- @forelse ($kategori as $item)
+							@forelse ($kategoriPembayaran as $item)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
-								<td>{{ $item->penyedia->nama_penyedia }}</td>
 								<td>{{ $item->nama_kategori }}</td>
 								<td class="hidden-sm">{{ $item->slug }}</td>
 								<td>
@@ -92,10 +91,10 @@
 								</td>
 								<td class="text-right">
 									<div class="d-flex justify-content-start">
-										<a href="{{ route('kategori.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+										<a href="{{ route('pembayaran.edit', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 											<i class="zmdi zmdi-edit"></i>
 										</a>
-										<a href="{{ route('kategori.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
+										<a href="{{ route('pembayaran.delete', ['jenis' => 'kategori', 'slug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
 											<i class="zmdi zmdi-delete"></i>
 										</a>
 									</div>
@@ -105,7 +104,7 @@
 							<tr>
 								<td colspan="5">Data belum tersedia...</td>
 							</tr>
-							@endforelse --}}
+							@endforelse
 						</tbody>
 					</table>
 				</div>
