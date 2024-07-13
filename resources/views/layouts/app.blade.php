@@ -209,7 +209,7 @@
                         </a>
                         <div class="collapse" id="transaksi">
                             <ul class="nav flex-column mt-0">
-                                <li class="nav-item pl-4"> <a class="nav-link" href="clint-list.html">Riwayat
+                                <li class="nav-item pl-4"> <a class="nav-link" href="{{ route('transaksi') }}">Riwayat
                                         Pembelian</a></li>
                             </ul>
                         </div>

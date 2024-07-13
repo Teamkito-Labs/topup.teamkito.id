@@ -37,6 +37,7 @@ Route::prefix('produk')->group(function () {
 
 Route::get('/pembayaran', function () { return view('pemilik.pembayaran.metode'); })->name('pembayaran');
 Route::get('/pembayaran/tambah', function () { return view('pemilik.pembayaran.partials.tambah'); })->name('pembayaran.tambah');
+Route::get('/transaksi', function () { return view('pemilik.transaksi.riwayat'); })->name('transaksi');
 
 Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')
