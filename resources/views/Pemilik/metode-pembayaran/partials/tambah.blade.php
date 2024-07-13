@@ -1,4 +1,4 @@
-@section('title', 'Prabayar')
+@section('title', 'Metode Pembayaran')
 @section('description', 'Top Up game murah dan cepat di topup.teamkito.id! Dukung permainan Anda dengan Top Up untuk
 Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Proses instan!')
 @section('keywords', 'Top Up game murah, Top Up game cepat, Top Up Free Fire murah, Top Up Mobile Legends cepat, Top Up
@@ -8,56 +8,47 @@ layanan Top Up game instan, Top Up game resmi, harga Top Up game terjangkau, Top
 up game mobile, Top Up game terbaik
 ')
 <x-app-layout>
-    <h3 class="card-title mb-4">Prabayar</h3>
+    <h3 class="card-title mb-4">Metode Pembayaran</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            {{-- <li class="breadcrumb-item"><a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}">{{ $produk->nama_produk }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug]) }}">{{ $kategori->nama_kategori }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}">{{ $brand->nama_brand }}</a></li> --}}
+            <li class="breadcrumb-item"><a href="{{ route('metode-pembayaran') }}">Metode Pembayaran</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tambah</li>
         </ol>
     </nav>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
 		<div class="card-body">
-            <form action="{{ route('produk.item.store') }}" method="POST">
+            <form action="{{ route('metode-pembayaran.store') }}" method="POST" enctype="multipart/form-data">
 				@csrf
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="kode_produk" class="col-form-label">Brand</label>
-                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk') }}" required>
+                        <label for="nama_metode" class="col-form-label">Metode Pembayaran</label>
+                        <input type="text" class="form-control" id="nama_metode" placeholder="Metode Pembayaran" name="nama_metode" value="{{ old('nama_metode') }}" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="tipe_id" class="col-form-label">Penyedia</label>
-                        <select id="tipe_id" class="form-control" name="tipe_id" required>
+                        <label for="penyedia_pembayaran_id" class="col-form-label">Penyedia</label>
+                        <select id="penyedia_pembayaran_id" class="form-control" name="penyedia_pembayaran_id" required>
                             <option value="" hidden>-- Pilih tipe --</option>
-                            {{-- @forelse ($tipe as $item)
-								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
+                            @forelse ($penyediaPembayaran as $item)
+								<option value="{{ $item->id }}" @if(old('penyedia_pembayaran_id') == $item->id) selected @endif>{{ $item->nama_penyedia }}</option>
 							@empty
 								
-							@endforelse --}}
+							@endforelse
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="tipe_id" class="col-form-label">Kategori</label>
-                        <select id="tipe_id" class="form-control" name="tipe_id" required>
+                        <label for="kategori_pembayaran_id" class="col-form-label">Kategori</label>
+                        <select id="kategori_pembayaran_id" class="form-control" name="kategori_pembayaran_id" required>
                             <option value="" hidden>-- Pilih tipe --</option>
-                            {{-- @forelse ($tipe as $item)
-								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
+                            @forelse ($kategoriPembayaran as $item)
+								<option value="{{ $item->id }}" @if(old('kategori_pembayaran_id') == $item->id) selected @endif>{{ $item->nama_kategori }}</option>
 							@empty
 								
-							@endforelse --}}
+							@endforelse
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="tipe_id" class="col-form-label">Kode Unik</label>
-                        <select id="tipe_id" class="form-control" name="tipe_id" required>
-                            <option value="" hidden>-- Pilih tipe --</option>
-                            {{-- @forelse ($tipe as $item)
-								<option value="{{ $item->id }}" @if(old('tipe_id') == $item->id) selected @endif>{{ $item->nama_tipe }}</option>
-							@empty
-								
-							@endforelse --}}
-                        </select>
+                        <label for="kode_unik" class="col-form-label">Kode Unik</label>
+                        <input type="text" class="form-control" id="kode_unik" placeholder="Kode Unik" name="kode_unik" value="{{ old('kode_unik') }}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="aktif" class="col-form-label">Status</label>
@@ -68,7 +59,7 @@ up game mobile, Top Up game terbaik
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="nama_brand" class="col-form-label">Logo</label>
+                        <label for="logo" class="col-form-label">Logo</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="logo" aria-describedby="logo" name="logo">
@@ -77,12 +68,6 @@ up game mobile, Top Up game terbaik
                         </div>
                     </div>
                 </div>
-				{{-- <input type="hidden" name="produk_id" value="{{ $produk->id }}">
-				<input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
-				<input type="hidden" name="brand_id" value="{{ $brand->id }}">
-				<input type="hidden" name="produk_slug" value="{{ $produk->slug }}">
-				<input type="hidden" name="kategori_slug" value="{{ $kategori->slug }}">
-				<input type="hidden" name="brand_slug" value="{{ $brand->slug }}"> --}}
                 <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Simpan</button>
             </form>
 		</div>

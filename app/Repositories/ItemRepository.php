@@ -29,6 +29,11 @@ class ItemRepository implements ItemInterface
 		return Item::where('brand_id', $brandId)->where('tipe_id', $tipeId)->orderBy('nama_item', 'ASC')->get();
 	}
 
+	public function getItemById($id)
+	{
+		return Item::where('id', $id)->first();
+	}
+
 	public function getItemBySlug($slug)
 	{
 		return Item::where('slug', $slug)->first();
@@ -61,6 +66,7 @@ class ItemRepository implements ItemInterface
 		$data->tipe_id = $request->tipe_id;
 		$data->kode_produk = $request->kode_produk;
 		$data->profit = $request->profit;
+		$data->nama_custom_item = $request->nama_custom_item;
 		$data->nama_item = $result['product_name'];
 		$data->slug = Str::slug($result['product_name'], '-');
 		$data->modal = $result['price'];
@@ -68,8 +74,14 @@ class ItemRepository implements ItemInterface
 
 		return $data;
 	}
+
 	public function updateMoreItem(array $kodeProduk)
 	{
 		//
+	}
+
+	public function deleteItemById($id)
+	{
+		return Item::where('id', $id)->delete();
 	}
 }

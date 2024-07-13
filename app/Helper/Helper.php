@@ -45,13 +45,18 @@ function checkHargaByKode($kode)
     // Decode the JSON response
     $jsonResponse = json_decode($response, true);
 
-    // Extract price and product_name
-    $price = $jsonResponse['data'][0]['price'];
-    $productName = $jsonResponse['data'][0]['product_name'];
+    if (isset($jsonResponse['data']) && !empty($jsonResponse['data'])) {
+        // Extract price and product_name
+        $price = $jsonResponse['data'][0]['price'] ?? null;
+        $productName = $jsonResponse['data'][0]['product_name'] ?? null;
 
-    // Return the associative array
-    return array(
-        'product_name' => $productName,
-        'price' => $price
-    );
+        // Return the associative array
+        return array(
+            'product_name' => $productName,
+            'price' => $price
+        );
+    } else {
+        // Return empty data if the response is empty or invalid
+        return '';
+    }
 }

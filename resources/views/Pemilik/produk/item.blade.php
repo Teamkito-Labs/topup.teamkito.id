@@ -59,7 +59,13 @@ up game mobile, Top Up game terbaik
                             </div></td>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->kode_produk }}</td>
-                            <td>{{ $item->nama_item }}</td>
+                            <td>
+								@if ($item->nama_custom_item == '')
+									<a href="{{ route('produk.item.edit', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'itemSlug' => $item->slug]) }}" class="text-sm text-info "><u>Belum dimasukkan</u></a>
+								@else
+									{{ $item->nama_custom_item }}
+								@endif
+							</td>
                             <td>{{ formatRupiah($item->modal + $item->profit) }}</a></td>
                             <td>{{ formatRupiah($item->modal) }}</a></td>
                             <td>{{ formatRupiah($item->profit) }}</a></td>
@@ -76,10 +82,30 @@ up game mobile, Top Up game terbaik
                                     <a href="{{ route('produk.item.edit', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'itemSlug' => $item->slug]) }}" class="btn btn-link btn-sm px-2 text-dark">
                                         <i class="zmdi zmdi-edit"></i>
                                     </a>
-                                    <span href="" class="btn btn-link btn-sm px-2 text-dark" data-toggle="modal"
-                                        data-target="#exampleModal">
+                                    <a class="btn btn-link btn-sm px-2 text-dark" data-toggle="modal"
+                                        data-target="#modalHapusItem{{ $item->id }}">
                                         <i class="zmdi zmdi-delete"></i>
-                                    </span>
+                                    </a>
+									<div class="modal fade" id="modalHapusItem{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-body text-center">
+													<p class="mb-2">Apakah Anda yakin ingin menghapus item
+														<span class="font-weight-bold">{{ $item->nama_custom_item }}</span>?
+													</p>
+													<form action="{{ route('produk.item.delete', ['itemId' => $item->id]) }}" method="post">
+														@csrf
+														@method('DELETE')
+														<input type="hidden" name="produk_slug" value="{{ $produk->slug }}">
+														<input type="hidden" name="kategori_slug" value="{{ $kategori->slug }}">
+														<input type="hidden" name="brand_slug" value="{{ $brand->slug }}">
+														<button type="button" class="btn btn-secondary btn-rounded btn-sm" data-dismiss="modal">Batal</button>
+														<button type="submit" class="btn btn-primary btn-rounded btn-sm">Hapus</button>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
                             </td>
                         </tr>
@@ -90,21 +116,6 @@ up game mobile, Top Up game terbaik
                         @endforelse
                     </tbody>
                 </table>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body text-center">
-                            <p class="mb-2">Apakah Anda yakin ingin menghapus item<span class="font-weight-bold">
-                                </span>?</p>
-                            <button type="button" class="btn btn-secondary btn-rounded btn-sm"
-                                data-dismiss="modal">Batal</button>
-                            <button type="button" class="btn btn-primary btn-rounded btn-sm">Hapus</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -119,7 +130,6 @@ up game mobile, Top Up game terbaik
             overflow-x: auto;
             white-space: nowrap;
         }
-
     </style>
     @endpush
     @push('scripts')

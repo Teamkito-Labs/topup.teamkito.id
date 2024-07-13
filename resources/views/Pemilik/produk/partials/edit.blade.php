@@ -11,16 +11,17 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4">Prabayar</h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="">Produk</a></li>
-            <li class="breadcrumb-item"><a href="">Games</a></li>
-            <li class="breadcrumb-item"><a href="">Mobile Legends</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('produk', ['produkSlug' => $produk->slug]) }}">{{ $produk->nama_produk }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('produk.show', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug]) }}">{{ $kategori->nama_kategori }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('produk.brand', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}">{{ $brand->nama_brand }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
 		<div class="card-body">
-            <form action="{{ route('produk.item.update', ['itemId' => $data->id]) }}" method="PATCH">
+            <form id="edit-item-form" action="{{ route('produk.item.update', ['itemId' => $data->id]) }}" method="POST">
                 @csrf
+				@method('PATCH')
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputEmail4" class="col-form-label">Produk</label>
@@ -34,19 +35,19 @@ up game mobile, Top Up game terbaik
                         <label for="inputPassword4" class="col-form-label">Brand</label>
                         <input type="text" class="form-control" id="inputPassword4" value="{{ $brand->nama_brand }}" disabled>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label for="kode_produk" class="col-form-label">Kode Item</label>
-                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk', $data->kode_produk) }}" required>
+                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk', $data->kode_produk) }}" readonly>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="kode_produk" class="col-form-label">Nama Item</label>
-                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk') }}" disabled>
+                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('nama_item', $data->nama_item) }}" disabled>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="kode_produk" class="col-form-label">Nama Custom Item</label>
-                        <input type="text" class="form-control" id="kode_produk" placeholder="Kode" name="kode_produk" value="{{ old('kode_produk') }}" required>
+                        <label for="nama_custom_item" class="col-form-label">Nama Custom Item</label>
+                        <input type="text" class="form-control" id="nama_custom_item" placeholder="Nama Custom Item" name="nama_custom_item" value="{{ old('nama_custom_item', $data->nama_custom_item) }}" required>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label for="tipe_id" class="col-form-label">Tipe</label>
                         <select id="tipe_id" class="form-control" name="tipe_id" required>
                             <option value="" hidden>-- Pilih tipe --</option>
@@ -57,7 +58,7 @@ up game mobile, Top Up game terbaik
 							@endforelse
                         </select>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-4">
                         <label for="aktif" class="col-form-label">Status</label>
                         <select id="aktif" class="form-control" name="aktif" required>
                             <option value="" hidden>-- Pilih tipe --</option>
@@ -65,13 +66,13 @@ up game mobile, Top Up game terbaik
 							<option value="N" @if(old('aktif', $data->aktif) == 'N') selected @endif>Tidak Aktif</option>
                         </select>
                     </div>
-					<div class="form-group col-md-3">
+					<div class="form-group col-md-4">
                         <label for="profit" class="col-form-label">Profit</label>
 						<div class="input-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text">Rp</span>
 							</div>
-							<input type="number" class="form-control" aria-label="Profit" min="0" id="profit" name="profit" placeholder="Profit" value="{{ $data->profit }}">
+							<input type="number" class="form-control" aria-label="Profit" min="0" id="profit" name="profit" placeholder="Profit" value="{{ $data->profit }}" required>
 						</div>
                     </div>
                 </div>
@@ -99,8 +100,43 @@ up game mobile, Top Up game terbaik
 			overflow-x: auto;
 			white-space: nowrap;
 		}
+		.is-invalid {
+            border-color: #dc3545;
+        }
 	</style>
     @endpush
     @push('scripts')
+	<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('edit-item-form');
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            
+            function validateInput(input) {
+                if (input.value.trim() === '') {
+                    input.classList.add('is-invalid');
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            }
+
+            inputs.forEach(input => {
+                validateInput(input); // Validate on page load
+                input.addEventListener('input', () => validateInput(input));
+            });
+
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+                inputs.forEach(input => {
+                    validateInput(input);
+                    if (input.classList.contains('is-invalid')) {
+                        isValid = false;
+                    }
+                });
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
     @endpush
 </x-app-layout>

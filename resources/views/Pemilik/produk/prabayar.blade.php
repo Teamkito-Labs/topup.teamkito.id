@@ -65,7 +65,9 @@ up game mobile, Top Up game terbaik
 							</td>
 						</tr>
 						@empty
-							
+						<tr>
+                            <td colspan="5">Data belum tersedia...</td>
+                        </tr>
 						@endforelse
 					</tbody>
 				</table>

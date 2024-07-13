@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BrandRequest extends FormRequest
+class KategoriPembayaranRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,7 @@ class BrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama_brand' => ['required', 'string', 'max:255'],
-			'logo' => ['nullable', 'image', 'mimes:png,jpg,jpeg'],
+            'nama_kategori' => ['required', 'string', 'max:255'],
         ];
     }
 }

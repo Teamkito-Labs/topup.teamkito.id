@@ -19,6 +19,7 @@ return new class extends Migration
 			$table->foreignId('tipe_id')->references('id')->on('tipe');
 			$table->string('kode_produk');
 			$table->string('nama_item');
+			$table->string('nama_custom_item')->nullable();
 			$table->string('slug');
 			$table->double('modal', 15, 2);
 			$table->double('profit', 15, 2)->nullable();

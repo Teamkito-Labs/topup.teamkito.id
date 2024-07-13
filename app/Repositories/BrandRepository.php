@@ -49,6 +49,16 @@ class BrandRepository implements BrandInterface
 	public function updateBrand(BrandRequest $request, $id)
 	{
 		$data = Brand::findOrFail($id);
+
+		if ($request->logo != '') {
+			$image = $request->file('logo');
+			$extension = $image->extension();
+			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
+			$image->move(public_path('images/brand-logo'), $imageNames);
+		} else {
+			$imageNames = $data->logo;
+		}
+		
 		$data->kategori_id = $request->kategori_id;
 		$data->nama_brand = $request->nama_brand;
 		$data->slug = Str::slug($request->nama_brand, '-');
