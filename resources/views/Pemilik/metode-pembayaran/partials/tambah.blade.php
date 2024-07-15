@@ -48,7 +48,11 @@ up game mobile, Top Up game terbaik
                     </div>
                     <div class="form-group col-md-4">
                         <label for="kode_unik" class="col-form-label">Kode Unik</label>
-                        <input type="text" class="form-control" id="kode_unik" placeholder="Kode Unik" name="kode_unik" value="{{ old('kode_unik') }}">
+                        <select id="kode_unik" class="form-control" name="kode_unik" required>
+                            <option value="" hidden>-- Pilih tipe --</option>
+							<option value="Y" @if(old('kode_unik') == 'Y') selected @endif>Aktif</option>
+							<option value="N" @if(old('kode_unik') == 'N') selected @endif>Tidak Aktif</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="aktif" class="col-form-label">Status</label>

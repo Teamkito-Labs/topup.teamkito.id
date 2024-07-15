@@ -70,6 +70,21 @@
                     name="nama_brand" placeholder="Nama Brand" value="{{ old('nama_brand') }}" required>
             </div>
             <div class="form-group">
+                <label for="kategori_id">Khusus</label>
+                <select class="form-control" id="kategori_id" name="kategori_id">
+                    <option value="" hidden>-- Pilih Khusus --</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+            </div>
+            <div class="form-group g-mb-20">
+                <label class="g-mb-10" for="inputGroup2_1">Keterangan</label>
+                <textarea id="inputGroup2_1" class="form-control form-control-md g-resize-none rounded-0" rows="3" placeholder="Masukkan keterangan Brand"></textarea>
+                <small class="form-text text-muted g-font-size-default g-mt-10">
+                    <strong>Catatan:</strong> height of the textarea depends on the rows attribute.
+                </small>
+            </div>
+            <div class="form-group">
                 <label for="nama_brand">Logo</label>
                 <div class="input-group mb-3">
                     <div class="custom-file">

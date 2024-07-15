@@ -32,7 +32,7 @@
 						<thead class="bg-light">
 							<tr>
 								<th>#</th>
-								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+								<th><i class="ti-dropbox align-middle"></i> Nama</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 								<th class="text-center"></th>
@@ -113,7 +113,7 @@
 							<tr>
 								<th>#</th>
 								<th><i class="ti-layers align-middle"></i> Produk</th>
-								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+								<th><i class="ti-dropbox align-middle"></i> Nama</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 								<th class="text-center"></th>
@@ -195,7 +195,9 @@
 							<tr>
 								<th>#</th>
 								<th><i class="ti-layers align-middle"></i> Kategori</th>
+								<th><i class="ti-dropbox align-middle"></i> Nama</th>
 								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+								<th><i class="ti-dropbox align-middle"></i> Khusus</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 								<th class="text-center"></th>
@@ -277,7 +279,7 @@
 							<tr>
 								<th>#</th>
 								<th><i class="ti-layers align-middle"></i> Kategori</th>
-								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
+								<th><i class="ti-dropbox align-middle"></i> Nama</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 								<th class="text-center"></th>
