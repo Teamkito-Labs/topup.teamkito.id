@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriPembayaranController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\MetodePembayaranController;
@@ -10,11 +11,10 @@ use Illuminate\Support\Facades\Route;
 use Nekoding\Tripay\Networks\HttpClient;
 use Nekoding\Tripay\Tripay;
 
-Route::get('/', function () { return view('welcome'); })->name('beranda');
+Route::get('/', [HomeController::class, 'home'])->name('beranda');
+Route::get('/perangkat/{perangkat}', [HomeController::class, 'home_perangkat'])->name('beranda.perangkat');
 
-Route::get('/free-fire', function () {
-	return view('guest.proses-topup-diamond'); 
-})->name('topup');
+Route::get('/proses/{gameSlug}', [HomeController::class, 'proses_topup'])->name('proses-topup');
 Route::get('/bayar', function () {
 	return view('guest.proses-pembayaran-diamond'); 
 })->name('pembayaran');

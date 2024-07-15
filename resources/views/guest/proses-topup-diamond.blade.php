@@ -1,4 +1,4 @@
-@section('title', 'Free Fire (FF)')
+@section('title', $data->nama_brand)
 @section('description', 'Top up game murah dan cepat di topup.teamkito.id! Dukung permainan Anda dengan top up untuk
 Free Fire, Mobile Legends, PUBG Mobile, dan Genshin Impact. Proses instan!')
 @section('keywords', 'top up game murah, top up game cepat, top up Free Fire murah, top up Mobile Legends cepat, top up
@@ -11,8 +11,8 @@ up game mobile, top up game terbaik
 <x-guest-layout>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route("beranda") }}">Top Up</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Free Fire</li>
+            <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Top Up</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $data->nama_brand }}</li>
         </ol>
     </nav>
     <section id="proses-topup"
@@ -23,7 +23,6 @@ up game mobile, top up game terbaik
                     <img class="shadow-sm rounded-lg mb-3"
                         src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
                         alt="Slide 1" />
-
                     <div id="langkah-topup" class="mt-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
                         <label class="font-weight-bold h4 text-body">Langkah Mudah Top-Up Voucher Game di
                             Teamkito</label>
@@ -99,16 +98,30 @@ up game mobile, top up game terbaik
                 <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
-                            <label class="h5 text-body mb-3"><span
-                                    class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                                    style="font-size: 15px;">01</span> Masukkan
-                                Informasi Akun</label><button type="button"
-                                class="btn btn-link btn-sm text-primary font-weight-bold px-2"><i
-                                    class="fa fa-info-circle" aria-hidden="true"></i> Panduan</button>
-                            <input type="number" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
-                                placeholder="Masukkan Game ID Free Fire Anda" x-model.number="informasiAkun">
+                            <label class="h5 text-body mb-3">
+								<span class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
+                                    style="font-size: 15px;">
+									01
+								</span> 
+								Masukkan Informasi Akun
+							</label>
+							<button type="button" class="btn btn-link btn-sm text-primary font-weight-bold px-2">
+								<i class="fa fa-info-circle" aria-hidden="true"></i> Panduan
+							</button>
+							@if ($data->jumlah_input == 2)
+								<div class="row">
+									<div class="col-md-6">
+										<input type="number" id="id-game" class="form-control rounded-lg form-control-md g-mb-10" placeholder="Masukkan Zone ID {{ $data->nama_brand }} Anda" x-model.number="informasiAkun">
+									</div>
+									<div class="col-md-6">
+										<input type="number" id="id-game" class="form-control rounded-lg form-control-md g-mb-10" placeholder="Masukkan User ID {{ $data->nama_brand }} Anda" x-model.number="informasiAkun">
+									</div>
+								</div>
+							@else
+								<input type="number" id="id-game" class="form-control rounded-lg form-control-md g-mb-10" placeholder="Masukkan User ID {{ $data->nama_brand }} Anda" x-model.number="informasiAkun">
+							@endif
                             <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
-                                Tap avatar di sudut kiri atas. ID Game muncul di bawah nama.
+                                {{ $data->keterangan }}
                             </p>
                         </div>
                     </div>
@@ -120,7 +133,30 @@ up game mobile, top up game terbaik
                                 Up</label>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
+									@forelse ($items as $item)
+									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
+										x-on:click="nominalTopup = '{{ $item->nama_custom_item }}'; itemHargaTopup = '{{ $item->harga_jual }}'; document.getElementById('hargaInput').value = itemHargaTopup">
+										<div class="card shadow-sm rounded-lg border"
+											:class="{ 'border border-primary': nominalTopup === '{{ $item->id }}' }">
+											<div class="card-body text-left p-3">
+												<img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
+												<h5 class="card-title mb-0 mt-2">{{ $item->nama_custom_item }}</h5>
+											</div>
+											<div class="card-footer text-muted">
+												<span class="text-primary font-weight-bold">{{ formatRupiah($item->modal + $item->profit) }}</span>
+											</div>
+										</div>
+									</div>
+									@empty
+									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
+										<div class="card shadow-sm rounded-lg border">
+											<div class="card-body text-left p-3">
+												<h5 class="card-title mb-0 mt-2">Belum Ada Data</h5>
+											</div>
+										</div>
+									</div>
+									@endforelse
+                                    {{-- <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
                                         x-on:click="nominalTopup = '100'; itemHargaTopup = '10000'; document.getElementById('hargaInput').value = itemHargaTopup">
                                         <div class="card shadow-sm rounded-lg border"
                                             :class="{ 'border border-primary': nominalTopup === '100' }">
@@ -158,7 +194,7 @@ up game mobile, top up game terbaik
                                                 <span class="text-primary font-weight-bold">Rp50.000,-</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -251,7 +287,7 @@ up game mobile, top up game terbaik
                                 </div>
                             </div>
                             <div class="col-6 col-sm-6 col-md-4 text-sm-left text-right">
-                                <p class="my-2 h6" x-text="`${nominalTopup} Diamond`"></p>
+                                <p class="my-2 h6" x-text="`${nominalTopup}`"></p>
                                 <img x-bind:src="logoPembayaran[metodePembayaran]" style="height:20px;" />
                             </div>
                             <input type="hidden" id="hargaInput" name="harga">

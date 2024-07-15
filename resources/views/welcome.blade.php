@@ -35,31 +35,42 @@ up game mobile, Top Up game terbaik
                 <div class="container my-0 my-sm-3">
                     <nav aria-label="Navigasi Utama">
                         <ul class="row d-flex justify-content-between">
-                            <li class="col text-center px-1"><a href="/home" title="Game Populer"><img
-                                        src="{{ asset('storage/img/flat-icon/trending.png') }}" />
+                            <li class="col text-center px-1">
+								<a href="{{ route('beranda') }}" title="Game Populer">
+									<img src="{{ asset('storage/img/flat-icon/trending.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">Populer</h6>
-                                </a></li>
-                            <li class="col text-center px-1"><a href="/about" title="Game Mobile"><img
-                                        src="{{ asset('storage/img/flat-icon/smartphone.png') }}" />
+                                </a>
+							</li>
+                            <li class="col text-center px-1">
+								<a href="{{ route('beranda.perangkat', ['perangkat' => 'mobile']) }}" title="Game Mobile">
+									<img src="{{ asset('storage/img/flat-icon/smartphone.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">Mobile</h6>
-                                </a></li>
-                            <li class="col text-center px-1"><a href="/services" title="Game PC"><img
-                                        src="{{ asset('storage/img/flat-icon/computer-game.png') }}" />
+                                </a>
+							</li>
+                            <li class="col text-center px-1">
+								<a href="{{ route('beranda.perangkat', ['perangkat' => 'pc']) }}" title="Game PC">
+									<img src="{{ asset('storage/img/flat-icon/computer-game.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">PC</h6>
-                                </a></li>
-                            <li class="col text-center px-1"><a href="/services" title="Game Konsol"><img
-                                        src="{{ asset('storage/img/flat-icon/xbox.png') }}" />
+                                </a>
+							</li>
+                            <li class="col text-center px-1">
+								<a href="{{ route('beranda.perangkat', ['perangkat' => 'konsol']) }}" title="Game Konsol">
+									<img src="{{ asset('storage/img/flat-icon/xbox.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">Konsol</h6>
-                                </a></li>
-                            <li class="col text-center px-1 d-none d-sm-block "><a href="/blog" title="Kupon Promo"><img
-                                        src="{{ asset('storage/img/flat-icon/voucher.png') }}" />
+                                </a>
+							</li>
+                            <li class="col text-center px-1 d-none d-sm-block ">
+								<a href="{{ route('beranda') }}" title="Kupon Promo">
+									<img src="{{ asset('storage/img/flat-icon/voucher.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">Kupon</h6>
-                                </a></li>
-                            <li class="col text-center px-1 d-none d-sm-block"><a href="/contact"
-                                    title="Butuh Bantuan"><img
-                                        src="{{ asset('storage/img/flat-icon/help-desk.png') }}" />
+                                </a>
+							</li>
+                            <li class="col text-center px-1 d-none d-sm-block">
+								<a href="{{ route('beranda') }}" title="Butuh Bantuan">
+									<img src="{{ asset('storage/img/flat-icon/help-desk.png') }}" />
                                     <h6 class="font-weight-lighter mt-2 mb-0">Bantuan</h6>
-                                </a></li>
+                                </a>
+							</li>
                         </ul>
                     </nav>
                 </div>
@@ -67,23 +78,37 @@ up game mobile, Top Up game terbaik
         </div>
     </section>
     <section id="kumpulan-game" class="mt-5">
-        <label class="font-weight-bold h4 text-body"><img src="{{ asset('storage/img/flat-icon/trending.png') }}" />
-            Top Up Populer</label>
+        <label class="font-weight-bold h4 text-body">
+			@if ($tipe == 'Top Up Populer')
+				<img src="{{ asset('storage/img/flat-icon/trending.png') }}" />
+			@elseif ($tipe == 'Mobile')
+				<img src="{{ asset('storage/img/flat-icon/smartphone.png') }}" />
+			@elseif ($tipe == 'PC')
+				<img src="{{ asset('storage/img/flat-icon/computer-game.png') }}" />
+			@elseif ($tipe == 'Konsol')
+				<img src="{{ asset('storage/img/flat-icon/xbox.png') }}" />
+			@endif
+			{{ $tipe }}
+		</label>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
-                    style="width: 11rem;">
-                    <a href="{{ url('free-fire') }}">
-                        <div class="ribbon ribbon-bookmark ribbon-right ribbon-info">TERLARIS</div>
-                        <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
-                            class="card-img-top"
-                            alt="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75">
-                        <div class="card-body text-center align-middle p-2 p-sm-3">
-                            <h6 class="card-text">Free Fire</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
+				@forelse ($games as $item)
+				<div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
+				style="width: 11rem;">
+					<a href="{{ route('proses-topup', ['gameSlug' => $item->slug]) }}">
+						{{-- <div class="ribbon ribbon-bookmark ribbon-right ribbon-info">TERLARIS</div> --}}
+						<img src="{{ asset('images/brand-logo/' . $item->logo) }}"
+							class="card-img-top"
+							alt="{{ asset('images/brand-logo/' . $item->logo) }}">
+						<div class="card-body text-center align-middle p-2 p-sm-3">
+							<h6 class="card-text">{{ $item->nama_brand }}</h6>
+						</div>
+					</a>
+				</div>
+				@empty
+					
+				@endforelse
+                {{-- <div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
                     style="width: 11rem;">
                     <a href="http://">
                     <img src="https://storage.googleapis.com/tokogame-img/products/mobile-legends-20240508.png"
@@ -182,7 +207,7 @@ up game mobile, Top Up game terbaik
                             <h6 class="card-text">League Of Legends</h6>
                         </div>
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="text-center mt-4 mb-5">
                 <a href="" class="h5 text-decoration-none font-weight-bold text-primary">TAMPIL LEBIH BANYAK</a>
@@ -499,8 +524,8 @@ up game mobile, Top Up game terbaik
                 $(".owl-carousel").owlCarousel({
                     loop: true,
                     margin: 10,
-                    autoplay: false,
-                    autoplayTimeout: 5000,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
                     autoplayHoverPause: false,
                     responsiveClass: true,
                     responsive: {

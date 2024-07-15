@@ -71,6 +71,30 @@
                 <input type="text" id="nama_brand" class="form-control @error('nama_brand') is-invalid @enderror"
                     name="nama_brand" placeholder="Nama Brand" value="{{ old('nama_brand', $data->nama_brand) }}" required>
             </div>
+            <div class="form-group">
+                <label for="perangkat">Perangkat</label>
+                <select class="form-control" id="perangkat" name="perangkat">
+                    <option value="" hidden>-- Pilih Perangkat --</option>
+                    <option value="Mobile" @if(old('perangkat', $data->perangkat) == 'Mobile') selected @endif>Mobile</option>
+                    <option value="PC" @if(old('perangkat', $data->perangkat) == 'PC') selected @endif>PC</option>
+                    <option value="Konsol" @if(old('perangkat', $data->perangkat) == 'Konsol') selected @endif>Konsol</option>
+                </select>
+            </div>
+			<div class="form-group">
+                <label for="jumlah_input">Jumlah Input</label>
+                <select class="form-control" id="jumlah_input" name="jumlah_input">
+                    <option value="" hidden>-- Pilih Jumlah Input --</option>
+                    <option value="1" @if(old('jumlah_input', $data->jumlah_input) == '1') selected @endif>1</option>
+                    <option value="2" @if(old('jumlah_input', $data->jumlah_input) == '2') selected @endif>2</option>
+                </select>
+            </div>
+            <div class="form-group g-mb-20">
+                <label class="g-mb-10" for="keterangan">Keterangan</label>
+                <textarea id="keterangan" class="form-control form-control-md g-resize-none rounded-0" rows="3" placeholder="Masukkan keterangan Brand" name="keterangan" required>{{ old('keterangan', $data->keterangan) }}</textarea>
+                <small class="form-text text-muted g-font-size-default g-mt-10">
+                    <strong>Catatan:</strong> height of the textarea depends on the rows attribute.
+                </small>
+            </div>
 			<div class="form-group">
                 <label for="nama_brand">Logo</label>
                 <div class="input-group mb-3">
