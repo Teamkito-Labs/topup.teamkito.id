@@ -47,6 +47,8 @@ Route::prefix('metode-pembayaran')
 
 Route::get('/pembayaran/tambah', function () { return view('pemilik.pembayaran.partials.tambah'); })->name('pembayaran.tambah');
 Route::get('/transaksi', function () { return view('pemilik.transaksi.riwayat'); })->name('transaksi');
+Route::get('/flash-sale', function () { return view('pemilik.flash-sale.index'); })->name('flash-sale');
+Route::get('/flash-sale/tambah', function () { return view('pemilik.flash-sale.partials.tambah'); })->name('flash-sale.tambah');
 
 Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')

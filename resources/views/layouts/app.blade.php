@@ -233,21 +233,33 @@
                         <div class="collapse @if(Request::segment(1) == 'produk') show @endif" id="produk">
                             <ul class="nav flex-column mt-0">
                                 <li class="nav-item pl-4 @if(Request::segment(2) == 'prabayar') active @endif">
-									<a class="nav-link" href="{{ route('produk', ['produkSlug' => 'prabayar']) }}">Prabayar</a>
+                                    <a class="nav-link"
+                                        href="{{ route('produk', ['produkSlug' => 'prabayar']) }}">Prabayar</a>
                                 </li>
-                                <li class="nav-item pl-4"> 
-									<a class="nav-link disabled text-muted" href="customer.html" tabindex="-1" role="button" aria-disabled="true">
-										Pascabayar 
-										<span class="badge badge-pill badge-light">
-											<i class="fa fa-clock-o"aria-hidden="true"></i>
-										</span>
-									</a>
-								</li>
+                                <li class="nav-item pl-4">
+                                    <a class="nav-link disabled text-muted" href="customer.html" tabindex="-1"
+                                        role="button" aria-disabled="true">
+                                        Pascabayar
+                                        <span class="badge badge-pill badge-light">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('flash-sale') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-zap link-icon">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            <span class="menu-title">Flash Sale</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('flash-sale') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-percent link-icon">
@@ -363,25 +375,33 @@
                                     class="footer-area d-sm-flex justify-content-center align-items-center justify-content-between">
                                     <!-- Copywrite Text -->
                                     <div class="copywrite-text">
-                                        <p>Dibuat oleh @ <a href="https://www.instagram.com/topup.teamkito.id/" target="_blank">Teamkito Labs</a></p>
+                                        <p>Dibuat oleh @ <a href="https://www.instagram.com/topup.teamkito.id/"
+                                                target="_blank">Teamkito Labs</a></p>
                                     </div>
                                     <div class="fotter-icon text-center">
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook" rel="noopener noreferrer" target="_blank">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Facebook"
+                                            rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/facebook.png') }}" />
                                         </a>
-                                        <a href="https://www.instagram.com/topup.teamkito.id/" class="action-item mr-2" data-toggle="tooltip" title="Instagram" rel="noopener noreferrer" target="_blank">
+                                        <a href="https://www.instagram.com/topup.teamkito.id/" class="action-item mr-2"
+                                            data-toggle="tooltip" title="Instagram" rel="noopener noreferrer"
+                                            target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/instagram.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter" rel="noopener noreferrer" target="_blank">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Twitter"
+                                            rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/twitter.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube" rel="noopener noreferrer" target="_blank">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Youtube"
+                                            rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/youtube.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok" rel="noopener noreferrer" target="_blank">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Tiktok"
+                                            rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/tik-tok.png') }}" />
                                         </a>
-                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord" rel="noopener noreferrer" target="_blank">
+                                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Discord"
+                                            rel="noopener noreferrer" target="_blank">
                                             <img src="{{ asset('storage/img/flat-icon/discord.png') }}" />
                                         </a>
                                     </div>
