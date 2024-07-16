@@ -18,7 +18,7 @@ return new class extends Migration
 			$table->string('nama_metode');
             $table->string('slug');
             $table->string('logo');
-            $table->string('kode_unik')->nullable();
+            $table->enum('kode_unik', ['Y','N']);
 			$table->enum('aktif', ['Y','N'])->default('Y');
             $table->timestamps();
         });

@@ -17,6 +17,9 @@ return new class extends Migration
 			$table->string('nama_brand');
 			$table->string('slug');
 			$table->string('logo');
+			$table->string('perangkat');
+			$table->integer('jumlah_input');
+			$table->string('keterangan');
 			$table->enum('aktif', ['Y','N'])->default('Y');
             $table->timestamps();
         });

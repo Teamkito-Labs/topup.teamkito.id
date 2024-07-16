@@ -57,7 +57,7 @@
                 <select class="form-control" id="kategori_id" name="kategori_id">
                     <option value="" hidden>-- Pilih Kategori --</option>
                     @forelse ($kategori as $item)
-                    <option value="{{ $item->id }}" @if(old('kategori_id')==$item->id) selected
+                    <option value="{{ $item->id }}" @if(old('kategori_id') == $item->id) selected
                         @endif>{{ $item->nama_kategori }}</option>
                     @empty
 
@@ -70,16 +70,25 @@
                     name="nama_brand" placeholder="Nama Brand" value="{{ old('nama_brand') }}" required>
             </div>
             <div class="form-group">
-                <label for="kategori_id">Khusus</label>
-                <select class="form-control" id="kategori_id" name="kategori_id">
-                    <option value="" hidden>-- Pilih Khusus --</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
+                <label for="perangkat">Perangkat</label>
+                <select class="form-control" id="perangkat" name="perangkat">
+                    <option value="" hidden>-- Pilih Perangkat --</option>
+                    <option value="Mobile" @if(old('perangkat') == 'Mobile') selected @endif>Mobile</option>
+                    <option value="PC" @if(old('perangkat') == 'PC') selected @endif>PC</option>
+                    <option value="Konsol" @if(old('perangkat') == 'Konsol') selected @endif>Konsol</option>
+                </select>
+            </div>
+			<div class="form-group">
+                <label for="jumlah_input">Jumlah Input</label>
+                <select class="form-control" id="jumlah_input" name="jumlah_input">
+                    <option value="" hidden>-- Pilih Jumlah Input --</option>
+                    <option value="1" @if(old('jumlah_input') == '1') selected @endif>1</option>
+                    <option value="2" @if(old('jumlah_input') == '2') selected @endif>2</option>
                 </select>
             </div>
             <div class="form-group g-mb-20">
-                <label class="g-mb-10" for="inputGroup2_1">Keterangan</label>
-                <textarea id="inputGroup2_1" class="form-control form-control-md g-resize-none rounded-0" rows="3" placeholder="Masukkan keterangan Brand"></textarea>
+                <label class="g-mb-10" for="keterangan">Keterangan</label>
+                <textarea id="keterangan" class="form-control form-control-md g-resize-none rounded-0" rows="3" placeholder="Masukkan keterangan Brand" name="keterangan" required>{{ old('keterangan') }}</textarea>
                 <small class="form-text text-muted g-font-size-default g-mt-10">
                     <strong>Catatan:</strong> height of the textarea depends on the rows attribute.
                 </small>

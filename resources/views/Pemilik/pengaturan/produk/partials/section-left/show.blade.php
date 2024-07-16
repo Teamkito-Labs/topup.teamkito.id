@@ -196,8 +196,7 @@
 								<th>#</th>
 								<th><i class="ti-layers align-middle"></i> Kategori</th>
 								<th><i class="ti-dropbox align-middle"></i> Nama</th>
-								<th><i class="ti-dropbox align-middle"></i> Keterangan</th>
-								<th><i class="ti-dropbox align-middle"></i> Khusus</th>
+								<th><i class="ti-dropbox align-middle"></i> Perangkat</th>
 								<th><i class="ti-link align-middle"></i> Slug</th>
 								<th class="hidden-sm"><i class="ti-check-box align-middle"></i> Status</th>
 								<th class="text-center"></th>
@@ -209,6 +208,7 @@
 								<td>{{ $loop->iteration }}</td>
 								<td>{{ $item->kategori->nama_kategori }}</td>
 								<td>{{ $item->nama_brand }}</td>
+								<td>{{ $item->perangkat }}</td>
 								<td class="hidden-sm">{{ $item->slug }}</td>
 								<td>
 									@if ($item->aktif == 'Y')

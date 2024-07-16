@@ -24,6 +24,11 @@ class BrandRepository implements BrandInterface
 		return Brand::withCount(['items'])->where('kategori_id', $kategoriId)->orderBy('nama_brand', 'ASC')->get();
 	}
 
+	public function getAllBrandByPerangkat($perangkat)
+	{
+		return Brand::where('perangkat', $perangkat)->orderBy('nama_brand', 'ASC')->get();
+	}
+
 	public function getBrandBySlug($slug)
 	{
 		return Brand::where('slug', $slug)->first();
@@ -39,6 +44,9 @@ class BrandRepository implements BrandInterface
 		$data = new Brand();
 		$data->kategori_id = $request->kategori_id;
 		$data->nama_brand = $request->nama_brand;
+		$data->perangkat = $request->perangkat;
+		$data->jumlah_input = $request->jumlah_input;
+		$data->keterangan = $request->keterangan;
 		$data->slug = Str::slug($request->nama_brand, '-');
 		$data->logo = $imageNames;
 		$data->save();
@@ -61,6 +69,9 @@ class BrandRepository implements BrandInterface
 		
 		$data->kategori_id = $request->kategori_id;
 		$data->nama_brand = $request->nama_brand;
+		$data->perangkat = $request->perangkat;
+		$data->jumlah_input = $request->jumlah_input;
+		$data->keterangan = $request->keterangan;
 		$data->slug = Str::slug($request->nama_brand, '-');
 		$data->save();
 
