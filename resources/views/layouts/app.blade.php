@@ -142,7 +142,7 @@
 
                     <li class="nav-item nav-profile dropdown dropdown-animate">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{ asset('storage/img/member-img/contact-2.jpg') }}" alt="profile" />
+                            <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top"
                             aria-labelledby="profileDropdown">
@@ -248,7 +248,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item @if(Request::segment(1) == 'flash-sale') active @endif">
                         <a class="nav-link" href="{{ route('flash-sale') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

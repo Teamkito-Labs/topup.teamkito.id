@@ -17,6 +17,11 @@ function tanggalLengkap($date)
 	return Carbon::parse($date)->translatedFormat('d F Y H:i');
 }
 
+function hargaPersen($harga, $persen)
+{
+	return $harga * $persen / 100;
+}
+
 function checkHargaByKode($kode)
 {
 	$username = env('DIGIFlAZZ_USERNAME');

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\APIController;
+use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriPembayaranController;
 use App\Http\Controllers\KategoriProdukController;
@@ -47,8 +49,18 @@ Route::prefix('metode-pembayaran')
 
 Route::get('/pembayaran/tambah', function () { return view('pemilik.pembayaran.partials.tambah'); })->name('pembayaran.tambah');
 Route::get('/transaksi', function () { return view('pemilik.transaksi.riwayat'); })->name('transaksi');
-Route::get('/flash-sale', function () { return view('pemilik.flash-sale.index'); })->name('flash-sale');
-Route::get('/flash-sale/tambah', function () { return view('pemilik.flash-sale.partials.tambah'); })->name('flash-sale.tambah');
+
+Route::prefix('flash-sale')
+	->group(function() {
+		Route::get('/', [FlashSaleController::class, 'index'])->name('flash-sale');
+		Route::get('/kategori/{kategoriSlug}', [FlashSaleController::class, 'show_by_kategori'])->name('flash-sale.kategori');
+		Route::get('/kategori/{kategoriSlug}/brand/{brandSlug}', [FlashSaleController::class, 'show_by_brand'])->name('flash-sale.brand');
+		Route::get('/tambah', [FlashSaleController::class, 'tambah'])->name('flash-sale.tambah');
+		Route::get('/edit/{id}', [FlashSaleController::class, 'edit'])->name('flash-sale.edit');
+		Route::post('/simpan', [FlashSaleController::class, 'store'])->name('flash-sale.store');
+		Route::patch('/update/{id}', [FlashSaleController::class, 'update'])->name('flash-sale.update');
+		Route::delete('/delete/{id}', [FlashSaleController::class, 'delete'])->name('flash-sale.delete');
+	});
 
 Route::prefix('pengaturan')->group(function () {
 	Route::prefix('kategori')
@@ -100,6 +112,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::prefix('api')
+	->group(function() {
+		Route::get('/kategori-by-produk-id/{produkId}', [APIController::class, 'getKategoriByProdukId']);
+		Route::get('/brand-by-kategori-id/{kategoriId}', [APIController::class, 'getBrandByKategoriId']);
+		Route::get('/item-by-brand-id/{brandId}', [APIController::class, 'getItemByBrandId']);
+		Route::get('/harga-by-item-id/{itemId}', [APIController::class, 'getHargaItemByItemId']);
+	});
 
 Route::get('/test', function() {
 	$result = checkHargaByKode('ml_3');

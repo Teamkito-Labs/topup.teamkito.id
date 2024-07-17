@@ -134,12 +134,13 @@
                                 </div>
                             </li>
 
-                            <div x-data="{loggedIn: false}">
-                                <div x-show="loggedIn" class="mt-1">
+                            <div>
+								@if (Auth::user())
+								<div class="mt-1">
                                     <li class="nav-item nav-profile dropdown dropdown-animate">
                                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                             id="profileDropdown">
-                                            <img src="{{ asset('storage/img/member-img/contact-2.jpg') }}"
+                                            <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}"
                                                 alt="profile" />
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top"
@@ -154,13 +155,15 @@
                                                     aria-hidden="true"></i> Keluar</a>
                                         </div>
                                     </li>
-                                </div>
-                                <div x-show="!loggedIn" class="my-3 mx-1">
+                                </div>								
+								@else
+								<div class="my-3 mx-1">
                                     <a class="btn btn-primary btn-rounded btn-block align-middle"
                                         href="{{ route('login') }}">
                                         Masuk
                                     </a>
                                 </div>
+								@endif
                             </div>
                         </ul>
                     </div>

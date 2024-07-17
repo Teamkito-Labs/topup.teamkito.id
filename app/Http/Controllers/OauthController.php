@@ -22,7 +22,7 @@ class OauthController extends Controller
             $finduser = User::where('gauth_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return redirect('/free-fire');
+                return redirect('/dashboard');
             }else{
                 $newUser = User::create([
                     'name' => $user->name,
@@ -32,7 +32,7 @@ class OauthController extends Controller
                     'password' => Hash::make('password')
                 ]);
                 Auth::login($newUser);
-                return redirect('/admin');
+                return redirect('/dashboard');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

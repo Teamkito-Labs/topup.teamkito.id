@@ -72,7 +72,7 @@ up game mobile, Top Up game terbaik
                 
                 <div class="row">
                     <div class="col-md-6">
-					<a href="{{ route('metode-pembayaran') }}" class="btn btn-rounded btn-block btn-secondary mt-">Batal</a>
+					<a href="{{ route('metode-pembayaran') }}" class="btn btn-rounded btn-block btn-secondary mt-2">Batal</a>
                     </div>
                     <div class="col-md-6">
 						<button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Simpan</button>

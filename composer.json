@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/socialite": "^5.15",
         "laravel/tinker": "^2.8",
+        "laravolt/avatar": "^5.1",
         "nekoding/tripay": "^2.0",
         "svakode/svaflazz": "^1.1"
     },

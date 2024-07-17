@@ -11,13 +11,14 @@ up game mobile, Top Up game terbaik
     <h3 class="card-title mb-4"></h3>
 	<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Flash Sale</li>
+            <li class="breadcrumb-item"><a href="{{ route('flash-sale') }}">Flash Sale</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $itemKategori->nama_kategori }}</li>
         </ol>
     </nav>
 	<div class="overflow-posisi-x mb-1">
-		<a href="{{ route('flash-sale') }}" class="btn @if(Request::segment(3) == '') btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">Semua</a>
-		@foreach ($kategori as $item)
-			<a href="{{ route('flash-sale.kategori', ['kategoriSlug' => $item->slug]) }}" class="btn @if(Request::segment(3) == $item->slug) btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_kategori }}</a>
+		<a href="{{ route('flash-sale') }}" class="btn @if(Request::segment(5) == '') btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">Semua</a>
+		@foreach ($brand as $item)
+			<a href="{{ route('flash-sale.brand', ['kategoriSlug' => $itemKategori->slug, 'brandSlug' => $item->slug]) }}" class="btn @if(Request::segment(5) == $item->slug) btn-dark @else btn-outline-secondary @endif btn-rounded btn-sm mb-3 mr-1">{{ $item->nama_brand }}</a>
 		@endforeach
 	</div>
     <div class="card shadow-sm rounded-lg height-card box-margin mx-0 px-0">
