@@ -8,6 +8,7 @@ interface FlashSaleInterface
 {
 	public function getAllFlashSale();
 	public function getAllFlashSaleByStatus($status);
+	public function getAllFlashSaleByProdukId($produkId);
 	public function getAllFlashSaleByKategoriId($kategoriId);
 	public function getAllFlashSaleByBrandId($brandId);
 	public function storeNewFlashSale(FlashSaleRequest $request);

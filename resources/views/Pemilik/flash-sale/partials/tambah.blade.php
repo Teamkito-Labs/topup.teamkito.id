@@ -72,8 +72,8 @@ up game mobile, Top Up game terbaik
                         <input type="text" class="form-control @error('potongan') is-invalid @enderror" id="potongan" placeholder="" name="potongan" value="" required readonly>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="kuota" class="col-form-label">Kuota</label>
-                        <input type="number" class="form-control @error('kuota') is-invalid @enderror" id="kuota" placeholder="Metode Pembayaran" name="kuota" value="{{ old('kuota') }}" required>
+                        <label for="kuota" class="col-form-label">Kuota Flash Sale</label>
+                        <input type="number" class="form-control @error('kuota') is-invalid @enderror" id="kuota" placeholder="Kuota Flash Sale" name="kuota" value="{{ old('kuota') }}" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="batas_waktu" class="col-form-label">Batas Waktu</label>

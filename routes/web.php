@@ -53,8 +53,9 @@ Route::get('/transaksi', function () { return view('pemilik.transaksi.riwayat');
 Route::prefix('flash-sale')
 	->group(function() {
 		Route::get('/', [FlashSaleController::class, 'index'])->name('flash-sale');
-		Route::get('/kategori/{kategoriSlug}', [FlashSaleController::class, 'show_by_kategori'])->name('flash-sale.kategori');
-		Route::get('/kategori/{kategoriSlug}/brand/{brandSlug}', [FlashSaleController::class, 'show_by_brand'])->name('flash-sale.brand');
+		Route::get('/produk/{produkSlug}', [FlashSaleController::class, 'show_by_produk'])->name('flash-sale.produk');
+		Route::get('/produk/{produkSlug}/kategori/{kategoriSlug}', [FlashSaleController::class, 'show_by_kategori'])->name('flash-sale.kategori');
+		Route::get('/produk/{produkSlug}/kategori/{kategoriSlug}/brand/{brandSlug}', [FlashSaleController::class, 'show_by_brand'])->name('flash-sale.brand');
 		Route::get('/tambah', [FlashSaleController::class, 'tambah'])->name('flash-sale.tambah');
 		Route::get('/edit/{id}', [FlashSaleController::class, 'edit'])->name('flash-sale.edit');
 		Route::post('/simpan', [FlashSaleController::class, 'store'])->name('flash-sale.store');

@@ -30,27 +30,37 @@ class FlashSaleController extends Controller
 	}
 
     function index() : View {
-		$kategori = $this->kategoriRepository->getAllKategori();
+		$produk = $this->produkRepository->getAllProduk();
 		$flashSale = $this->flashSaleRepository->getAllFlashSale();
 
-		return view('pemilik.flash-sale.index', compact('flashSale', 'kategori'));
+		return view('pemilik.flash-sale.index', compact('flashSale', 'produk'));
 	}
 
-	function show_by_kategori($kategoriSlug) : View {
+	function show_by_produk($produkSlug) : View {
+		$itemProduk = $this->produkRepository->getProdukBySlug($produkSlug);
+		$kategori = $this->kategoriRepository->getAllKategoriByProdukId($itemProduk->id);
+		$flashSale = $this->flashSaleRepository->getAllFlashSaleByProdukId($itemProduk->id);
+
+		return view('pemilik.flash-sale.show-produk', compact('flashSale', 'kategori', 'itemProduk'));
+	}
+
+	function show_by_kategori($produkSlug, $kategoriSlug) : View {
 		$itemKategori = $this->kategoriRepository->getKategoriBySlug($kategoriSlug);
+		$itemProduk = $this->produkRepository->getProdukBySlug($produkSlug);
 		$brand = $this->brandRepository->getAllBrandByKategoriId($itemKategori->id);
 		$flashSale = $this->flashSaleRepository->getAllFlashSaleByKategoriId($itemKategori->id);
 
-		return view('pemilik.flash-sale.show-kategori', compact('flashSale', 'brand', 'itemKategori'));
+		return view('pemilik.flash-sale.show-kategori', compact('flashSale', 'brand', 'itemKategori', 'itemProduk'));
 	}
 
-	function show_by_brand($kategoriSlug, $brandSlug) : View {
+	function show_by_brand($produkSlug, $kategoriSlug, $brandSlug) : View {
 		$itemBrand = $this->brandRepository->getBrandBySlug($brandSlug);
+		$itemProduk = $this->produkRepository->getProdukBySlug($produkSlug);
 		$itemKategori = $this->kategoriRepository->getKategoriBySlug($kategoriSlug);
 		$brand = $this->brandRepository->getAllBrandByKategoriId($itemKategori->id);
 		$flashSale = $this->flashSaleRepository->getAllFlashSaleByBrandId($itemBrand->id);
 
-		return view('pemilik.flash-sale.show-brand', compact('flashSale', 'brand', 'itemBrand', 'itemKategori'));
+		return view('pemilik.flash-sale.show-brand', compact('flashSale', 'brand', 'itemBrand', 'itemKategori', 'itemProduk'));
 	}
 
 	function tambah() : View {

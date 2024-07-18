@@ -24,6 +24,11 @@ class ProdukRepository implements ProdukInterface
 		return Produk::where('slug', $slug)->first();
 	}
 
+	public function getProdukById($id)
+	{
+		return Produk::where('id', $id)->first();
+	}
+
 	public function storeNewProduk(ProdukRequest $request)
 	{
 		$data = new Produk();

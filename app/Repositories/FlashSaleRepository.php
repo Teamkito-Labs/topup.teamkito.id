@@ -18,6 +18,11 @@ class FlashSaleRepository implements FlashSaleInterface
 		return FlashSale::where('aktif', $status)->orderBy('updated_at', 'DESC')->get();
 	}
 
+	public function getAllFlashSaleByProdukId($produkId)
+	{
+		return FlashSale::where('produk_id', $produkId)->orderBy('updated_at', 'DESC')->get();
+	}
+
 	public function getAllFlashSaleByKategoriId($kategoriId)
 	{
 		return FlashSale::where('kategori_id', $kategoriId)->orderBy('updated_at', 'DESC')->get();
@@ -41,7 +46,7 @@ class FlashSaleRepository implements FlashSaleInterface
 		
 
 		$data = new FlashSale();
-		//$data->produk_id = $request->produk_id;
+		$data->produk_id = $request->produk_id;
 		$data->kategori_id = $request->kategori_id;
 		$data->brand_id = $request->brand_id;
 		$data->item_id = $request->item_id;
@@ -74,7 +79,7 @@ class FlashSaleRepository implements FlashSaleInterface
 			$imageNames = $data->thumbnail;
 		}
 		
-		//$data->produk_id = $request->produk_id;
+		$data->produk_id = $request->produk_id;
 		$data->kategori_id = $request->kategori_id;
 		$data->brand_id = $request->brand_id;
 		$data->item_id = $request->item_id;

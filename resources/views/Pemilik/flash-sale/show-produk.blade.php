@@ -9,7 +9,7 @@ up game mobile, Top Up game terbaik
 ')
 <x-app-layout>
     <h3 class="card-title mb-4"></h3>
-	@includeIf('pemilik.flash-sale.partials.breadcrumb', ['tipe' => 'index'])
+	@includeIf('pemilik.flash-sale.partials.breadcrumb', ['tipe' => 'produk'])
     @include('pemilik.flash-sale.partials.table')
     <div class="fixed-bottom d-flex justify-content-end mb-4 mr-5">
         <a href="{{ route('flash-sale.tambah') }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
