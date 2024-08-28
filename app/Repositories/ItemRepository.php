@@ -21,7 +21,7 @@ class ItemRepository implements ItemInterface
 
 	public function getAllItemByBrandId($brandId)
 	{
-		return Item::where('brand_id', $brandId)->orderBy('nama_item', 'ASC')->get();
+		return Item::where('brand_id', $brandId)->orderBy('modal', 'ASC')->get();
 	}
 
 	public function getAllItemByBrandIdAndTipeId($brandId, $tipeId)

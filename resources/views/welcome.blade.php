@@ -9,6 +9,7 @@ up game mobile, Top Up game terbaik
 ')
 @section('robots', 'index, follow')
 <x-guest-layout>
+	{{ $data }}
     <section id="slide-ads-internal">
         <div class="owl-carousel">
             <div>
