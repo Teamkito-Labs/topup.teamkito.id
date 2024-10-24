@@ -134,68 +134,28 @@ up game mobile, top up game terbaik
                             <div class="container">
                                 <div class="row">
 									@forelse ($items as $item)
-									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
-										x-on:click="nominalTopup = '{{ $item->nama_custom_item }}'; itemHargaTopup = '{{ $item->harga_jual }}'; document.getElementById('hargaInput').value = itemHargaTopup">
-										<div class="card shadow rounded-lg border border-dark"
-											:class="{ 'border border-primary': nominalTopup === '{{ $item->id }}' }">
-											<div class="card-body text-left p-3">
-												<img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-												<h5 class="card-title mb-0 mt-2">{{ $item->nama_custom_item }}</h5>
-											</div>
-											<div class="card-footer text-muted">
-												<span class="text-primary font-weight-bold">{{ formatRupiah($item->modal + $item->profit) }}</span>
+										<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
+											<div class="card-nominal card shadow-sm rounded-lg border" data-item-id="{{ $item->id }}">
+												<div class="card-body text-left p-3">
+													<img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
+													<h5 class="card-title mb-0 mt-2">{{ $item->nama_custom_item }}</h5>
+												</div>
+												<div class="card-footer text-muted">
+													<span class="text-primary font-weight-bold">{{ formatRupiah($item->modal + $item->profit) }}</span>
+												</div>
 											</div>
 										</div>
-									</div>
 									@empty
-									<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
-										<div class="card shadow-sm rounded-lg border">
-											<div class="card-body text-left p-3">
-												<h5 class="card-title mb-0 mt-2">Belum Ada Data</h5>
+										<div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2">
+											<div class="card shadow-sm rounded-lg border">
+												<div class="card-body text-left p-3">
+													<h5 class="card-title mb-0 mt-2">Belum Ada Data</h5>
+												</div>
 											</div>
 										</div>
-									</div>
 									@endforelse
-                                    {{-- <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
-                                        x-on:click="nominalTopup = '100'; itemHargaTopup = '10000'; document.getElementById('hargaInput').value = itemHargaTopup">
-                                        <div class="card shadow-sm rounded-lg border"
-                                            :class="{ 'border border-primary': nominalTopup === '100' }">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">100 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                <span class="text-primary font-weight-bold">Rp10.000,- </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
-                                        x-on:click="nominalTopup = '200'; itemHargaTopup = '20000'; document.getElementById('hargaInput').value = itemHargaTopup">
-                                        <div class="card shadow-sm rounded-lg border"
-                                            :class="{ 'border border-primary': nominalTopup === '200' }">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">200 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                <span class="text-primary font-weight-bold">Rp20.000,-</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 p-2"
-                                        x-on:click="nominalTopup = '300'; itemHargaTopup = '50000'; document.getElementById('hargaInput').value = itemHargaTopup">
-                                        <div class="card shadow-sm rounded-lg border"
-                                            :class="{ 'border border-primary': nominalTopup === '300' }">
-                                            <div class="card-body text-left p-3">
-                                                <img src="{{ asset('storage/img/flat-icon/diamond_game.png') }}" />
-                                                <h5 class="card-title mb-0 mt-2">500 Diamond</h5>
-                                            </div>
-                                            <div class="card-footer text-muted">
-                                                <span class="text-primary font-weight-bold">Rp50.000,-</span>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                </div>
+								</div>
+								
                             </div>
                         </div>
                     </div>
@@ -217,43 +177,23 @@ up game mobile, top up game terbaik
                             </label>
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    {{-- @forelse ($data['data'] as $item)
+									@forelse ($pembayaran as $item)
 										<div class="col-md-3 col-sm-6 p-2">
-                                            <div class="card shadow-sm rounded-lg border pembayaran" data-value="{{ $item['fee_customer']['flat'] }}">
-                                    <input type="radio" class="radio-input" name="metode" id="metode100"
-                                        value="{{ $item['fee_customer']['flat'] }}" x-model="metodePembayaran">
-                                    <div class="card-body text-left p-3">
-                                        <img src="{{ $item['icon_url'] }}" />
-                                        <h5 class="card-title mb-0 mt-3 text-left">Biaya Layanan :
-                                            Rp.{{ $item['total_fee']['flat'] }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            @empty
-
-                            @endforelse --}}
-                            <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'DANA'; pilihPembayaranClass = metodePembayaran === 'DANA' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran; calculateTotalHarga()">
-                            <div class="card shadow-sm rounded-lg border"
-                                :class="{ 'border border-primary': metodePembayaran === 'DANA' }">
-                                <div class="card-body text-left p-3">
-                                    <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" />
-                                    <h5 class="card-title mb-0 mt-2 text-left">Rp10.000,-</h5>
-                                    <i class=":pilihPembayaranClass"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-2"
-                                x-on:click="metodePembayaran = 'OVO'; pilihPembayaranClass = metodePembayaran === 'OVO' ? 'fas fa-money-bill-wave' : ''; document.getElementById('metodePembayaranInput').value = metodePembayaran; calculateTotalHarga()">
-                            <div class="card shadow-sm rounded-lg border"
-                                :class="{ 'border border-primary': metodePembayaran === 'OVO' }">
-                                <div class="card-body text-left p-3">
-                                    <img src="https://www.lapakgaming.com/static/images/payment-methods/gopay.webp?w=96&q=75" />
-                                    <h5 class="card-title mb-0 mt-2">Rp10.000,-</h5>
-                                    <i class=":pilihPembayaranClass"></i>
-                                    </div>
-                                </div>
-                            </div>
+											<div class="card-wrapper">
+												<input type="radio" class="radio-input" name="metode" id="metode{{ $loop->index }}" value="{{ $item->id }}">
+												<label for="metode{{ $loop->index }}" class="card shadow-sm rounded-lg border pembayaran">
+													<div class="card-body text-left p-3">
+														<img src="{{ asset('images/metode-pembayaran-logo/' . $item->logo) }}" />
+														<h5 class="card-title mb-0 mt-3 text-left">{{ $item->nama_metode }}</h5>
+													</div>
+												</label>
+											</div>
+										</div>
+									@empty
+										<!-- Handle empty case -->
+									@endforelse
+								</div>															
+							</div>
                         </div>
                     </div>
                 </div>
@@ -277,11 +217,11 @@ up game mobile, top up game terbaik
                         <div class="row">
                             <div class="col-6 col-sm-6 col-md-4">
                                 <div class="media">
-                                    <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
+                                    <img src="{{ asset('images/brand-logo/' . $data->logo) }}"
                                         class="align-self-center rounded-lg mr-3 d-none d-sm-block"
                                         style="height: 64px;" alt="..." x-on:click="calculateTotalHarga()">
                                     <div class="media-body">
-                                        <h6 class="my-0">Free Fire</h6>
+                                        <h6 class="my-0">{{ $data->nama_brand }}</h6>
                                         <h5 class="mt-0 text-primary" id="totalHarga"></h5>
                                     </div>
                                 </div>
@@ -429,9 +369,29 @@ up game mobile, top up game terbaik
     </section>
 
     @push('styles')
+	<style>
+		.selected-card {
+			border: 2px solid #007bff; /* Border warna primary */
+		}
+	</style>
     @endpush
     @push('scripts')
     <script>
+		$(document).ready(function() {
+			$('.card-nominal').click(function() {
+				// Hapus kelas selected-card dari semua kartu
+				$('.card-nominal').removeClass('selected-card');
+				$('.card-nominal').addClass('border');
+
+				// Tambahkan kelas selected-card ke kartu yang dipilih
+				$(this).removeClass('border');
+				$(this).addClass('selected-card');
+
+				// Anda bisa menambahkan tindakan lain di sini, seperti mengatur nilai input tersembunyi, dll.
+				// Misalnya:
+				// $('#selectedItem').val($(this).data('item-id'));
+			});
+		});
         function calculateTotalHarga() {
             let harga = document.getElementById('hargaInput').value;
             let kodePembayaran = document.getElementById('metodePembayaranInput').value;
