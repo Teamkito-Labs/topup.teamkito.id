@@ -9,7 +9,6 @@ up game mobile, Top Up game terbaik
 ')
 @section('robots', 'index, follow')
 <x-guest-layout>
-	{{ $data }}
     <section id="slide-ads-internal">
         <div class="owl-carousel">
             <div>
@@ -98,9 +97,9 @@ up game mobile, Top Up game terbaik
 				style="width: 11rem;">
 					<a href="{{ route('proses-topup', ['gameSlug' => $item->slug]) }}">
 						{{-- <div class="ribbon ribbon-bookmark ribbon-right ribbon-info">TERLARIS</div> --}}
-						<img src="{{ asset('images/brand-logo/' . $item->logo) }}"
+						<img src="{{ asset('img/brand-logo/' . $item->logo) }}"
 							class="card-img-top"
-							alt="{{ asset('images/brand-logo/' . $item->logo) }}">
+							alt="{{ asset('img/brand-logo/' . $item->logo) }}">
 						<div class="card-body text-center align-middle p-2 p-sm-3">
 							<h6 class="card-text">{{ $item->nama_brand }}</h6>
 						</div>
