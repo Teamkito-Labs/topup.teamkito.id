@@ -128,4 +128,8 @@ Route::get('/test', function() {
 	dd($result['product_name']);
 });
 
+Route::get('/cache', function() {
+	Artisan::call('config:clear');
+});
+
 require __DIR__.'/auth.php';

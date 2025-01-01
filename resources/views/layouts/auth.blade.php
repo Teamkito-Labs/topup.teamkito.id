@@ -28,13 +28,7 @@
         <link rel="icon" href="{{ asset('storage/img/core-img/favicon.png') }}" type="image/x-icon">
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <!-- Style -->
-        @vite([
-            'public/xvito-responsive-bootstrap/style.css', 
-            'resources/css/auth.css', 
-            'resources/js/app.js'
-            ])
+		
         @stack('style')
     </head>
     <body>
