@@ -18,185 +18,124 @@ up game mobile, top up game terbaik
     </nav>
     <section id="proses-topup">
         <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-lg-7">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-lg-8">
                     <div class="card shadow-sm rounded-lg mb-3">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-2 pr-0">
-                                    <img src="{{ asset('storage/img/flat-icon/payment.png') }}" />
-                                </div>
-                                <div class="col-md-7 pl-0">
+                                <div class="col-md-12">
                                     <h5 class="m-0">Menunggu Pembayaran</h5>
-                                    <p class="m-0">Anda akan diarahkan ke halaman pembayaran setelah melakukan pembayaran</p>
+                                    <p class="m-0 mb-1">Anda akan diarahkan ke halaman pembayaran setelah melakukan pembayaran.</p>
+                                    <div class="alert alert-warning" role="alert">
+                                        Batas waktu bayar <span class="font-weight-bold"><i class="zmdi zmdi-time"></i> 29m 48d</span>
+                                    </div>
+                                    
                                 </div>
-                                <div class="col-md-3 text-right">
-                                    <span class="font-weight-bold"><i class="zmdi zmdi-time"></i> 29m 48d</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <div class="media">
+                                        <img src="https://www.lapakgaming.com/static/images/category/free-fire.webp?tr=w-256%2Cq-75"
+                                            class="align-self-center rounded-lg mr-3"
+                                            style="height: 64px;" alt="...">
+                                        <div class="media-body">
+                                            <h6 class="my-0">Free Fire</h6>
+                                            <span class="mt-0 text-primary">5 Diamonds (5 + 0 Bonus)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <p class="my-2 h6">Total pembayaran</p>
+                                    <p class="my-2 h6 font-weight-bold">Rp1.600,-</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row mt-3">
+                                <div class="col-6 col-sm-6 col-md-6 text-sm-left text-right">
+                                    <p class="my-2 h6">Metode pembayaran</p>
+                                    <img src="https://www.lapakgaming.com/static/images/payment-methods/dana.webp?w=96&q=75" style="height:20px;" />
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6">
+                                    <button type="button" class="btn btn-primary btn-rounded btn-block my-2"
+                                        data-toggle="modal" data-target="#exampleModal"><i
+                                            class="fa fa-rocket align-middle mr-1"></i> Bayar Sekarang</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            da
-                        </div>
-                    </div>
-                    <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
-                    <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-lg-5">
-                    <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
-                    <div class="card shadow-sm rounded-lg mb-3">
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="penawaran-eksklusif" class="mt-5">
-        <label class="font-weight-bold h4 text-body"><img src="{{ asset('storage/img/flat-icon/discount.png') }}"
-                class="mr-2" /> Penawaran Eksklusif untuk Anda</label>
-        <div class="container">
-            <div class="row">
-                <div class="card-deck-wrapper my-3">
-                    <div class="card-deck">
-                        <div class="card shadow-sm rounded-lg mb-20">
-                            <img class="card-img-top img-fluid"
-                                src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title h5 mb-0">Mobile Legends</h5>
-                                <p class="card-text">
-                                    <h6 class="font-weight-bold"><span class="badge badge-danger">10%</span> Rp98.000,-
-                                        <del class="text-muted">Rp100.000</del></h6>
-                                </p>
-                                <div class="info">
-                                    <div class="progress mb-20 progress-sm">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="card-body my-1">
+                            <div class="row">
+                                <div class="col-4 col-sm-4 col-md-4">
+                                    <div class="mb-3">
+                                        <span class="fw-bold">Status transaksi</span>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="avatar-area">
-                                            <div class="img-group">
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith Jones"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="David jhon"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Jhon Henry"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"></a>
-                                            </div>
+                                    <div class="mb-3">
+                                        <span class="fw-bold">No. transaksi</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="fw-bold">Waktu transaksi</span>
+                                    </div>
+                                </div>
+                                <div class="col-8 col-sm-8 col-md-8">
+                                    <div class="mb-3">
+                                        <div class="status-badge">BELUM DIPROSES</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div>
+                                            #P1729697553486562 
+                                            <span class="transaction-number">Salin</span>
                                         </div>
-                                        <h6 class="mb-0">Sisa Kuota Diskon 70%</h6>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div>23 Oktober 2024 - 22:32</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card shadow-sm rounded-lg mb-20">
-                            <img class="card-img-top img-fluid"
-                                src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title h5 mb-0">Free Fire</h5>
-                                <p class="card-text">
-                                    <h6 class="font-weight-bold"><span class="badge badge-danger">10%</span> Rp98.000,-
-                                        <del class="text-muted">Rp100.000</del></h6>
-                                </p>
-                                <div class="info">
-                                    <div class="progress mb-20 progress-sm">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="avatar-area">
-                                            <div class="img-group">
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith Jones"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="David jhon"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Jhon Henry"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"></a>
-                                            </div>
-                                        </div>
-                                        <h6 class="mb-0">Sisa Kuota Diskon 40%</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card shadow-sm rounded-lg mb-20">
-                            <img class="card-img-top img-fluid"
-                                src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title h5 mb-0">PUBG Mobile</h5>
-                                <p class="card-text">
-                                    <h6 class="font-weight-bold"><span class="badge badge-danger">10%</span> Rp98.000,-
-                                        <del class="text-muted">Rp100.000</del></h6>
-                                </p>
-                                <div class="info">
-                                    <div class="progress mb-20 progress-sm">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;"
-                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="avatar-area">
-                                            <div class="img-group">
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith Jones"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="David jhon"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Jhon Henry"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"> </a>
-                                                <a class="user-avatar user-avatar-group" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Smith"><img
-                                                        src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                                        alt="user" class="rounded-circle"></a>
-                                            </div>
-                                        </div>
-                                        <h6 class="mb-0">Sisa Kuota Diskon 10%</h6>
-                                    </div>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table rounded-lg mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-transparent border-top-0">
+                                                <span class="font-14">Detail Produk</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-weight-lighter">
+                                                <p class="my-0">Produk</p>
+                                            </td>
+                                            <td class="text-right font-weight-bold">
+                                                Mobile Legends
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-lighter">
+                                                <p class="my-0">Nominal</p>
+                                            </td>
+                                            <td class="text-right font-weight-bold">
+                                                5 Diamonds ( 5 + 0 Bonus )
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-lighter">
+                                                <p class="my-0">Nickname</p>
+                                            </td class="font-weight-lighter">
+                                            <td class="text-right font-weight-bold">
+                                                pakkos
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-weight-lighter">
+                                                <p class="my-0">User ID</p>
+                                            </td class="font-weight-lighter">
+                                            <td class="text-right font-weight-bold">
+                                                83358538 (2164)
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -204,97 +143,6 @@ up game mobile, top up game terbaik
             </div>
         </div>
     </section>
-    <section id="pendapat-pelanggan" class="mt-5">
-        <label class="font-weight-bold h4 text-body">Pendapat Pelanggan Teamkito</label>
-        <p class="text-muted">
-            Baca ulasan dari pelanggan yang puas dengan layanan kami. Temukan bagaimana top-up voucher game di platform
-            kami telah membantu mereka menikmati permainan favorit mereka tanpa hambatan.
-        </p>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-2">
-                    <div class="card shadow-sm rounded-lg">
-                        <div class="card-body">
-                            <ul class="list-inline mb-2 product-review">
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o text-primary"></i></li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content....</p>
-                            <hr>
-                            <div class="row">
-                                <div class="col-2 col-sm-2 pr-1">
-                                    <img src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                        class="user-avatar rounded-circle" alt="" width="40" height="40" />
-                                </div>
-                                <div class="col-10 col-sm-10 pl-1">
-                                    <h6 class="card-title mb-0">Iit Pranata</h6>
-                                    <p class="card-subtitle mb-2 text-muted">Ketua Guild Teamkito</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-2">
-                    <div class="card shadow-sm rounded-lg">
-                        <div class="card-body">
-                            <ul class="list-inline mb-2 product-review">
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o text-primary"></i></li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content....</p>
-                            <hr>
-                            <div class="row">
-                                <div class="col-2 col-sm-2 pr-1">
-                                    <img src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                        class="user-avatar rounded-circle" alt="" width="40" height="40" />
-                                </div>
-                                <div class="col-10 col-sm-10 pl-1">
-                                    <h6 class="card-title mb-0">Iit Pranata</h6>
-                                    <p class="card-subtitle mb-2 text-muted">Ketua Guild Teamkito</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-2">
-                    <div class="card shadow-sm rounded-lg">
-                        <div class="card-body">
-                            <ul class="list-inline mb-2 product-review">
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star text-primary"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star-o text-primary"></i></li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content....</p>
-                            <hr>
-                            <div class="row">
-                                <div class="col-2 col-sm-2 pr-1">
-                                    <img src="https://storage.googleapis.com/tokogame-img/products/free-fire-20240424.png"
-                                        class="user-avatar rounded-circle" alt="" width="40" height="40" />
-                                </div>
-                                <div class="col-10 col-sm-10 pl-1">
-                                    <h6 class="card-title mb-0">Iit Pranata</h6>
-                                    <p class="card-subtitle mb-2 text-muted">Ketua Guild Teamkito</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
     @push('styles')
     @endpush
     @push('scripts')

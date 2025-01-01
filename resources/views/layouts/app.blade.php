@@ -28,19 +28,30 @@
 
     <link rel="icon" href="{{ asset('storage/img/core-img/favicon.png') }}" type="image/x-icon">
 
+    <!-- Master Stylesheet CSS -->
+    <link rel="stylesheet" href="{{ asset('nav-sidebar/style.css') }}">
+
+    <!-- Tambahan Stylesheet CSS -->
+    @stack('styles')
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Style -->
+    @vite([
+    'public/xvito-responsive-bootstrap/nav-sidebar/style.css',
+    'resources/js/app.js',
+    ])
     @stack('styles')
 </head>
 
 <body>
     <!-- Preloader -->
-    {{-- <div id="preloader-area">
+    <div id="preloader-area">
         <div class="lds-ripple">
             <div></div>
             <div></div>
         </div>
-    </div> --}}
+    </div>
     <!-- Preloader -->
     <div class="main-container-wrapper">
         <!-- Top bar area -->
@@ -411,6 +422,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @vite([
+    'public/xvito-responsive-bootstrap/js/wow.min.js',
+    'public/xvito-responsive-bootstrap/js/popper.min.js',
+    'public/xvito-responsive-bootstrap/js/bootstrap.min.js',
+    'public/xvito-responsive-bootstrap/js/bundle.js',
+    'public/xvito-responsive-bootstrap/js/canvas.js',
+    'public/xvito-responsive-bootstrap/js/collapse.js',
+    'public/xvito-responsive-bootstrap/js/settings.js',
+    'public/xvito-responsive-bootstrap/js/template.js',
+    'public/xvito-responsive-bootstrap/js/default-assets/active.js',
+    ])
     @stack('scripts')
 </body>
 

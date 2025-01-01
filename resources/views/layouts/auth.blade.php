@@ -27,6 +27,13 @@
 
         <link rel="icon" href="{{ asset('storage/img/core-img/favicon.png') }}" type="image/x-icon">
 
+        <!-- Master Stylesheet CSS -->
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        <link rel="stylesheet" href="{{ asset('auth.css') }}">
+
+        <!-- Tambahan Stylesheet CSS -->
+        @stack('styles')
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
 		
         @stack('style')
@@ -61,19 +68,21 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        @vite([
-            'public/xvito-responsive-bootstrap/js/popper.min.js',
-            'public/xvito-responsive-bootstrap/js/bootstrap.min.js',
-            'public/xvito-responsive-bootstrap/js/bundle.js',
-            'public/xvito-responsive-bootstrap/js/canvas.js',
-            'public/xvito-responsive-bootstrap/js/collapse.js',
-            'public/xvito-responsive-bootstrap/js/settings.js',
-            'public/xvito-responsive-bootstrap/js/template.js',
-            'public/xvito-responsive-bootstrap/js/default-assets/active.js',
-            ])
-        @stack('script')
+        
+        <!-- Plugins Js -->
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bundle.js') }}"></script>
+
+        <!-- Active JS -->
+        <script src="{{ asset('js/canvas.js') }}"></script>
+        <script src="{{ asset('js/collapse.js') }}"></script>
+        <script src="{{ asset('js/settings.js') }}"></script>
+        <script src="{{ asset('js/template.js') }}"></script>
+        <script src="{{ asset('js/default-assets/active.js') }}"></script>
+
+        <!-- Tambahan Js -->
+        @stack('scripts')
     </body>
 </html>
