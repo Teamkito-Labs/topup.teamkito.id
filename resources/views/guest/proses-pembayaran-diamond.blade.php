@@ -11,7 +11,7 @@ up game mobile, top up game terbaik
 <x-guest-layout>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="">Top Up</a></li>
+            <li class="breadcrumb-item"><a href="{{ route("beranda") }}">Top Up</a></li>
             <li class="breadcrumb-item"><a href="">Free Fire</a></li>
             <li class="breadcrumb-item active" aria-current="page">#TK378247494729FF</li>
         </ol>
