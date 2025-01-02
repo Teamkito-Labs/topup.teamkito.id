@@ -108,7 +108,7 @@ up game mobile, Top Up game terbaik
 				@empty
 					
 				@endforelse
-                {{-- <div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
+                <div class="col-3 col-sm-3 col-md-2 col-lg-2 card shadow-sm rounded-lg m-2 m-sm-3 m-md-3 m-lg-3 px-0"
                     style="width: 11rem;">
                     <a href="http://">
                     <img src="https://storage.googleapis.com/tokogame-img/products/mobile-legends-20240508.png"
@@ -207,7 +207,7 @@ up game mobile, Top Up game terbaik
                             <h6 class="card-text">League Of Legends</h6>
                         </div>
                     </a>
-                </div> --}}
+                </div>
             </div>
             <div class="text-center mt-4 mb-5">
                 <a href="" class="h5 text-decoration-none font-weight-bold text-primary">TAMPIL LEBIH BANYAK</a>
@@ -281,9 +281,6 @@ up game mobile, Top Up game terbaik
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
             integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        @vite([
-        'resources/css/welcome.css',
-        ])
     @endpush
     @push('scripts')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
