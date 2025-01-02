@@ -13,17 +13,22 @@ up game mobile, Top Up game terbaik
         <div class="owl-carousel">
             <div>
                 <img class="rounded-lg"
-                    src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/ID-HB-Flashsale-exorcist.png?tr=w-828%2Cq-75"
+                    src="{{ asset('img/banner/topup.teamkito.id-1.png') }}"
                     alt="Slide 1" />
             </div>
             <div>
                 <img class="rounded-lg"
-                    src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/Moonlightsales-Banner_724x260.webp?tr=w-828%2Cq-75"
+                    src="{{ asset('img/banner/topup.teamkito.id-2.png') }}"
                     alt="Slide 2" />
             </div>
             <div>
                 <img class="rounded-lg"
-                    src="https://www.lapakgaming.com/static/banner/lapakgaming/202405/Fafinal-Banner.png?tr=w-828%2Cq-75"
+                    src="{{ asset('img/banner/topup.teamkito.id-3.png') }}"
+                    alt="Slide 3" />
+            </div>
+            <div>
+                <img class="rounded-lg"
+                    src="{{ asset('img/banner/topup.teamkito.id-4.png') }}"
                     alt="Slide 3" />
             </div>
         </div>
