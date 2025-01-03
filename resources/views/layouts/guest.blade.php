@@ -221,9 +221,9 @@
                                 </p>
                                 <ul class="list-inline mb-3">
                                     <li class="list-inline-item">
-                                        <a href="mailto:cs@teamkito.id" class="font-weight-bold text-primary">
+                                        <a href="mailto:topup@teamkito.id" class="font-weight-bold text-primary">
                                             <i class="icon_mail_alt"></i>
-                                            cs@teamkito.id
+                                            topup@teamkito.id
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
