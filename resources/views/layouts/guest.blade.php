@@ -37,8 +37,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <script src="{{ asset('assets/app-f79bab79.js') }}"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <script src="{{ asset('assets/app-f79bab79.js') }}"></script> --}}
 </head>
 
 <body>
@@ -227,7 +227,7 @@
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="http://wa.me/" class="font-weight-bold text-primary">
+                                        <a href="http://wa.me/628117367673" class="font-weight-bold text-primary">
                                             <i class="fa fa-whatsapp"></i>
                                             Chat WhatsApp
                                         </a>

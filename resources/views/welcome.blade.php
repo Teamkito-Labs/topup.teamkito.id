@@ -13,22 +13,22 @@ up game mobile, Top Up game terbaik
         <div class="owl-carousel">
             <div>
                 <img class="rounded-lg"
-                    src="{{ asset('img/banner/topup.teamkito.id-1.png') }}"
+                    src="{{ asset('storage/img/banner/topup.teamkito.id-1.png') }}"
                     alt="Slide 1" />
             </div>
             <div>
                 <img class="rounded-lg"
-                    src="{{ asset('img/banner/topup.teamkito.id-2.png') }}"
+                    src="{{ asset('storage/img/banner/topup.teamkito.id-2.png') }}"
                     alt="Slide 2" />
             </div>
             <div>
                 <img class="rounded-lg"
-                    src="{{ asset('img/banner/topup.teamkito.id-3.png') }}"
+                    src="{{ asset('storage/img/banner/topup.teamkito.id-3.png') }}"
                     alt="Slide 3" />
             </div>
             <div>
                 <img class="rounded-lg"
-                    src="{{ asset('img/banner/topup.teamkito.id-4.png') }}"
+                    src="{{ asset('storage/img/banner/topup.teamkito.id-4.png') }}"
                     alt="Slide 3" />
             </div>
         </div>
@@ -102,9 +102,9 @@ up game mobile, Top Up game terbaik
 				style="width: 11rem;">
 					<a href="{{ route('proses-topup', ['gameSlug' => $item->slug]) }}">
 						{{-- <div class="ribbon ribbon-bookmark ribbon-right ribbon-info">TERLARIS</div> --}}
-						<img src="{{ asset('img/brand-logo/' . $item->logo) }}"
+						<img src="{{ asset('storage/img/brand-logo/' . $item->logo) }}"
 							class="card-img-top"
-							alt="{{ asset('img/brand-logo/' . $item->logo) }}">
+							alt="{{ asset('storage/img/brand-logo/' . $item->logo) }}">
 						<div class="card-body text-center align-middle p-2 p-sm-3">
 							<h6 class="card-text">{{ $item->nama_brand }}</h6>
 						</div>
