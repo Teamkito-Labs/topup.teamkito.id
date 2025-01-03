@@ -26,10 +26,10 @@ class MetodePembayaranRepository implements MetodePembayaranInterface
 
 	public function storeNewMetodePembayaran(MetodePembayaranRequest $request)
 	{
-		$image = $request->file('logo');
-		$extension = $image->extension();
-		$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-		$image->move(public_path('images/metode-pembayaran-logo'), $imageNames);
+		$value = $request->file('logo');
+        $extension = $value->extension();
+        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+        Storage::putFileAs('public/images/metode-pembayaran-logo', $value, $imageNames);
 
 		$data = new MetodePembayaran();
 		$data->penyedia_pembayaran_id = $request->penyedia_pembayaran_id;
@@ -48,10 +48,10 @@ class MetodePembayaranRepository implements MetodePembayaranInterface
 		$data = MetodePembayaran::findOrFail($id);
 
 		if ($request->logo != '') {
-			$image = $request->file('logo');
-			$extension = $image->extension();
-			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			$image->move(public_path('images/metode-pembayaran-logo'), $imageNames);
+			$value = $request->file('logo');
+        $extension = $value->extension();
+        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+        Storage::putFileAs('public/images/metode-pembayaran-logo', $value, $imageNames);
 		} else {
 			$imageNames = $data->logo;
 		}	
