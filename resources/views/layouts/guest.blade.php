@@ -37,8 +37,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <script src="{{ asset('assets/app-f79bab79.js') }}"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <script src="{{ asset('assets/app-f79bab79.js') }}"></script> --}}
 </head>
 
 <body>
@@ -221,13 +221,13 @@
                                 </p>
                                 <ul class="list-inline mb-3">
                                     <li class="list-inline-item">
-                                        <a href="mailto:cs@teamkito.id" class="font-weight-bold text-primary">
+                                        <a href="mailto:topup@teamkito.id" class="font-weight-bold text-primary">
                                             <i class="icon_mail_alt"></i>
-                                            cs@teamkito.id
+                                            topup@teamkito.id
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href="http://wa.me/" class="font-weight-bold text-primary">
+                                        <a href="http://wa.me/628117367673" class="font-weight-bold text-primary">
                                             <i class="fa fa-whatsapp"></i>
                                             Chat WhatsApp
                                         </a>
