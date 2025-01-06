@@ -36,10 +36,10 @@ class FlashSaleRepository implements FlashSaleInterface
 	public function storeNewFlashSale(FlashSaleRequest $request)
 	{
 		if ($request->file('logo')) {
-			$image = $request->file('logo');
-			$extension = $image->extension();
+			$value = $request->file('logo');
+			$extension = $value->extension();
 			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			$image->move(public_path('images/thumbnail-flash-sale'), $imageNames);
+			Storage::putFileAs('public/images/thumbnail-flash-sale', $value, $imageNames);
 		} else {
 			$imageNames = '';
 		}
@@ -71,10 +71,10 @@ class FlashSaleRepository implements FlashSaleInterface
 		$data = FlashSale::findOrFail($id);
 
 		if ($request->file('logo')) {
-			$image = $request->file('logo');
-			$extension = $image->extension();
-			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			$image->move(public_path('images/thumbnail-flash-sale'), $imageNames);
+			$value = $request->file('logo');
+        $extension = $value->extension();
+        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+        Storage::putFileAs('public/images/thumbnail-flash-sale', $value, $imageNames);
 		} else {
 			$imageNames = $data->thumbnail;
 		}

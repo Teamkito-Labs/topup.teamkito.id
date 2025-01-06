@@ -21,7 +21,7 @@ Route::get('/bayar', function () {
 	return view('guest.proses-pembayaran-diamond'); 
 })->name('pembayaran');
 
-Route::get('/dashboard', function () { return view('pemilik/dashboard'); })->name('dashboard');
+Route::get('/dashboard', function () { return view('pemilik.dashboard'); })->name('dashboard');
 
 Route::prefix('produk')->group(function () {
 	Route::get('/{produkSlug}', [ProdukController::class, 'index'])->name('produk');

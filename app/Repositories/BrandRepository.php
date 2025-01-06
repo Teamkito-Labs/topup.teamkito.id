@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Requests\BrandRequest;
 use App\Interfaces\BrandInterface;
 use App\Models\Brand;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BrandRepository implements BrandInterface
@@ -36,10 +37,10 @@ class BrandRepository implements BrandInterface
 
 	public function storeNewBrand(BrandRequest $request)
 	{
-		$image = $request->file('logo');
-		$extension = $image->extension();
-		$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-		$image->move(public_path('images/brand-logo'), $imageNames);
+		$value = $request->file('logo');
+        $extension = $value->extension();
+        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+        Storage::putFileAs('public/images/brand-logo', $value, $imageNames);
 
 		$data = new Brand();
 		$data->kategori_id = $request->kategori_id;
@@ -59,10 +60,10 @@ class BrandRepository implements BrandInterface
 		$data = Brand::findOrFail($id);
 
 		if ($request->logo != '') {
-			$image = $request->file('logo');
-			$extension = $image->extension();
+			$value = $request->file('logo');
+			$extension = $value->extension();
 			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			$image->move(public_path('images/brand-logo'), $imageNames);
+			Storage::putFileAs('public/images/brand-logo', $value, $imageNames);
 		} else {
 			$imageNames = $data->logo;
 		}
