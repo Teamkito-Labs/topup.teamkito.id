@@ -97,12 +97,7 @@ up game mobile, Top Up game terbaik
                     </div>
                     <div class="form-group col-md-6">
                         <label for="thumbnail" class="col-form-label">Thumbnail</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input @error('thumbnail') is-invalid @enderror" id="thumbnail" aria-describedby="thumbnail" name="thumbnail">
-                                <label class="custom-file-label" for="thumbnail">Choose file</label>
-                            </div>
-                        </div>
+                        <input type="file" class="form-control @error('thumbnail') is-invalid @enderror" id="thumbnail" aria-describedby="thumbnail" name="thumbnail">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="aktif" class="col-form-label">Status</label>

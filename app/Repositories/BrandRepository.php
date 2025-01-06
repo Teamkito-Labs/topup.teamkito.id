@@ -40,7 +40,7 @@ class BrandRepository implements BrandInterface
 		$value = $request->file('logo');
         $extension = $value->extension();
         $imageNames = uniqid('img_', microtime()) . '.' . $extension;
-        Storage::putFileAs('public/images/brand-logo', $value, $imageNames);
+        Storage::putFileAs('public/img/brand-logo', $value, $imageNames);
 
 		$data = new Brand();
 		$data->kategori_id = $request->kategori_id;
@@ -63,7 +63,7 @@ class BrandRepository implements BrandInterface
 			$value = $request->file('logo');
 			$extension = $value->extension();
 			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			Storage::putFileAs('public/images/brand-logo', $value, $imageNames);
+			Storage::putFileAs('public/img/brand-logo', $value, $imageNames);
 		} else {
 			$imageNames = $data->logo;
 		}

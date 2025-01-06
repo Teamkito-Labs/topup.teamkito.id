@@ -39,7 +39,7 @@ class FlashSaleRepository implements FlashSaleInterface
 			$value = $request->file('logo');
 			$extension = $value->extension();
 			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
-			Storage::putFileAs('public/images/thumbnail-flash-sale', $value, $imageNames);
+			Storage::putFileAs('public/img/thumbnail-flash-sale', $value, $imageNames);
 		} else {
 			$imageNames = '';
 		}
@@ -74,7 +74,7 @@ class FlashSaleRepository implements FlashSaleInterface
 			$value = $request->file('logo');
         $extension = $value->extension();
         $imageNames = uniqid('img_', microtime()) . '.' . $extension;
-        Storage::putFileAs('public/images/thumbnail-flash-sale', $value, $imageNames);
+        Storage::putFileAs('public/img/thumbnail-flash-sale', $value, $imageNames);
 		} else {
 			$imageNames = $data->thumbnail;
 		}

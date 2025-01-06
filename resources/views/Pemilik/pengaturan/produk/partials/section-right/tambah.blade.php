@@ -95,12 +95,7 @@
             </div>
             <div class="form-group">
                 <label for="nama_brand">Logo</label>
-                <div class="input-group mb-3">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="logo" aria-describedby="logo" name="logo">
-                        <label class="custom-file-label" for="logo">Choose file</label>
-                    </div>
-                </div>
+                <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" aria-describedby="logo" name="logo">
             </div>
             <div class="d-flex justify-content-end">
                 <a href="{{ route('kategori') }}" class="btn btn-secondary btn-rounded btn-sm mr-2">Batal</a>

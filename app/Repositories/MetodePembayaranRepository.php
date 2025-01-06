@@ -29,7 +29,7 @@ class MetodePembayaranRepository implements MetodePembayaranInterface
 		$value = $request->file('logo');
         $extension = $value->extension();
         $imageNames = uniqid('img_', microtime()) . '.' . $extension;
-        Storage::putFileAs('public/images/metode-pembayaran-logo', $value, $imageNames);
+        Storage::putFileAs('public/img/metode-pembayaran-logo', $value, $imageNames);
 
 		$data = new MetodePembayaran();
 		$data->penyedia_pembayaran_id = $request->penyedia_pembayaran_id;
@@ -49,9 +49,9 @@ class MetodePembayaranRepository implements MetodePembayaranInterface
 
 		if ($request->logo != '') {
 			$value = $request->file('logo');
-        $extension = $value->extension();
-        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
-        Storage::putFileAs('public/images/metode-pembayaran-logo', $value, $imageNames);
+			$extension = $value->extension();
+			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
+			Storage::putFileAs('public/img/metode-pembayaran-logo', $value, $imageNames);
 		} else {
 			$imageNames = $data->logo;
 		}	

@@ -64,12 +64,7 @@ up game mobile, Top Up game terbaik
                     </div>
                     <div class="form-group col-md-4">
                         <label for="logo" class="col-form-label">Logo</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="logo" aria-describedby="logo" name="logo">
-                                <label class="custom-file-label" for="logo">Choose file</label>
-                            </div>
-                        </div>
+                        <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" aria-describedby="logo" name="logo">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-rounded btn-block btn-primary mt-2">Simpan</button>
