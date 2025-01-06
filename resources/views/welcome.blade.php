@@ -21,16 +21,6 @@ up game mobile, Top Up game terbaik
                     src="{{ asset('storage/img/banner/topup.teamkito.id-2.png') }}"
                     alt="Slide 2" />
             </div>
-            <div>
-                <img class="rounded-lg"
-                    src="{{ asset('storage/img/banner/topup.teamkito.id-3.png') }}"
-                    alt="Slide 3" />
-            </div>
-            <div>
-                <img class="rounded-lg"
-                    src="{{ asset('storage/img/banner/topup.teamkito.id-4.png') }}"
-                    alt="Slide 3" />
-            </div>
         </div>
     </section>
     <section id="menu-utama" class="mt-4">

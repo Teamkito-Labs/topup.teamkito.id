@@ -196,19 +196,19 @@ up game mobile, top up game terbaik
 							</div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card shadow-sm rounded-lg mb-3">
-                <div class="card-body">
-                    <label class="h5 text-body mb-3"><span
-                            class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
-                            style="font-size: 15px;">05</span> Masukkan
-                        Informasi Kontak</label>
-                    <input type="text" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
-                        placeholder="Masukkan Email (opsional)" x-model="informasiKontak">
-                    <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
-                        Masukkan detail ini untuk mendapatkan bukti transaksi.
-                    </p>
+                    <div class="card shadow-sm rounded-lg mb-3">
+                        <div class="card-body">
+                            <label class="h5 text-body mb-3"><span
+                                    class="badge badge-primary font-weight-bold p-2 rounded-lg mr-1"
+                                    style="font-size: 15px;">05</span> Masukkan
+                                Informasi Kontak</label>
+                            <input type="text" id="id-game" class="form-control rounded-lg form-control-md g-mb-10"
+                                placeholder="Masukkan Email (opsional)" x-model="informasiKontak">
+                            <p id="masukkan-informasi-akun" class="form-text text-muted mb-1">
+                                Masukkan detail ini untuk mendapatkan bukti transaksi.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card fixed-bottom">
@@ -371,7 +371,7 @@ up game mobile, top up game terbaik
     @push('styles')
 	<style>
 		.selected-card {
-			border: 2px solid #007bff; /* Border warna primary */
+			border: 2px solid #405075; /* Border warna primary */
 		}
 	</style>
     @endpush

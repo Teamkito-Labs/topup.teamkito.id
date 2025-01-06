@@ -211,7 +211,7 @@
                 <div class="container-fluid mt-5">
                     <section id="footer-top" class="py-3">
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
+                            <div class="col-12 col-sm-12 col-md-7 col-lg-7 mt-4">
                                 <img src="{{ asset('storage/img/core-img/logo.png') }}" alt="logo"
                                     style="height: 50px;" />
                                 <p class="my-3">
@@ -219,7 +219,7 @@
                                     up untuk game populer seperti Free Fire, Mobile Legends, PUBG Mobile, dan Genshin
                                     Impact. Nikmati harga terjangkau dan proses instan hanya di topup.teamkito.id.
                                 </p>
-                                <ul class="list-inline mb-3">
+                                <ul class="list-inline my-3">
                                     <li class="list-inline-item">
                                         <a href="mailto:topup@teamkito.id" class="font-weight-bold text-primary">
                                             <i class="icon_mail_alt"></i>
@@ -232,20 +232,22 @@
                                             Chat WhatsApp
                                         </a>
                                     </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://maps.app.goo.gl/HjuWU7EFuaBaUQrf9" class="font-weight-bold text-primary">
+                                            <i class="icon_pin_alt"></i>
+                                            Kandang Limun, Muara Bangka Hulu, Kota Bengkulu
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
+                            <div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-4">
                                 <h5>Informasi</h5>
                                 <nav class="mb-4">
                                     <ul class="list-inline">
-                                        <li class="list-inline-item"><a href="http://" class="text-primary">Tentang
-                                                Kami</a></li>
                                         <li class="list-inline-item"><a href="http://" class="text-primary">Kebijakan
                                                 Privasi</a></li>
                                         <li class="list-inline-item"><a href="http://" class="text-primary">Syarat &
                                                 Ketentuan</a></li>
-                                        <li class="list-inline-item"><a href="http://" class="text-primary">Kontak</a>
-                                        </li>
                                         <li class="list-inline-item"><a href="http://" class="text-primary">FAQ</a></li>
                                     </ul>
                                 </nav>
@@ -272,7 +274,7 @@
                                         rel="noopener noreferrer">
                                         <img src="{{ asset('storage/img/flat-icon/facebook.png') }}" />
                                     </a>
-                                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Instagram"
+                                    <a href="https://www.instagram.com/topup.teamkito.id/" class="action-item mr-2" data-toggle="tooltip" title="Instagram"
                                         rel="noopener noreferrer">
                                         <img src="{{ asset('storage/img/flat-icon/instagram.png') }}" />
                                     </a>
