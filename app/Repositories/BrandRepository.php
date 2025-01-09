@@ -59,7 +59,7 @@ class BrandRepository implements BrandInterface
 	{
 		$data = Brand::findOrFail($id);
 
-		if ($request->logo != '') {
+		if ($request->file('logo') != '') {
 			$value = $request->file('logo');
 			$extension = $value->extension();
 			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
@@ -73,6 +73,7 @@ class BrandRepository implements BrandInterface
 		$data->perangkat = $request->perangkat;
 		$data->jumlah_input = $request->jumlah_input;
 		$data->keterangan = $request->keterangan;
+		$data->logo = $imageNames;
 		$data->slug = Str::slug($request->nama_brand, '-');
 		$data->save();
 

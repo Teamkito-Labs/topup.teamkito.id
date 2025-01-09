@@ -72,9 +72,9 @@ class FlashSaleRepository implements FlashSaleInterface
 
 		if ($request->file('logo')) {
 			$value = $request->file('logo');
-        $extension = $value->extension();
-        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
-        Storage::putFileAs('public/img/thumbnail-flash-sale', $value, $imageNames);
+			$extension = $value->extension();
+			$imageNames = uniqid('img_', microtime()) . '.' . $extension;
+			Storage::putFileAs('public/img/thumbnail-flash-sale', $value, $imageNames);
 		} else {
 			$imageNames = $data->thumbnail;
 		}
