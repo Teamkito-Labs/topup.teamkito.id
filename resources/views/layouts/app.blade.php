@@ -37,8 +37,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- <script src="{{ asset('assets/app-f79bab79.js') }}"></script> --}}
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <script src="{{ asset('assets/app-f79bab79.js') }}"></script>
     
 <body>
     <!-- Preloader -->
