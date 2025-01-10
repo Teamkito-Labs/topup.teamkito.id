@@ -120,7 +120,7 @@ up game mobile, Top Up game terbaik
         </div>
     </div>
     <div class="fixed-bottom d-flex justify-content-end mb-4 mr-5">
-        <a href="{{ route('produk.item.tambah', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
+        <a href="{{ route('produk.item.tambah', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug]) }}" class="btn btn-primary btn-lg btn-circle"><i class="fa fa-plus"></i></a>
     </div>
     @push('styles')
     <link rel="stylesheet" href="{{ url('xvito-responsive-bootstrap/css/default-assets/new/sweetalert-2.min.css') }}">
