@@ -144,7 +144,7 @@
 
                     <li class="nav-item nav-profile dropdown dropdown-animate">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" alt="profile" />
+                            <img src="{{ Avatar::create(Auth::user()->nama)->toBase64() }}" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top"
                             aria-labelledby="profileDropdown">

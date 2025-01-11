@@ -22,17 +22,23 @@ class OauthController extends Controller
             $finduser = User::where('gauth_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return redirect('/dashboard');
+
+				if (Auth::user()->role == 'user') {
+					return redirect('/');
+				} else {
+					return redirect('/dashboard');
+				}
             }else{
                 $newUser = User::create([
-                    'name' => $user->name,
+                    'nama' => $user->name,
                     'email' => $user->email,
                     'gauth_id'=> $user->id,
                     'gauth_type'=> 'google',
-                    'password' => Hash::make('password')
+                    'role'=> 'user',
+                    'password' => Hash::make('p4$Sw0rd')
                 ]);
                 Auth::login($newUser);
-                return redirect('/dashboard');
+                return redirect('/');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

@@ -59,17 +59,17 @@ up game mobile, Top Up game terbaik
                             </div></td>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->kode_produk }}</td>
-                            <td>
+                            <td class="font-weight-bold">
 								@if ($item->nama_custom_item == '')
 									<a href="{{ route('produk.item.edit', ['produkSlug' => $produk->slug, 'kategoriSlug' => $kategori->slug, 'brandSlug' => $brand->slug, 'itemSlug' => $item->slug]) }}" class="text-sm text-info "><u>Belum dimasukkan</u></a>
 								@else
 									{{ $item->nama_custom_item }}
 								@endif
 							</td>
-                            <td>{{ formatRupiah($item->modal + $item->profit) }}</a></td>
-                            <td>{{ formatRupiah($item->modal) }}</a></td>
-                            <td>{{ formatRupiah($item->profit) }}</a></td>
-                            <td>{{ tanggal($item->updated_at) }} WIB</a></td>
+                            <td class="font-weight-bold">{{ formatRupiah($item->jual) }}</td>
+                            <td>{{ formatRupiah($item->modal) }}</td>
+                            <td>{{ formatRupiah($item->modal * $item->profit / 100) }}</td>
+                            <td>{{ tanggal($item->updated_at) }}</td>
                             <td class="text-center">
                                 @if ($item->aktif == 'Y')
                                 <span class="badge badge-success">Aktif</span>

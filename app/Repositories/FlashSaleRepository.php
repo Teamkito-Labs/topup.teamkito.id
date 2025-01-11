@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Requests\FlashSaleRequest;
 use App\Interfaces\FlashSaleInterface;
 use App\Models\FlashSale;
+use Illuminate\Support\Facades\Storage;
 
 class FlashSaleRepository implements FlashSaleInterface
 {

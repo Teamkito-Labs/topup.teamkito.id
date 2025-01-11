@@ -143,7 +143,7 @@
                                     <li class="nav-item nav-profile dropdown dropdown-animate">
                                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                             id="profileDropdown">
-                                            <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}"
+                                            <img src="{{ Avatar::create(Auth::user()->nama)->toBase64() }}"
                                                 alt="profile" />
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown profile-top"
@@ -154,8 +154,13 @@
                                             <a href="#" class="dropdown-item"><i
                                                     class="zmdi zmdi-file-text profile-icon mr-2"
                                                     aria-hidden="true"></i> Riwayat Transaksi</a>
-                                            <a href="#" class="dropdown-item"><i class="ti-unlink profile-icon mr-2"
-                                                    aria-hidden="true"></i> Keluar</a>
+											<form method="POST" action="{{ route('logout') }}">
+												@csrf
+												<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+												this.closest('form').submit();">
+													<i class="ti-unlink profile-icon mr-2" aria-hidden="true"></i> Keluar
+												</a>
+											</form>
                                         </div>
                                     </li>
                                 </div>								

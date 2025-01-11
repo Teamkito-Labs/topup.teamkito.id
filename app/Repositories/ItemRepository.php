@@ -62,14 +62,19 @@ class ItemRepository implements ItemInterface
 
 	public function updateItemById(ItemRequest $request, $result, $id)
 	{
+		$profit = $request->profit;
+		$modal = $result['price'];
+		$nProfit = $result['price'] * $profit / 100;
+
 		$data = Item::findOrFail($id);
 		$data->tipe_id = $request->tipe_id;
 		$data->kode_produk = $request->kode_produk;
-		$data->profit = $request->profit;
+		$data->profit = $profit;
 		$data->nama_custom_item = $request->nama_custom_item;
 		$data->nama_item = $result['product_name'];
 		$data->slug = Str::slug($result['product_name'], '-');
-		$data->modal = $result['price'];
+		$data->modal = $modal;
+		$data->jual = $modal + $nProfit;
 		$data->save();
 
 		return $data;

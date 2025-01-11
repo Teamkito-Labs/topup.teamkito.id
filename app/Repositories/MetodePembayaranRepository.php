@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Requests\MetodePembayaranRequest;
 use App\Interfaces\MetodePembayaranInterface;
 use App\Models\MetodePembayaran;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class MetodePembayaranRepository implements MetodePembayaranInterface
