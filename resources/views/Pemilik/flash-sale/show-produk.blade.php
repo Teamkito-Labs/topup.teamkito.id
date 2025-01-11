@@ -12,7 +12,7 @@ up game mobile, Top Up game terbaik
 	@includeIf('pemilik.flash-sale.partials.breadcrumb', ['tipe' => 'produk'])
     @include('pemilik.flash-sale.partials.table')
     <div class="fixed-bottom d-flex justify-content-end mb-4 mr-5">
-        <a href="{{ route('flash-sale.tambah') }}" class="btn btn-primary btn-circle"><i class="fa fa-plus"></i></a>
+        <a href="{{ route('flash-sale.tambah') }}" class="btn btn-primary btn-lg btn-circle"><i class="fa fa-plus"></i></a>
     </div>
     @include('pemilik.flash-sale.partials.style')
     @include('pemilik.flash-sale.partials.script')

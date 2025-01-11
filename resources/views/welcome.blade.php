@@ -96,7 +96,7 @@ up game mobile, Top Up game terbaik
 							class="card-img-top"
 							alt="{{ asset('storage/img/brand-logo/' . $item->logo) }}">
 						<div class="card-body text-center align-middle p-2 p-sm-3">
-							<h6 class="card-text">{{ $item->nama_brand }}</h6>
+							<h6 class="card-text font-size-sm">{{ $item->nama_brand }}</h6>
 						</div>
 					</a>
 				</div>

@@ -259,7 +259,7 @@
 
                                 <p>
                                     Daftar sebagai anggota hari ini untuk mendapatkan penawaran eksklusif yang tidak
-                                    akan Anda temukan di tempat lain. <a href="http://" class="text-primary">Gabung
+                                    akan Anda temukan di tempat lain. <a href="{{ route('register') }}" class="text-primary">Gabung
                                         Sekarang!</a>
                                 </p>
                             </div>
